@@ -229,6 +229,7 @@ Email:ccfyzh@gmail.com
     <Header>Options</Header>
     <Language>Language（Restart GestureSign to take effect）</Language>
     <Opacity>Opacity </Opacity>
+    <Opacity2Fingers>2-Finger Opacity </Opacity2Fingers>
     <VisualFeedbackWidth>Visual Feedback Width {0:0} px</VisualFeedbackWidth>
     <Off>Off</Off>
     <PickColor>Pick Color...</PickColor>
