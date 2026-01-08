@@ -142,6 +142,18 @@ namespace GestureSign.Common.Configuration
             }
         }
 
+        public static double Opacity2Fingers
+        {
+            get
+            {
+                return (double)GetValue("Opacity2Fingers", 0.35);
+            }
+            set
+            {
+                SetValue("Opacity2Fingers", value);
+            }
+        }
+
         public static bool IsOrderByLocation
         {
             get

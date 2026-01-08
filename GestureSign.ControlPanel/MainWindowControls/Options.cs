@@ -49,6 +49,7 @@ namespace GestureSign.ControlPanel.MainWindowControls
                 VisualFeedbackWidthSlider.Value = AppConfig.VisualFeedbackWidth;
                 MinimumPointDistanceSlider.Value = AppConfig.MinimumPointDistance;
                 OpacitySlider.Value = AppConfig.Opacity;
+                Opacity2FingersSlider.Value = AppConfig.Opacity2Fingers;
                 ShowTrayIconSwitch.IsChecked = AppConfig.ShowTrayIcon;
                 SendLogToggleSwitch.IsChecked = AppConfig.SendErrorReport;
                 TouchPadSwitch.IsChecked = AppConfig.RegisterTouchPad;
@@ -143,6 +144,15 @@ namespace GestureSign.ControlPanel.MainWindowControls
             if (Math.Abs(e.NewValue - AppConfig.Opacity) < 0.001) return;
 
             AppConfig.Opacity = OpacitySlider.Value;
+        }
+
+        private void Opacity2FingersSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            // Change opacity display text with new value
+            Opacity2FingersText.Text = LocalizationProvider.Instance.GetTextValue("Options.Opacity2Fingers") + GetAlphaPercentage(Opacity2FingersSlider.Value) + "%";
+            if (Math.Abs(e.NewValue - AppConfig.Opacity2Fingers) < 0.001) return;
+
+            AppConfig.Opacity2Fingers = Opacity2FingersSlider.Value;
         }
 
         private void MinimumPointDistanceSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

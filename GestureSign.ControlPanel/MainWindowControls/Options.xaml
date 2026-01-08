@@ -99,6 +99,16 @@
                 <Slider x:Name="OpacitySlider"
                         ValueChanged="OpacitySlider_ValueChanged"
                         Maximum="1" />
+                <TextBlock x:Name="Opacity2FingersText"
+                           HorizontalAlignment="Center"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           Margin="15,5,0,3"
+                           FontSize="14"
+                           Text="{localization:LocalisedText Options.Opacity2Fingers}" />
+                <Slider x:Name="Opacity2FingersSlider"
+                        ValueChanged="Opacity2FingersSlider_ValueChanged"
+                        Maximum="1" />
                 <TextBlock x:Name="VisualFeedbackWidthText"
                            HorizontalAlignment="Center"
                            TextWrapping="Wrap"

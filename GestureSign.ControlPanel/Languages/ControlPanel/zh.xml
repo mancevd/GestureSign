@@ -233,6 +233,7 @@ QQ交流群：576981420
     <Header>选项</Header>
     <Language>语言（重启生效）</Language>
     <Opacity>不透明度 </Opacity>
+    <Opacity2Fingers>双指不透明度 </Opacity2Fingers>
     <VisualFeedbackWidth>轨迹宽度 {0:0} px</VisualFeedbackWidth>
     <Off>关闭</Off>
     <PickColor>选择颜色..</PickColor>

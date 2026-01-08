@@ -367,7 +367,13 @@ namespace GestureSign.Daemon.Surface
             pathDirty.Intersect(Bounds);
             pathDirty.Offset(-Bounds.X, -Bounds.Y); //挪回来变为基于窗口的坐标
 
-            SetDiBitmap(_bitmap, /*_pathDirtyRect*/pathDirty, (byte)(AppConfig.Opacity * 0xFF));
+            double opacity = AppConfig.Opacity;
+            if (_lastStroke != null && _lastStroke.Length == 2)
+            {
+                opacity = AppConfig.Opacity2Fingers;
+            }
+
+            SetDiBitmap(_bitmap, /*_pathDirtyRect*/pathDirty, (byte)(opacity * 0xFF));
         }
 
         #endregion
