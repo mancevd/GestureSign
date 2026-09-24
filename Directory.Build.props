@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <!-- RootPath is Framework\, then MSBuild appends .NETFramework\vX.Y -->
+    <TargetFrameworkRootPath>$(MSBuildThisFileDirectory).ref-assemblies\</TargetFrameworkRootPath>
+    <BypassFrameworkInstallChecks>true</BypassFrameworkInstallChecks>
+  </PropertyGroup>
+</Project>

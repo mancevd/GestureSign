@@ -1,0 +1,33 @@
+<Project>
+  <PropertyGroup Condition="$(MSBuildProjectDirectory.Contains('GestureSign.ExtraPlugins'))">
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+  </PropertyGroup>
+
+  <ItemGroup Condition="$(MSBuildProjectDirectory.Contains('GestureSign.CorePlugins')) or $(MSBuildProjectDirectory.Contains('GestureSign.ControlPanel'))">
+    <Reference Remove="Windows" />
+    <Reference Include="Windows">
+      <HintPath>$(MSBuildThisFileDirectory)packages\Microsoft.Windows.SDK.Contracts.10.0.28000.2705\ref\netstandard2.0\Windows.WinMD</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <IsWinMDFile>true</IsWinMDFile>
+    </Reference>
+    <Reference Update="System.Runtime.WindowsRuntime">
+      <HintPath></HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Windows.Foundation.UniversalApiContract">
+      <HintPath>$(MSBuildThisFileDirectory)packages\Microsoft.Windows.SDK.Contracts.10.0.28000.2705\ref\netstandard2.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
+      <IsWinMDFile>true</IsWinMDFile>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Windows.Foundation.FoundationContract">
+      <HintPath>$(MSBuildThisFileDirectory)packages\Microsoft.Windows.SDK.Contracts.10.0.28000.2705\ref\netstandard2.0\Windows.Foundation.FoundationContract.winmd</HintPath>
+      <IsWinMDFile>true</IsWinMDFile>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Windows.ApplicationModel.StartupTaskContract">
+      <HintPath>$(MSBuildThisFileDirectory)packages\Microsoft.Windows.SDK.Contracts.10.0.28000.2705\ref\netstandard2.0\Windows.ApplicationModel.StartupTaskContract.winmd</HintPath>
+      <IsWinMDFile>true</IsWinMDFile>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+</Project>
