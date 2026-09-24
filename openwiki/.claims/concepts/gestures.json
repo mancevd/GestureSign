@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c5792298a8faf2ca033ec6e758e583413f945d21060b0ef7b6fdf48c02b8c15b",
+  "claims": [
+    {
+      "id": "claim_182c35fd5f2847fbb4dba51fa8ca40ed",
+      "statement": "A Gesture has a Name and PointPattern array; each PointPattern is Point[][] (contacts then samples).",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Gestures/Gesture.cs#L11-L25",
+          "version": "repo-lines-v1:sha256:1a9b6df75116f6857a2fb0391f75363aac1032f1a7aaf47bd3ee6d2da8848c1c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0NWU2YmE3NTE1YWIwYTkyMDhhZmY5NWU2MjJhNTk0NDcxNzQ0YzhkY2UxMDZjYjcxNzliMmM5NmZkMjQ2NWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1MDBkNWY1ZjYzM2FmNmUyZjAyNTkwOGE5Yjk1YTYwOTVhNGRkMTQ3MTExOTQ2ZjEwOTJlZTQ4YmRiOWNjZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0M2U3OTY3ZDg3ZDczMjFiZjRkMmEzZGRlMGM0NmY4NjBhOTczZjY3ZDEyZGZmMzAyOTdmYzYxODliOTUwYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmYmNjYjkyZTI2MzkxZTkyZmNlMGYzMmM5MzEyMDcxY2JiYWFlYTg3MTA2YzEwNmI4YTE2NmU2YTBjYzAwODIifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Gestures/PointPattern.cs#L10-L20",
+          "version": "repo-lines-v1:sha256:97dbb2a57d4f7a0f2559b38615da954e1913136b8e6e2bd8689938a9c0d2052b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjZDBmMzY4NTA0MzgzYzZjZjk2MzE2ZTY0ZmI4ZWNlMjg3ZTk1NmQyMjQ0NjcyOGUxYTViYzY3YTQzMTUwOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkNDZjMmI3NjRhYTczMGVlNTFhMTgxNmNlODBlYzg0ODNiMmNlYTliNjk3ZjllMTAyMWM5YzllNTRmOTcxMDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1MzA5MTM2ZTg5ZmY5ZDU3MTEzMjBkODk4OTRhMzBkMzA1MDRhYWUwYTc0ODM5YTBkZGYyMmUxNmRmMWRiZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmYmNjYjkyZTI2MzkxZTkyZmNlMGYzMmM5MzEyMDcxY2JiYWFlYTg3MTA2YzEwNmI4YTE2NmU2YTBjYzAwODIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_542140d27aef4540aa6f207ba5ef6790",
+      "statement": "Live matching uses ProbabilityThreshold 80 and GestureStackTimeout 800 ms; CaptureStarted clears a stale stack and training mode resets the stack each capture.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Gestures/GestureManager.cs#L18-L19",
+          "version": "repo-lines-v1:sha256:98fb2208f44d6682585acdb9b931442509c2dfc292cdce3b5e967f1cdd0b1038:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFkZGMxZDY4NTgzNzk5N2I3YmRkMWI1ZjYxYTQyNmE0MzBmYjk5MGU5YWZkNWJiNTU2ODdmZDA1YmU4ZTEwZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGEwNTEwNmUyNDMxMDA0NjNiYjUxOWI2MThiZmZiOGM0MmU5Yjk5OTY0NzU4MWM4Yzk2ODc0MzNmZThiOGE4NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjY1YWJkOGNhN2YxOGI5MDM4Zjk2MGQxNGI0OTU5YTY1MDg0YjU1MGFmMDk5ZTQ1M2ExMDFhNDkzNTA3ZjE0NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjljMDVhZmUzYmUwNzAyOTM0YjQyMGFmNzIwZThkNTY0MmU4NTBmZjZjMjBlYmIxZTA3YWU0MjhlMDFjZWU2ZCJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Gestures/GestureManager.cs#L78-L114",
+          "version": "repo-lines-v1:sha256:82a066a51a46db4eeda3369c99f35a73051b1c3fc6a680bf8b83c7397a753c20:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzNWVlNGY3YmY5MTM4YzNkMTZlMDBmNTlkMjUxNTA1NzlmYjdjZmE3ZWE3ZjM5NDYyYTZiOTA2MjU5YTgxMGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2MjU2ZmQ4MWQyNTNkZmMyMzY0MGIyN2Q1Y2Q1NTk3ZjM4YmIzNzM5ZjMzYzRjZWZhYjc3OTNiYWExMGE1MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiNzZhNGMxZjZhOGRhNGU1ZWUxYTJiZGNjY2U1YWNmMDUzZTQzZTQ4YzE1YjczYjY0NWYzNjgzNTRhMmVjNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjY2VjNzBkZjJlYzE5ZDg5YjY3YWE2MmQzYTM4Yzk1NzZmODEzOTRhN2MxOWE2NzlkZDY4Zjg1ZDMzOGRkOTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_88a601a0fd734df39f34d68f4fce1f31",
+      "statement": "GetGestureSetNameMatch keeps gestures whose every contact exceeds probability 80, continues stacking if more PointPatterns remain, otherwise returns the highest summed-probability name.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Gestures/GestureManager.cs#L333-L374",
+          "version": "repo-lines-v1:sha256:d66421da86420d742c1190e65f8c1057cdeb9f2fb5a114817537c062cb808e26:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkZTk5NDJkOWZiOWEzZTBhZmY5NTc2ZTYzN2FmMzk5ZGRmZDFiN2YzZDU2MjZiZWNjMDdmZjA4YzgyMmRjNTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyNDk1MTBlMWNkN2IzODEyZTY1NjNhMDc4YjQyNzIyZTg2NjgxZDczNzlhZjE3N2EyMjNjMWVjOTcxODMxM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhZDM1ZGY2YWYwMWY4ZWQyODMzMjRiMWIxY2RkZGQzMzgxODJiNWRhOTUyZTQyNzE4MjZiODIxODcwYzA4YzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMzYmZiNTFlNmE4NjUwOTU3NTg3YjEzNzdkNmE1MTJkYWE3ZDczNGY2NDUyNzI2MTFjM2Q5OTYxNDJkOTNlNGEifQ"
+        },
+        {
+          "resource": "repo://GestureSign.PointPatterns/PointPatternAnalyzer.cs#L61-L90",
+          "version": "repo-lines-v1:sha256:bd53ce80cce751dcba7ac9db544a86f10a412fa7fb2ee640a916f36283750673:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4ZmEwNzdkNzU0ZThiYzc2OWExNWQzZDM3NjYyMjVlYjhjN2FkZWYwYTZlY2ZlOTA4MjQ3ZWQxYjNjN2FlMWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1YTVlYzE1OTQ4ZDQ2MDU2MmVlZWQyZTkwMmNkYjZiZDI1ZDc4MjlmNmNkODk2ZWNhOTlkNGQ0YjY1NWIzOTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExZDM1ZjE4YmNlZDc4ZTI1ZDE0YjBjOWQ0NWFmM2NiMTA2ODlhOWY5YmY5ODg5NmJjM2QyMzBhZmZmN2MzZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyNmY3ZTc2ZjEwNTQyNWM1NGQxNzAwNTUyNWIzNmI4OGQxZDQ3YmVhYjNiMDAwZDIyOGQ1MmM3NjQ5NjY0ZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e7cd4f53a2e84a66b66f2ca59b9ff2db",
+      "statement": "Gestures load from Gestures.gest under ApplicationDataPath and SaveGestures writes that file then raises GestureSaved.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Constants.cs#L6-L7",
+          "version": "repo-lines-v1:sha256:ece3c65b0660d560c3ac7867a3949b211dd8971155b2bec95b51e4cc7f329c82:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODYxMTA0MWZlMDRkYmMzMTY1ODQyOTMzNjZmNmJlNTJjZmQyMGY5ZTJhZWRkNjM4YjVjZDBjOGMyNWVhOWQ4OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWExZTY2MThhZTk0NWUwOTQ5NTIxMmFjZmNhZGMzZjI1MmI4NzE4MzViZjc4YTU5N2U0OGVhNzkzM2M0OTQ3MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWIwZDVkYWRmMGE3MDc1NTBhYmRkNDAwZjQ4MjQwYmNiZjNhZGMwOGYwNjQ3ZDM4ODNjN2FmYWRhN2QyOWE3YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWY3YzkzMmM0MTE2ZmYwNGQ1NjNlZTk3MzI2YjMyZjYzNmFmMzBkNjgzM2NkZDdmZmY5NDE5NmFkYWI4MzJiMCJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Gestures/GestureManager.cs#L203-L204",
+          "version": "repo-lines-v1:sha256:4e62f03f3b9aec3e2a0ba373939277c7927566e2bd50f6d5a338c0599892885a:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTUyMzUxZWY3ZDZiMjRhOWVkNGM2OGQ4MTI1ZTJkMzRmNGNkZDc0OTgxNTBiODU5NmRjNGQ4MzRiNDAyMTQ5NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcxOGY2MGQxMTQzZjE0MzQ0YWY0MTQwMDlkNjBmNzFhNjZkNjkzOWI4MmFlMDlhYTNkOTBhZDliODliZTY4NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDkyOTA3NzgyNTM2ODBjZjIzOTNjMjM5NWQ3Y2ZhNDVhYTk5YjY3ZjNlNDk0OGZiYzk0YTg4NTA4Y2EwN2Q1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDQ5ZTY0MzkzNjZiOTBlNWE3MDc2MzE2MDdhNjQzNzRhOWU4NzI2MDIzODg5M2ZmMmE2OGE5MTA2ZmM5MmVlOCJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Gestures/GestureManager.cs#L237-L246",
+          "version": "repo-lines-v1:sha256:36e398053316cb3f30299dce17be3fbbd995d89ba218be75814836a5fc539a94:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzN2M3OTU3YjA4NDBmZDU2Zjk5ODJmNTQ0MjA3OTY0NGFmNzNmOWE5OGU1MDY2ZjVkM2I0NTVhMTQ2ZDAyOWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2NzhiYWU3MjU2OGYzNTI0YmZmNmNlMTZiMjMzZjdjMTZlMDYwZDg3ZTY4YzYxYjYxMmYxNjY0YjkyZDZjNmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZjllMDNmY2VjYzRlMTMxMWU0M2M5YTNmZjVhZTg5MTc0YmJmMzVkMDgwMzJiYWViM2UyNWViNDk3OTAyNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1NzU5MGU2NjUxMzZlNzYwZmJiM2FlZjIzNTc5NjBlZTI2MTNhYTEzODE0MjhhOTJhOGVmMjJlMjgwZTY2MDMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

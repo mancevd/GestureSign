@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5b301d37c0b2d2b3aaab307da0fe7772bad6992e0d519c37b88575d1ff5bcf3a",
+  "claims": [
+    {
+      "id": "claim_297bb6bdc0b24701b9517136a06f7439",
+      "statement": "MessageWindow is a message-only HWND that registers Raw Input with RIDEV_INPUTSINK and RIDEV_DEVNOTIFY.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Daemon/Input/MessageWindow.cs#L140-L143",
+          "version": "repo-lines-v1:sha256:30459d168cb5d7903bc9b753d7f07eb4f05b6fb881b5adf901953710108fc35e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGQ5ZDhiMTIwNDJjYWM4NWMzZmRkNjgwMWFlYTliZWRhMTU0ODJhODk3ZmRkZTIxYmE5ODQ4MGJjZTBhMWJmOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODMyNzBiYTk4YjdlNGZjNjI5N2E1ODFiOGE0Zjg3MWIyOTViMjU5MjEyNzI5Njc2OWE0NTA0MTY1ODc1ZjU2MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmUyMDZkN2I4YWNiYTE4YTRhNDZjOWFmODU1YWMyMWNiN2UzMmJmOTM4MDYxNzdhZGI5YzI1NTlkODVkM2E0NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2U2MGRkOGM0MzVlODM3ZTlmOWIxODJhY2NlZGY1NDQ5ZDk2Y2ZkZjI1ZmU5NDY5NDA3NTkxOGU5ZmFkMzcyZSJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Input/MessageWindow.cs#L42-L55",
+          "version": "repo-lines-v1:sha256:e12ad386253bda412d28da87c9fc3101ce5b227a6eea2bd953685058942231ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2OWI4OWVhOTMwMDU0MWM5M2NiZTRhZDgxYjczNTVmNjdiOGQ1ZGZkOTVjZGQ5ZTlkYjhiZGYxOTE5MGU3ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YTg1NzJiODg4YjA4Zjc5Nzk4YTE5YWNhZDFlZmRhZmVkMDI3MDQyNWEzZTFjMjJkODg4ZDEwNmQ2NTY4M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdkMGM0MmRmYjQ2ZDU2ZmNhYTMzMDI1MTRjYzQ2MWNiMmVhNzA1NmE2MjM4YjNjZGE3Mjk0MGQzNzJlN2I0MzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiZTNlNjhhZWFmOWQ2MmE3YTI0MDNhYzJmNWViNzdiMDQ5NGMwN2MzZGVhMjJmMTEyYWMyNmI3OGIzZTk2OTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_261b939aa5ae4941b7195eb832a7e341",
+      "statement": "A ManagedWinapi LowLevelMouseHook is started when AppConfig.DrawingButton is not None and unhooked when that setting is None.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Daemon/Input/InputProvider.cs#L27-L32",
+          "version": "repo-lines-v1:sha256:bb48ac3802f3a0e930af55ebeadc812693a3a5ab9d281496c02ae8368c13e375:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc1NGZlNGQ3YmRiOTM3OTMwNGQ0NWNkN2NkMjRlNzI2NDI3ZWZhMDRlNzkyN2EzYzhiYjRjNThjMTgyMDM1MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGU4N2EzNTJjYjMxNDQ3OTM3NDdhOTUxMWMwZGJiZTc3YTc1MzMxMWQxMDQyZDIxODYxODFiZGQyOWYzOWVhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQwMDVkMzg5ZjA4ZGIzZjhjNzEyZTI1ZDcwZjlhMTk0N2I1NDgxZjU3Yzk0NjVjMWJkYzhjNzVjMTFlYjM0OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjdhMDZiNTExZmE3ZmRmZGM3MWI0NWQxOTliMDQ2YTU1MGJhNWI5ZTJiZTUwYzllYmUxZDVkMDZlNTg2NmJmNiJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Input/InputProvider.cs#L42-L46",
+          "version": "repo-lines-v1:sha256:23ef2a266287bbd5ec1e9eddd8d167bd54cfd94c2721041153bf193fdcc61617:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWU4MmFkYjEyZTI0Zjc5NTZkZDEyODE2ODAwZjJiZGIzNWJlMzA4MGQzMDZiN2RkYjVlZGY1MWZmM2M3MzNmYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDY5OWQzNmUxZjdhMTQzZWM4MDY5ODU2ODdhNThlZjFmYzdhOWVhMGM4NDVkODg1MWZkZDA3YmU0OGEzMjJkNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjUxNThkNTM5ODk1MGU5NGY2YjBiNDUzYTAyZTg0ZWVlYjI2YWMwZmUwYzYwNTEzNzc1ODVlNzQ0NjJmN2VmZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2Y0NDc0Njk4YzJiNDc0NWM4MGRlZWQxZjRhMTg0Y2ViYTg0NGZiMTIwOTE5ZGJkMmMwMjlmOWI1Y2I0YTc1NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8323ac8738ba409eb1a610fef8999d70",
+      "statement": "PointCapture hooks WinEvents from EVENT_SYSTEM_FOREGROUND to EVENT_SYSTEM_MINIMIZEEND and, when UiAccess is set, constructs PointerInputTargetWindow for touch blocking.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Daemon/Input/PointCapture.cs#L220-L234",
+          "version": "repo-lines-v1:sha256:c6fd529001069b9723a6cb0e667dac25b9c4a9e8b3ff4fcdcc41b0834896ce9a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzMDA3Zjk1ZmFiNzJiODkzYjVhNDQ1ZTNkNDQ0OWU1ZDJmNGE0YzdmYjdkMGFjZDgwMjdmYTRmNGQzNjY1ZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YTg1NzJiODg4YjA4Zjc5Nzk4YTE5YWNhZDFlZmRhZmVkMDI3MDQyNWEzZTFjMjJkODg4ZDEwNmQ2NTY4M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiMjY1NTVlMjdiY2YzNzZiNjE1MzU3MzI1MzRkZjI4MTExZGFjZmRiMzBmZjViMGVkZmUyNDBkMmRjZTJhOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljMzQyYTQ0YzU5NjBmYTBlZWY2ZmMzZmJlNmZiOWQ5ZjM4OTgwNDU0NWZiZDQ3MTc0NjliNGU0MzM5YmNkNjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7d2d2d7514594929a6ef46e75af8ba73",
+      "statement": "Core plugins simulate keyboard and mouse by constructing WindowsInput.InputSimulator (SendInput).",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.CorePlugins/HotKey/HotKeyPlugin.cs#L261-L261",
+          "version": "repo-lines-v1:sha256:6abb4a7ebab6a7083c24f30592894a76e7c85254897532580fe1f5ae505104bf:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmFiYjRhN2ViYWI2YTcwODNjMjRmMzA1OTI4OTRhNzZlN2M4NTI1NDg5NzUzMjU4MGZlMWY1YWU1MDUxMDRiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmFiYjRhN2ViYWI2YTcwODNjMjRmMzA1OTI4OTRhNzZlN2M4NTI1NDg5NzUzMjU4MGZlMWY1YWU1MDUxMDRiZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzdkNDIwY2MyMDE1MzJiYjZlNTAzMjIxZDcyY2E5OWFmZjQ5NWMwYWFiODZkNGE5ZjMwN2ZlMDkwZjg5ZGIzYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTMyMTk4OTMxZDJmNGE4NmJhZTczOTJjYjlhNzE4NzZjODNjODcxYmU4YjQ4YjZkNDc2YjI1MWQ5ZTBkNTc4OCJ9"
+        },
+        {
+          "resource": "repo://WindowsInput/InputSimulator.cs#L38-L45",
+          "version": "repo-lines-v1:sha256:5e85fc1ddeae8d959c065d16eadbdb344c512853ddd38d662480687c20c97b4b:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTJhNGIxNzJjNzdiNGQzODI4MjlhYzFmMTUyODZiNDczZjUzNTI2N2Y3MTMyZDM3ZGZiN2MzNjRhMzhhZTA4MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQzMmNlNzMwMWIwYWFjMWQ3NTAxMmM3NzkyODZmYjQ2ZTY5MTJjMzFmMTE2MGIwYTRkMmQyZTUyNTRmYjcyMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2VlYzM2NTlmYzc2NmQ4YjQzNTEzZjk1MDAyMTU3Yzk2NTI5YTAyYTFkM2M0ZmNmMzQ0NDY0MTBhNzhlN2ZkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTQ4MjI2ZjQ4ODkwZjBiZWU2NjRhZjJlNzU3NTYwODU2ODQyMzU5MDE4MDQyZjhlMjc4MTE5ZjhmYmQ2Mjk4YSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

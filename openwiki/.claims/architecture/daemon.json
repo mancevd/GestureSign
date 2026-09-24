@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ccee7f29c87389941e4ab0ee660baaaffec285bbee5a28bf9594af2d813ea853",
+  "claims": [
+    {
+      "id": "claim_5078fbc51a124d88af9f7581f80b6a93",
+      "statement": "The daemon uses a mutex named Constants.Daemon; a second instance sends StartControlPanel to the existing daemon and exits instead of starting another capture loop.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Daemon/Program.cs#L24-L77",
+          "version": "repo-lines-v1:sha256:e97e3e7f85453c6e79a7c728b7743fcd547b94af84c5d5ae50fa22caa2670d0a:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzMmRjZTZjYmE0NmFmOWJjNWU3YzNhODE0YTAzNzA5ODc4NjVhM2Y5MGM3NzcyM2ExMzk0MzQzM2I3ZTY2NjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2NzhiYWU3MjU2OGYzNTI0YmZmNmNlMTZiMjMzZjdjMTZlMDYwZDg3ZTY4YzYxYjYxMmYxNjY0YjkyZDZjNmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwOTZhODY3MDE1YjQ4Yzg0MDkwODhiODA3NTNhYjYxNTk0MWYyNjM1ZTMwNGNkMmIyYmNmNDM2MjMzZjg2MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzZDczYzY2ZWY1YmE4YWZmN2Y3NGYwYTBiMGQ4M2Q4NGZiNzdiMDU2YmFlMjJkODZmNGQyMjgzNzY1OTE4MTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d81b05b89d5f4785b12c7fad078242d4",
+      "statement": "First-instance startup loads PointCapture, TriggerManager, GestureManager and ApplicationManager against capture, PluginManager with a HostControl, TrayManager, then the daemon named-pipe server before Application.Run.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Daemon/Program.cs#L42-L64",
+          "version": "repo-lines-v1:sha256:3e760258fc28b9352bf4efbc735db0338f13618fb1690a3f650b20c3ccd875ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1OGFlODJmYTZhNmZhN2FlNjgwODg0NDY0N2VmZTUyYTc1NTk1YTIyNmZkY2Y0NmI4MDFjNzRmNjhmZTNkY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0OWM5NjhiZGQ3NzQwZDEzNzFlYzA4YzI4ODU2NWIwYTUyMTI3MjUzNzM0YjA5ODIzNWQ3ODgyM2NjMDE4NTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY1MTE2ZTlmY2VjOTM1ZjU2NjdjZDc1MDg2ODVlMjZiODkyNzgzZTE4MzYzZTY0NzE0MDgzNmU3Y2Y3OTRlM2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJkZjhjZmY5OTE2NDc3ODI5NmI1NjIyYTgzNjE0NWI4OTI2ZjhmNWZlYWUyNzM3Y2M4OTViY2U1YWZiMDI1MGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f59fce7250a94184a5277c0209f9e1a4",
+      "statement": "Daemon MessageProcessor posts StartTeaching, StopTraining, LoadApplications, LoadGestures, LoadConfiguration, and StartControlPanel onto the UI SynchronizationContext.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Daemon/MessageProcessor.cs#L20-L46",
+          "version": "repo-lines-v1:sha256:be64d27c1ad7323f959d9e63062fc3f5ba42b5658522b0dd792b741dee812053:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzYjE0YWY2NjA2YTBkYTIxNmNlZTU2MTEwNmU3YWFkNzMxYWI0ZTNlNDk2YjA1Nzg5MzAzNzVjZjY2Y2QwMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhNTZkYmYyOTlmZGE1YTE4ZTEyYWUwYjJkY2Q3OTM4ODI1ZDlmYzRhYmU2MTM3MzczZjI4MzcyNmYwNWUwZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0NTFlOGE2MWJmNjY1YzQyMzZhMDA5MDBmYWUyYzM4NjBiMzQ5ZWM0YTJlMTg5MTIwZDg0OTlkNTFhODNhM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzZWNhNzU0MDM1MzEwMDRiYjlmODQ4OTZjNjQ1NmU2N2ViZGUwNDhlYWJhNTc5ZmNkYmQ1ODBkNjA1N2YxODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a75de10dc9254438a5723ff8145cfa62",
+      "statement": "On ApplicationExit the daemon disposes NamedPipe.Instance and PointCapture.Instance.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Daemon/Program.cs#L81-L85",
+          "version": "repo-lines-v1:sha256:cf6e111588f3203c2a136a88ba88194eb94348dde6f8742204e8534f7c2720d4:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjU0MGIwMjI1ZThhNzJjNTI3Njg4YzhlNzQ5ZWJlNDRjMGVmMzgzMWRhZDQ1NzM2MzdhNjMxMjc2OGU1YzY0ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODI1MWJmYWJjZmI2ZDg5ZmQ5ZjRlM2I3YmM0YTE3NGZkOTBjOTk4MTg2ZTRmZGUyYzhmYTM0ZTZkNWMyOTNhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDNkNzNjNjZlZjViYThhZmY3Zjc0ZjBhMGIwZDgzZDg0ZmI3N2IwNTZiYWUyMmQ4NmY0ZDIyODM3NjU5MTgxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDBjYjYwNmVlNzQxMzFhMWM1MjA0NTM4Yzg2ZGFiOWM4ZjczNGFhZjFiYmQyZWQxOGIxODAwODY1YWU1MjFkZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e7c6afafce0d4a23bc9b877a51162a27",
+      "statement": "The tray can start GestureSign.ControlPanel.exe, toggle user-disabled capture, and on exit notify the Control Panel with IpcCommands.Exit before Application.Exit.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Daemon/TrayManager.cs#L143-L169",
+          "version": "repo-lines-v1:sha256:3f04f94b9c944e28223f1de034d81ad92d8374a44dd10d4eb142b48ffe42e509:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5NTFmYzQ3NzBhNDIxNDQ3NmZhMzkzNzVlOTI3YmQ1MTE0YzJjZDQwZTlkOTg4ODdkOWI4OWY4ZDcxMmE2NzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YTg1NzJiODg4YjA4Zjc5Nzk4YTE5YWNhZDFlZmRhZmVkMDI3MDQyNWEzZTFjMjJkODg4ZDEwNmQ2NTY4M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlYjhiMWI3MDk2ZWFmYmI5YzExOWRkMWRlYTg0Y2U2NGU4MjYwMDU0NGYxZTJlODQzNzM3OGI3MDA4MWI0MmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyNmY3ZTc2ZjEwNTQyNWM1NGQxNzAwNTUyNWIzNmI4OGQxZDQ3YmVhYjNiMDAwZDIyOGQ1MmM3NjQ5NjY0ZmIifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/TrayManager.cs#L202-L205",
+          "version": "repo-lines-v1:sha256:bdc4a09c8f49e2f0f8c717c20dbaaa444a49e84768f422fe593b61ef5b2f130f:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmI4NWJkMTEzNzE1NmQ4YjQyYzlkZDRhYjVjYTliZGIwNWRkNTRkOGE1NmFiMWVmZWEwYTRmZmQ2NDM0OTFiYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODI1MWJmYWJjZmI2ZDg5ZmQ5ZjRlM2I3YmM0YTE3NGZkOTBjOTk4MTg2ZTRmZGUyYzhmYTM0ZTZkNWMyOTNhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDA2YzY0NzE2NjcwM2U0ZGJjNTczYjg4ZDNmODA4YmJjZDI2YTJmOGFmMWI3YjI1ZGZiMzYzOWNhM2E4NTRiNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDI0YjY2M2E2MzdiYzk3NzVlZjVjYzdmZTVlZDNkZDkzZjVkYjliNzVmNmFlMWNiMTMyNGY3ZjA4MmVjN2NmNSJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/TrayManager.cs#L82-L87",
+          "version": "repo-lines-v1:sha256:5c077cb310320b5af6bef9816f3bbf632d1d6b9af0092c69bac1275011c9e87d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTYyMDY1YzNjYWVkMDgzYzY0MzllODBkNWFhN2YwN2QzN2I3YWZhODkzY2NkZTI0ZjUxMDQ4MTg4YjZmZDE1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDNiOGZlMTFjNzczY2E4ZjA0MzE4N2ZjMTY5YmZmM2ViOWM2Zjc2NGVhNWMzMTdkOGI5MTgzYWZiNjcwYTU3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzBiODQyNjUxYTU3YzAzOTQ3ZTRlZWUzMjViNWUzMDY0NjExY2JiOWViMGIzZmQ0OTA1MDM5YTIxMGJkN2UxZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmViOGIxYjcwOTZlYWZiYjljMTE5ZGQxZGVhODRjZTY0ZTgyNjAwNTQ0ZjFlMmU4NDM3Mzc4YjcwMDgxYjQyZCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

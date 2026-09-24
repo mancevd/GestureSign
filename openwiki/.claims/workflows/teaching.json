@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:7bc9192fbefb5f72f767f295e7085ec1f4dcf8cbc5e49f1bd994c6336b72bd36",
+  "claims": [
+    {
+      "id": "claim_adc527ee67714b84a6e40ab8b08e7245",
+      "statement": "GestureSelector StartTeaching/StopTraining flips daemon CaptureMode between Training and Normal (unless UserDisabled).",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ControlPanel/UserControls/GestureSelector.xaml.cs#L65-L81",
+          "version": "repo-lines-v1:sha256:4e0ac9aff4eafc1fa9e939d9dacd8b12a4b4e7973d5f81801d9ab0f6876c13d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiNDlhNjIwMGVmN2NjMzg5NzY1YTIxYjUxM2RiNGFmN2M1MzBhZTVhZTRmMjIzYmI5ZGM3ZDQxZTIxZjliMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YTg1NzJiODg4YjA4Zjc5Nzk4YTE5YWNhZDFlZmRhZmVkMDI3MDQyNWEzZTFjMjJkODg4ZDEwNmQ2NTY4M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhMDhiMDMxYjkzNTQxMDIxODc3ZmM3ZTdiNmNmODMzYjdkODI4OWFmMzBlNzhmZDVmODAyZThjN2Y4MWYxNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4YTdiZWU3YWNhNWJhM2FkZjJhZGUzNzBmMDkyYzg4NzBmZmE0NGE4MjQ2NWI2YmJiNmZhODM3Njk5Njg4M2EifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/MessageProcessor.cs#L26-L32",
+          "version": "repo-lines-v1:sha256:ef89bfb3af39e852fa05994e536399df9cd2efbecfdb99c9e97b08de32ee944b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjllY2Q2OGU0ZjU0MDZkMjhjMzE2M2MzM2NhNWNlZmIyMDA1OTFlOGNmMDZmOWRjZDBjNjA0YTMwMTE1NDI3ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGIzNGU2NDZiNGVhMjZkYmVkNjRiZTc2MDlmZGY3MmJhNTM4OTYwZWY4NzdiMzliYTBkMTkxZGZhN2IwMDQ5MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjRhZjg1NjdhZGE3MDFlMmJmZjYyMGIwMjE5OGUxMzgwMzRjNTA3OTIwODY4YjRiZWRhZjVjNGFjZDc2N2JlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmU1NDAxZTJlZjE0ZTJmMTQzNDlhNzc2Y2FiNmUyNTIyOTQxNTBjYjM0N2MzNTA3MmVhZjY2NTkwMDE3N2U0MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_565185f770d349138106fb65d32f76df",
+      "statement": "Training captures send GotGesture; GestureSelector maps PointPattern[] into a new or similar existing Gesture and can stack up to three patterns.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ControlPanel/MessageProcessor.cs#L28-L34",
+          "version": "repo-lines-v1:sha256:962c7e19aa0c298a1e6ecc9eddde0147e3311bee3dd6105739b7c942a937392b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDNjYTQ0MzA5YWM3NmNmMDA0NWU5M2ZkZDk3Njg1ZWZjYjg5ZWNiMGI1ZjkwYjg1YmNjYjE3NWVlMWYzMTIyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWJiODYwNTQzYzdmODNlMzU1MTQ4ZTEyYTllYjc3OTA2NjhlYWNlN2M5OTMzODYxMmYzZjY4NTYwNGIzMDA5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDJkYTk5ODQyZGI3YmY0MTEyODcyODU1MGJkNDNlNDg4YWVmYmMwY2I4YzQ2ZGJkOGM3YWFlNjQ3ZTA1Y2MwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWY2OTg0NDM2NTI3ZjAwNWJjZGYyZmYyNWE1NjY2ZjJmZmRiYmY5ODdlZGJlMWVmYzc4OTg0YjU2NDVmODJhOSJ9"
+        },
+        {
+          "resource": "repo://GestureSign.ControlPanel/UserControls/GestureSelector.xaml.cs#L35-L62",
+          "version": "repo-lines-v1:sha256:6a5a1214fafa208ff90a191fbd2294efde83006d647fee222ab7e8537d0a2c88:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4YzQxYTJjMjgyYmU0MjA5NDhiYjVmODYwZGZjNGFiZmFmMjdhNTU3OTlkZTNkNDkyMWZmNDQ2M2IzNTc4YjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjZjNlMDRhOTMyMmIwMGMxZmE5Njg0NjhlMWVkNzNkMGQ4OTBlNDE5OGU0NTczZWQ1NzViZjRhMTU4NGUwNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyMjM0YzI1OTVmN2U1NzA1ZWUxYzMxZmY0Y2UyOTdlYTgyOTljZmI3MjhiMDA3Yjg0MDZjZTU4N2YzM2UxNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4MGZlZWFjMDRmN2Y1MjI0NmIyZjA5YzdmYzQxOWU0YmIzY2I0NjYxNDAyNGE1MmExYjk4NmIzMTVhN2RkNDIifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Input/PointCapture.cs#L567-L573",
+          "version": "repo-lines-v1:sha256:dcb80eccb88b042860deeb909e7c1cfb4d3ac3c57654b1ba11511e30b11c9b3b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjM1ZWNiY2RiZmNjMDZiZDczM2I1MDc0YWQ0ZjE5NmJjNGE1YzM1OTc4ZGQ2NWIwYjc2ZTMyY2IzZDdjYzEwYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzhhYTU1MTFkMGFmM2Y5MTkxNWY3NDBhMzlkZTE5MjZlY2Q1NDU2YTViMDlhODM1ZjE3N2FiNzg3OGNmZTFiMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODUzYjA0N2FhYzgxN2VlNTZlYjkyNDAzZDQ1NTcxN2M5NzUyNTg3ZGQ3NDM3YTlkNWJkYTNjYTRmYmU0ZTYyOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDRiMzA0Y2U0ZjFhY2IyOWVhODQ0ZTMzYzg2NTg2Nzc0ZDcxYzY0OWE1M2JjMDQxZjFmMTU3NDU1MzgxN2I1ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a2d02c97c2142ce94029abdd092e13c",
+      "statement": "SaveGesture writes Gestures.gest via GestureSaved IPC; ApplicationSaved and ConfigChanged similarly tell the daemon to reload actions and configuration.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ControlPanel/App.xaml.cs#L48-L53",
+          "version": "repo-lines-v1:sha256:f5a15f7535661fb3d9971253052c26e47104c5dcdb56fcf88dbacabf5f4fb200:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWUzMjUwNTM5MTNiNmRkM2M4ZDEyNGRmN2Y5NjcwZWQ4OGNjMmFmMDRhYjQ3NjEwMjkzOWNlNTQ2NTY3YjAwYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2YzOWZkNTlmMmJkN2Q5Y2NlYjNlMDU1MmI5M2ExYzFkMGQxOTdlMTUwMGUzYTQ2ZTU4OWE3ZDY0OGM4ZjQ4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTI3OTAwMTA3MzM1ZThjM2Q5YjhmMjQ1YTI5N2E3NTU1OWUzZWVmM2NhNmRhZjQwZDY5YzRhZjgwNTE4YTIzYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTdiMDZiZjgzMDUwZDE1ZGZhYTUyZjgwN2M3YjAyNjI5MGZlNmRkMzRkOGNiMmZiYzc4YzNjOGQyNTA1YmQxMCJ9"
+        },
+        {
+          "resource": "repo://GestureSign.ControlPanel/Dialogs/GestureDefinition.xaml.cs#L67-L82",
+          "version": "repo-lines-v1:sha256:58d21cd6604e363f1164b579996f3c34708551a6798db20c3566a174161d5377:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0NGQwZDQ4ZDdiNjQ4MTNiZWFhYmRiZGM2OTJhYzM1OGYzMGExMjg0OGVmODBmYTczMTMwY2FkZGNiZTQxODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0YTcxZGZmMDBkOWZkYTczYzliYzAxNzBmNDZjM2M2OGY0ZGYzMmM3OGYxMDk4Yjc0MTc3YzAzNjczMDgwZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjMDhhODg0N2M2ZmQzZDM3NmZkNWYzMGE2ZmRjY2I4NzlhMjUwNDhiZTA0YWU4ZjAzMjliNWViMmFlMWJjOWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyNmY3ZTc2ZjEwNTQyNWM1NGQxNzAwNTUyNWIzNmI4OGQxZDQ3YmVhYjNiMDAwZDIyOGQ1MmM3NjQ5NjY0ZmIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

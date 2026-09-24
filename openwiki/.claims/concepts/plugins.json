@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ae6f6019b3f662fabf8fd182b04d056393047a157a5c9405aa51fbe52beb6548",
+  "claims": [
+    {
+      "id": "claim_d13c94643cbc41daba98995de9bc6f96",
+      "statement": "IPlugin exposes metadata, GUI, Serialize/Deserialize, Initialize, Gestured, and an injected IHostControl.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Plugins/IPlugin.cs#L3-L34",
+          "version": "repo-lines-v1:sha256:f239163ff36d968bad4ce9d67699e7a46ad162294ead4390faf919af8f69e73d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MGM0ZDE5YTE5MzY0OGE1ODJiMzk4YTY5NDM2ZDRmODA1YThiZjI4OGI5N2EyOWIxMGZmYTM2NWZmZDVjMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1MDBkNWY1ZjYzM2FmNmUyZjAyNTkwOGE5Yjk1YTYwOTVhNGRkMTQ3MTExOTQ2ZjEwOTJlZTQ4YmRiOWNjZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwOTNlOTFlYjlmMjRlMGM4M2ZlZTJlN2RiM2QyZWQ0NmM1N2RmY2I3MGY5OTA3YTlhOWM2MTI3NTNiZTBlYmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmYmNjYjkyZTI2MzkxZTkyZmNlMGYzMmM5MzEyMDcxY2JiYWFlYTg3MTA2YzEwNmI4YTE2NmU2YTBjYzAwODIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1395dcc4003042b6a0b62b5cb362ba25",
+      "statement": "Plugins load from GestureSign.CorePlugins.dll beside the host and from Plugins\\*.dll; types implementing IPlugin are instantiated from bytes, given HostControl, and Initialize is called.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Plugins/PluginManager.cs#L128-L156",
+          "version": "repo-lines-v1:sha256:465de749686eced01a497f1e3622e995a04ea7c7f40e81961d1c5321469dfa7c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhOWNiYjc1MjVmMmY1YmEyMTE1YTVkODE0ODIxYTQwYTY0Y2E4MjQ4YjNjNTFlMDMyYTA5NWE3ZGI4OTdjMWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YTg1NzJiODg4YjA4Zjc5Nzk4YTE5YWNhZDFlZmRhZmVkMDI3MDQyNWEzZTFjMjJkODg4ZDEwNmQ2NTY4M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzZDczYzY2ZWY1YmE4YWZmN2Y3NGYwYTBiMGQ4M2Q4NGZiNzdiMDU2YmFlMjJkODZmNGQyMjgzNzY1OTE4MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0N2YyOTQxZmQ0MDBiNzk3ODViOGI2MzcyNWU0MTNkNTgwZTZmMjVjZGEzODQ2OTFhMTUzMWE3NjdiMTBhZTMifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Plugins/PluginManager.cs#L177-L203",
+          "version": "repo-lines-v1:sha256:c85a6a826aa58170eade777caaa9b18ec5c6f64b89a8ed4ba6e198990fdf2704:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlMmY0MzQyNjkyN2RkN2M0ZmIyMjY3YTc5MjcwYjE2MzU5NjY3Y2RiMzFhNTRhMWY3MjdlODEyNjc4M2Q3ODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyOTY4NDIxMWQ0Nzg2MTYxODY3NjQxZjRlNTYzNjc0ZTg2MGU5ZjZkYWUzZjNiMTNmMDhmNDg0MjU0OGIwZDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjMDhhODg0N2M2ZmQzZDM3NmZkNWYzMGE2ZmRjY2I4NzlhMjUwNDhiZTA0YWU4ZjAzMjliNWViMmFlMWJjOWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1YTJmZWQ4ZDg4ZjAzMDE2ZWEyOThiOTU2YTZjOTAwNzA3ZTZkNzVhMzk5NmFmNmJlZmYwYjgwNGRhYmRhYjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d48e1fcd95974deaab57c788603cdf02",
+      "statement": "ClipboardMatch is an optional extra IPlugin whose post-build copies the DLL into a Plugins folder.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ExtraPlugins/ClipboardMatch/ClipboardMatch.cs#L8-L37",
+          "version": "repo-lines-v1:sha256:df12a1eaf97a5ae5a7974b9c6d5e9de1419655fed76e8ff558ea72010098b393:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzMTYwZTIyMzgzZTc1YmE3MDVhYTJhZWY5YTk2NTBjNDEzNThjYjNhNzZmNTNjNWQ4YzVlNTM1NTg3YjE5MzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTFiZmFiY2ZiNmQ4OWZkOWY0ZTNiN2JjNGExNzRmZDkwYzk5ODE4NmU0ZmRlMmM4ZmEzNGU2ZDVjMjkzYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1YjZlODg3ZTc2NzdkMWE0M2RiNTE5YmNmM2UyZDFhZjZmMTE1OGQ2ZTYyZjkxODUzY2UwZjkyN2FlMTgwOTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2MjA4MTEwM2IyNWQxNzExMjJlMGMzNmE2ZTYzYTdjNmMzMjM3YjUxNTQ1ZDBiZjVhNTQ4MTJjNGU1ZTAwM2UifQ"
+        },
+        {
+          "resource": "repo://GestureSign.ExtraPlugins/ClipboardMatch/ClipboardMatch.csproj#L89-L90",
+          "version": "repo-lines-v1:sha256:1cbddbafa20a2a508ac4494f1babdd31498ad39e4af2d1054e96efdd258924c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjg0MWI3ZmExZGRmZDE3N2Y1MGRiMWNjZTRkNGRlNjhmOGU2Y2Y2ZGQ1NzAwYTNkYWUxZTE5ZWIyZWEzMTQ1YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTBlNzM4M2M5YzNhY2E4Yzg3MWE2OWEyNGY4NmQ0MTYzYjkwZGQ5YTIyYTljZmI2MWI4MWQwMTUwMDYxZTlmZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWE5MzMyYmY0OWY4NzE4ZDc3OGE1MzNiNGUyNjdmMGRiZmY4OTkxZTMxOTA4OWUxZmY0ZjYyMjkyMDllNWU5NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzg3NTU3ODY3YmUwYzdkZGZmNjQyYTc4NTRiMzhiMTdjNjlhODc4YWExZjU5NzgwMzdjMjcxNWUzMjEwYWNlYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_13867500c9964f52b82808dd546524ec",
+      "statement": "ExecuteAction skips Training mode, chains work on a single Task, skips UserDisabled commands except ToggleDisableGestures, deserializes settings, and calls Gestured.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Plugins/PluginManager.cs#L64-L126",
+          "version": "repo-lines-v1:sha256:1f906f7ba42daa20ef87cf6567b01d7b6a4bb3381bfe1f19b6acdac7048fb4c8:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4YWZkNzVmYWE1NWJiMzFiMzIwNjYwNmJmMWQ2NGMwNDA0YzlmYzc1YTdjZDk0M2M5ZGU0YjI3Njk1NTI4M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTFiZmFiY2ZiNmQ4OWZkOWY0ZTNiN2JjNGExNzRmZDkwYzk5ODE4NmU0ZmRlMmM4ZmEzNGU2ZDVjMjkzYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNmM2NDcxNjY3MDNlNGRiYzU3M2I4OGQzZjgwOGJiY2QyNmEyZjhhZjFiN2IyNWRmYjM2MzljYTNhODU0YjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiOWY5MGQzZTVkMzM4YWE3MGFmMGFjYjM4OTQwY2M3MWU4MGY5YjBiYTI3MzNkNTZjZWM4MWQ3NTU5YzFhYjEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

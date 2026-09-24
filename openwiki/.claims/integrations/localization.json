@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:49234c820015942e9ea496c4b2a8d840aeabcf08706145fb48191497df1d0ea6",
+  "claims": [
+    {
+      "id": "claim_4cae74b8d5454d9abacd7b373f890c53",
+      "statement": "LocalizationProvider culture comes from AppConfig.CultureName or CurrentUICulture; LoadFromFile selects Languages/{folder} XML whose Culture attribute matches that name.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Localization/LocalizationProvider.cs#L21-L30",
+          "version": "repo-lines-v1:sha256:5fe19258276f77b8c3365b1deb4424cfb6e598edfbddcaab6963dc05e157889c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2NzkyNzIyNzg0MDEwMDhmZmIwZDRmOGRlM2Y0MjdjYmI3ZGMwNGQ3YTZmMjhhNTQzMjliMzhiMWI3MDNkNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YTg1NzJiODg4YjA4Zjc5Nzk4YTE5YWNhZDFlZmRhZmVkMDI3MDQyNWEzZTFjMjJkODg4ZDEwNmQ2NTY4M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyNzQxYjMyN2JlYjJlYzJlMmVlZDgxYzYyY2NjNTg0NmIzNzA5NzYzNTY2MWYyZGI1MmU2NGQ2NDUzMDNiYzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkNDBjMWE5NWQxZTc2ZmNiYTlhN2VmMzFjNWM0OTg2OGI4ZjQ2NDJkNzA4NjkwZmVlYWU3ZGI2MjUwOTRiOGUifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Localization/LocalizationProvider.cs#L88-L136",
+          "version": "repo-lines-v1:sha256:146d02fb1da5951dcdbfd9cc9a7e9a263ac7710d3dc0bc75002366654c5b2a0e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1ZTNjZGUxYjAyMWNiYjg0NWVkNWZjYTNkM2JhZjAzMzQwYTI1ZGQ5NjI5NTYxNWNkNTIxYWQxMDA1OGQzODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTFiZmFiY2ZiNmQ4OWZkOWY0ZTNiN2JjNGExNzRmZDkwYzk5ODE4NmU0ZmRlMmM4ZmEzNGU2ZDVjMjkzYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjN2I2YmYyZDBkNzE0ZDdlYWRmNjhkMjc1NmU1N2I2ZDRiZmFjNzhiMGM1YmQzMzYxYmM4NGQ2MjA1NjlkMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2M2NlYzA3ZTdkNjRhY2JiOTFmNTMwYTM5ZDQwMzJmMDVlZDE0NzMxY2JjZWEwYjIxZWE5NzUzYjFlMTc5MjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_461a233ca7594744bb5e5c28e825eee7",
+      "statement": "Daemon and Control Panel load XML language files first and fall back to embedded English resources if the file load fails.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ControlPanel/App.xaml.cs#L65-L70",
+          "version": "repo-lines-v1:sha256:7a09029e19ed361942715e1fd27aa2576f50c674cee5ad259a28a8d479ac566e:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWRmN2ExYzlhOGVkYThjMTkyZDFiMjkyYWM5YzIxOTliNjgyMjU5MGJkNzQ1ZTZlMzk1YTRkMzliMTA1ZDQ2YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzlhODU3MmI4ODhiMDhmNzk3OThhMTlhY2FkMWVmZGFmZWQwMjcwNDI1YTNlMWMyMmQ4ODhkMTA2ZDY1NjgzYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDNkNzNjNjZlZjViYThhZmY3Zjc0ZjBhMGIwZDgzZDg0ZmI3N2IwNTZiYWUyMmQ4NmY0ZDIyODM3NjU5MTgxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjgyZmRiYjAzNjgxM2YwOTY2ODA0MzI5NDkwZjJkYjI1YjFjMTdlNWQ4YWMxZjYxOTVhMDVmMmMwYjIxNTJjOSJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Program.cs#L37-L40",
+          "version": "repo-lines-v1:sha256:c8a02915353e21fcfa08e73ca87e0d49403d372e139a2f583a08597dad2d1d89:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjA1NGNlNThmZGU0OGQwY2RmNjZmMzdlOWQzMDBlNWIzOTRlMDY1ZGI5ZTYzODMwNWYxNDM0NjhlOWJlYTkxNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2U2N2UxMjhlNDNlYmM5YTFmOGNiNTQ4MWY4MjRiZGFkYTVkZmZiNTg1OTdhN2RmYzI0NGQxNDRhOTM0MDhjMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjJhYTVhYjlmZDBiNDBmNGU3NThkNDE3NmQ4OTIxOTdiNDcxOWJiOWMwYWY5ODQyNjZjMjNkZjI3YjlhMjJjOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWZiNjk0ZTA4MjdhODM3NjQ3MzgwYjQxMDc2Zjc0MDJjY2EyMjIzNTBhZmU3ZTIwNWU2Mzc5Y2E0OGY4ZDA1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fe6532693275493092fee81849147ba2",
+      "statement": "Missing keys load plugin/host assembly XML for the two-letter culture then en; PluginManager registers each plugin assembly with AddAssembly.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Localization/LocalizationProvider.cs#L68-L79",
+          "version": "repo-lines-v1:sha256:e7f2c8301b48c30777841f8b312017dff00b3b87c6ac6d954aed6015dcb38442:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyZDBhZWU4YjY5MTJmMzJmMjZhZDM1ZmI0MDZmYzgyM2UwMmVjNTY3NTE0ZjQ0MjQyNjI1MTY5MjJiNzU4NjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkOTQ4NTI1MzBjNTJkODM5ZjIwOThiOTUyZTZmYzg2ZGM2NTE4YTE1ODAxNDU3YmEyMGFjODhjNWIwZGRhNDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyODJiYWE2MDJiNTIxNzI5NDljMWY5NTI4ZGZjYWFhMGUyMGYwYzNjYmMyYmIzMTdhODZlYTMxZGZmZTljODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlZTdlNTc4MDc2MjlhNjMwNzAwMmY0NmU0NjJlOTkzMDIyMDEwYTAxOGYxNDhjMDgyNjhiOWFhOWNmNGI0NTAifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Plugins/PluginManager.cs#L185-L185",
+          "version": "repo-lines-v1:sha256:138d9ce3f831e9730680eec5f3a7131daa2c73168270a100c28e66495e089007:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTM4ZDljZTNmODMxZTk3MzA2ODBlZWM1ZjNhNzEzMWRhYTJjNzMxNjgyNzBhMTAwYzI4ZTY2NDk1ZTA4OTAwNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTM4ZDljZTNmODMxZTk3MzA2ODBlZWM1ZjNhNzEzMWRhYTJjNzMxNjgyNzBhMTAwYzI4ZTY2NDk1ZTA4OTAwNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjExYWM0YzVmYjFlNmM1ZmMzYzg0MmUxM2E3YTBlMGFmZjkxZGI1Njk0Yzk1MzVmNWY3NTgzZWU0MzY2NTJhYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2Y3MzViZWMyNTQyM2Q5MzI2MDQ4N2FmYWNiOTI4NDcxNTQyN2YyZGM3NTEzNDU4ZmQ1NzkzZGQ1OWNlYjIwMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf0f0f10374440619e173de914011d3c",
+      "statement": "OpenLogFile appends GestureSign.log under LocalApplicationDataPath, rotating when larger than 100 KiB, and LogAndNotice raises LoggedExceptionOccurred.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Log/Logging.cs#L42-L77",
+          "version": "repo-lines-v1:sha256:e64f00023b9b32b0149b366756f0163769b750c65c58a29e97b69829b424d17a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlZWFiMGExNTYxMjZlMGYyOTJlYmMwZGY1OTE1Y2I2M2ExNGZmOWRjMmQzZTJlN2JiOGIwZDU4Zjg5NDE2NmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTFiZmFiY2ZiNmQ4OWZkOWY0ZTNiN2JjNGExNzRmZDkwYzk5ODE4NmU0ZmRlMmM4ZmEzNGU2ZDVjMjkzYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2YzVmNDRhYTc0MjkzMWM5MjQ4MzdmZmM0ZWJkOGE5NjA5NWI0NDEyM2NiZDUyM2NlNzYxYmI0NDRhZjZmN2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5NTE5MzRiMzE4ZDFiYWRlNGM1MmU0MDI3NTUwN2NiMjE3ZWE2MjFmMTE1YzJmZGQxMWExZWE0YTEzNmE5MmMifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Log/Logging.cs#L85-L91",
+          "version": "repo-lines-v1:sha256:6bf5867c34ce243806d398ed1155163f847ea3e2aeed953b7dcb56a3176f5cf9:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjJhOWM5MjI4MzE3YmQ0ZjFlMDI0N2EzMTE4ZGEwMjAzODZlOTlkZDE4MWE5NzA2YTJlNzgwZDljZjcxZjFiNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzlhODU3MmI4ODhiMDhmNzk3OThhMTlhY2FkMWVmZGFmZWQwMjcwNDI1YTNlMWMyMmQ4ODhkMTA2ZDY1NjgzYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWZkYTVlZDAxMDEyMDQxMTNiMDE0ZTAzODFlOWFlYjAyZjdhOGMxMmM5NWRlYjdmYTY0YTczN2UxZmVmNDc2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGY2YjZlYjg3MjU2Yjc4MzdlZjY2NTE0YjI4M2E5ZDY2MmNiNzc2ZWMyNjc4MTE1NmFlODNmMjQ4MTBmYjU5NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_72206be5228f47a4ae14ff35822fdcf1",
+      "statement": "FileWriteException adds a localized message in the Control Panel error box; optional SendErrorReport uses Event Log plus Feedback.OutputLog/Send via SharpRaven.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ControlPanel/App.xaml.cs#L177-L189",
+          "version": "repo-lines-v1:sha256:5aeb999065ccc29dcd5c2f4d6dc692d671bd4ccff24c24b9082eaa9ee8302503:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwNDY1Mjc3Y2QxNDM4ZTk3MTkzMzVlOGMyNTA5NTMxZjZlYjNhMmUxMzBlMzc2ZDdmYTU0YWRjZjEyOThiODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjZTI1OTQ4YTNkZTFlZWUzOWM5NTg1MWNhZDNkOWI3NWIxNjdjYTEyOTg2ZWJkZTA2N2Q4MWI5NDM4OWJiZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlYjhiMWI3MDk2ZWFmYmI5YzExOWRkMWRlYTg0Y2U2NGU4MjYwMDU0NGYxZTJlODQzNzM3OGI3MDA4MWI0MmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1M2VjZWMxMzJlZmE3NWQ1NDIwMTgyMDM1YjhjZGFiYjkzY2JhYjIxYTVmZThhZTAyMzUxNjI3ZmE0ZTE0ZDUifQ"
+        },
+        {
+          "resource": "repo://GestureSign.ControlPanel/Log/Feedback.cs#L23-L46",
+          "version": "repo-lines-v1:sha256:f84a5a617b90c61d7258eb96309a3cb815a8c57993a68e66e67a07246aa6cb5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxOGEyMWZjZTY0NTZkMjVhMDJjNjhiNzk5YmM5ZjE5OWU0MmU1MmZlNWIyOWU5MTJlM2MwZTFlNWNmYzlkYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1NzI5YjQ2OTY5NDUyYWUxMzAwMTUzYmQzMmZlNzNjNWE5ZTBlOGJjZmEyOGE0ODUzMDljMTgxYTdmNmNiNTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1OWNkZTA2YWY1MmU4MjEzOWMwMjE0NmU2OTRiZGQ3NjQzYTYyZTA4NTlhNzRkMDhjMmY0NzExNWY3MTkyMWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzZTY2ODQ1NDAyNTM4M2E1YTQwMmEwOTBhOTdjNWFlZTI5MDk4MjIzNjU1MDc4NjMzNDIzODkyMTkyMzk5MTkifQ"
+        },
+        {
+          "resource": "repo://GestureSign.ControlPanel/MainWindow.xaml.cs#L41-L44",
+          "version": "repo-lines-v1:sha256:9f2188a6a2b0f77ae4dffe1b41dc22d066dc060c34c0f4ae793f385e72792b1e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzIxYmU0Y2YyYWU1OTJjNTA5YTViOTcyYTkwYjAyNjBkYzYwMTZmMGNmZWJmMGU5NzFmNDM4NGQwNmY5MDFlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzlhODU3MmI4ODhiMDhmNzk3OThhMTlhY2FkMWVmZGFmZWQwMjcwNDI1YTNlMWMyMmQ4ODhkMTA2ZDY1NjgzYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGNjMjlhZjBhMTg1YTE5NDFjNGQ1MDE4YjY2ZGQ0ZTM0MWU3OWU4Y2E5Y2IzYmZhYTQ0MDNkN2M4YzYwY2FhMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWM2ZTgyM2UxYmUzYjA4YTM3NmUyZjE3NDEwNWIxMzY5MWE4ZWIwODYxNWNlM2QxNDBhM2Y0ZGE4ZDY2M2ZhOCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

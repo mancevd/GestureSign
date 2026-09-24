@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5b17cb71760c1a4cedbc897c3195fb1edbd561ca75ee6459aaea10ef9a48e75c",
+  "claims": [
+    {
+      "id": "claim_05f57a0fe3c74b36b9567c1e263c0fc5",
+      "statement": "Applications are GlobalApp (always MatchUsing.All), UserApp (finger limit and BlockTouchInputThreshold), or IgnoredApp (IsEnabled cancels capture).",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Applications/GlobalApp.cs#L5-L31",
+          "version": "repo-lines-v1:sha256:1c287ebb47474c4e67b5d839f260f1bb393498c3f07097d6ecee600b9cb561c1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3NzJlMWY2ODE2NmY5YWI2YmE4YzE3YzYzZmJkZDVhYTgxZjc2NGQ4NGFiYWIzNmQzYjBiZjM1ZDM1MzA1MzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1MDBkNWY1ZjYzM2FmNmUyZjAyNTkwOGE5Yjk1YTYwOTVhNGRkMTQ3MTExOTQ2ZjEwOTJlZTQ4YmRiOWNjZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxNDMwNmRiODQ5NWRhOWM3MDkyN2EwYjBlY2NlOTc5YmNiZmRiZjk2YjAxNjZmZmNkYWNmOTU4NDg2MjY0ZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmYmNjYjkyZTI2MzkxZTkyZmNlMGYzMmM5MzEyMDcxY2JiYWFlYTg3MTA2YzEwNmI4YTE2NmU2YTBjYzAwODIifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Applications/IgnoredApp.cs#L8-L37",
+          "version": "repo-lines-v1:sha256:0223fcf2b45b59f2cd65e9008e5442bcfaba0a94cc724e006e7438cbda1cc19b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3OTZmM2M2Y2NlMGM1YzZjYjc2MDQ0OWI1YWRkODg0ZWI3NTZjMzdhNjJmYzViNTAxZDdlODhkODY2ZDAyNzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTFiZmFiY2ZiNmQ4OWZkOWY0ZTNiN2JjNGExNzRmZDkwYzk5ODE4NmU0ZmRlMmM4ZmEzNGU2ZDVjMjkzYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxNDMwNmRiODQ5NWRhOWM3MDkyN2EwYjBlY2NlOTc5YmNiZmRiZjk2YjAxNjZmZmNkYWNmOTU4NDg2MjY0ZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1NjkyNDg2M2ZiZDY4MzdmNmNiMTBhMzAyMDUzM2M3NWVjYmQwYTY5ZWM5YzZjZjMxNDllYWYxMDE1YTVjZjkifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Applications/UserApp.cs#L1-L14",
+          "version": "repo-lines-v1:sha256:2c485ead01f3a2947c66bdbd5d35bb21cbd6491e2d6f298d56af25ba01805d24:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyYzQyZGI2MGZjZTFhMjA3ODljZWJiMDQ3OGJlNzVmNTdiY2M3MDg2OTk5ODE4ZmJkNTk2OTMwZWU5MDBlNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2632a8c363754a8dbe3107bf2e309ed5",
+      "statement": "Window matching uses WindowClass, WindowTitle, or ExecutableFilename; MatchUsing.All is not compared in FindMatchApplications.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Applications/ApplicationManager.cs#L472-L490",
+          "version": "repo-lines-v1:sha256:21b09c48f58a0e310d37b4a25b83cc34ca9f297803ae32d9ae26b286193e693d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjNWI0NmUyMGM3YzIwZWE2MjgwY2Y4M2U3YjI3NGRjMGZlNTMxNGNiY2RlZDg2ZGEyNjdjOWU5MTNhNGMwOTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiOTcyN2M3ZWFlYTkyNjMyMGQ2NDNhMDNhMTViNzY0NThjNDVjMzkzMzc4YTQ2N2E4MmExZjkwNTAwZWVjY2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjMDhhODg0N2M2ZmQzZDM3NmZkNWYzMGE2ZmRjY2I4NzlhMjUwNDhiZTA0YWU4ZjAzMjliNWViMmFlMWJjOWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRiODVlNDUwYmFkMjlmYmEzMGQ4OGExNWY5NzI4ZTQyMTQ4ZjJhMTg3ZjFmMDQ5YTY0ZDUyYWIxYmQwNmM2MWIifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Applications/MatchUsing.cs#L3-L10",
+          "version": "repo-lines-v1:sha256:8ede8224b67c6e43a367eee8c1db16807bcc5e3dc88d39bb08b51035389a0055:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTc1ZGEzY2U4ZTkwZWU5ODI1MzJkNDUyN2Y1ZmFmYWNiOTNkYjIwODI3Zjc2YTM3ZDUyZWU3Y2ExNGZmMzhiYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWQzOGNlYzc0Zjg3ZDQ5ZGE2OGZhNmRmNGM2MmZiNDIyM2U4NGE1ZGVhYzNkNDY3OWI5OGVmMThlOWU3ZDc2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDEwYjM2YWE3NGE1OWJjZjRhODgxODU4MzdmNjU4YWZhZjM2NDZlZmYyYmIxNmMzOTI4ZDBlOTMzNWU5NDVkMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e09a27b3d4f94094a687975a37ab8a58",
+      "statement": "CaptureStarted matches the window under the first point and can cancel for ignored apps, full-screen GlobalApp, or too few fingers; BeforePointsCaptured may rematch the foreground window when MatchActivated UserApps exist.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Applications/ApplicationManager.cs#L65-L138",
+          "version": "repo-lines-v1:sha256:7b3375d88883b6737c1e73babeef08e0ed1d58ff164901768b4d4fe3d23a58a3:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzNWVlNGY3YmY5MTM4YzNkMTZlMDBmNTlkMjUxNTA1NzlmYjdjZmE3ZWE3ZjM5NDYyYTZiOTA2MjU5YTgxMGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyYmM3MDlkMGUxNDE0ODY3Y2EzZDhhY2I1NjA2M2M2NDFjYjU2ZjMwMWY1Yzk3MGU0MmU3NDA2OWFlODg0MmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiNzZhNGMxZjZhOGRhNGU1ZWUxYTJiZGNjY2U1YWNmMDUzZTQzZTQ4YzE1YjczYjY0NWYzNjgzNTRhMmVjNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyNmY3ZTc2ZjEwNTQyNWM1NGQxNzAwNTUyNWIzNmI4OGQxZDQ3YmVhYjNiMDAwZDIyOGQ1MmM3NjQ5NjY0ZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e42f8ecb314e44578d39bc3e09b68d70",
+      "statement": "An Action binds GestureName (plus optional hotkey/mouse/continuous trigger) to Commands that name a plugin class, DLL, serialized settings, and IsEnabled.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Applications/Action.cs#L24-L51",
+          "version": "repo-lines-v1:sha256:613a76b6f4b7e96a065f42b7f8f9921c4a70faf623a0f70c94f5d1fd1faea7c4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkN2VlNTAzZTEwMjA1YzlhMjM3NzBiNzVhZWMyNGRiYzE2Y2M3N2E1OTZjNDQ4NzU1NzYxZDE5MmIxNDk0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3MWFhNjkwOWY5M2I2YTRjYzJmZjg5YjFjMzFjZWI0ZmI2ZGZlOWVjOWM5NzlmYmQzMTVkNTBkMDVlZGViZTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZhZmZhMjVkMmU5MmUxMjRkNWQ4YTlmNjNmODE1MmM0MjIwOTMzMjI1YTJhOGJiNGRmNzM3MGNjODQwMWY3NWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4YjU2ZTM1OThjM2NkZDhlOTc0ZjE1NDViY2M4OTI2ZWMwZjRlZDhiNmU5OTQ1MGJjZTEzYWRhMjdhYWFmOTcifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Applications/Command.cs#L10-L14",
+          "version": "repo-lines-v1:sha256:07b58a648f5a1a8e73370798cb997beb1d0b3d7cfe8a764d9d173505251f710c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzZiNjk0MWQyMDUwNGYwMDdlOGY5NDJmMzUzMzA4NzQxYmUzYmVkMDgyNDUxNTU3NDVmNGM0OTcxZGE1NzhhZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGExMWE4YzI3NWI2OGJiNzIyOTAzOTM0MThmZTM4NTA0NjljZTA1YWY4ZTk0MzNiMDcyZjAxYzRlZjcwYTAzMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTY1YzQ1MzI3OGJhMmQyMjk0ZGY5NDllNjc2Y2RlYjQxZGU3NzgxNjZiYjJhOWU2MTEzMjgyYmVlZDQ3MDk0NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjIwNTUwMmZjYjlkNjA4NGJlMDRkYzc1YTNlNzg3ZThmZWVhMTc2Y2NiYTQyNmMwY2ZjM2U3MWIwZWMzZjdhOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d70fd1d09ba54fcf8af10ce34fc44ab4",
+      "statement": "Recognized actions fall back to GlobalApp when the matched apps have none; empty Condition is true and non-empty conditions are evaluated with DataTable.Compute.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Applications/ApplicationManager.cs#L302-L335",
+          "version": "repo-lines-v1:sha256:2e44f9d52c8908d8a897599e7095c04bff6a7b52db5325ecb5e2f4bee95e0949:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNWRjZjg4N2VlZGZmODhiM2ZjNGM4MjE0MmQ3Yzc3ZjUyZGJhMTFiZTY4OTY3YWFlZmQxNjRhNzJlNzYxNzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2YWI5OTYzNzcwYjhlNzhmMDJhMzA2OThiYzgzNDI0MDc2ODVmOWUyZjIyODJjMTdmYjk2YmVjZTM4NDhiYmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0YTc0ZWM4Y2VmOWZiMjY4ZmUwZTg4YzUzMTYxZjY1YmRjZjQ2MjI5NmRhYzE0YTZlZTc3ZGMzNGM3YTdjNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzMTU2Yjk2NmJjOTM1NjUyNGEwMDI5OTEwYjcxYjE3ODQ1NDU3NzNjOTFlNTRhOWZiMzJkMjk4MTZjN2ZmZTAifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Plugins/PluginManager.cs#L206-L216",
+          "version": "repo-lines-v1:sha256:e7752b6265dce08781d23722b8bdbe20c6796f5b99edd8566eb49cdc42e4d163:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2OWUwYTc5NjU4ODE3MjFhZDVmMzc4NDM1ODlkNmY3MDkxYjU5MTZjYjNmOGRlMDMzMzY5NTI0NDBlN2ZiZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YTg1NzJiODg4YjA4Zjc5Nzk4YTE5YWNhZDFlZmRhZmVkMDI3MDQyNWEzZTFjMjJkODg4ZDEwNmQ2NTY4M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4NTVkMWU4OTBkMjQ3MmMwZDQ5YTU1OTIxY2ExY2Y2MmE1ODA5ZTIxMjVhNjk2MjRiMzZmZGMwYTExYTI2OGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5NTJkNTg1YTE1MzExNDYwYzdhNWE0MjdhMDczYWExY2ExN2E0MjFhNzNkYmVjYjgyMWU2NDM5OTQwMjViYzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b45a822360fc4110a0266f3d31a0ea2c",
+      "statement": "Applications persist as Actions.gsa under ApplicationDataPath with JSON type names.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Applications/ApplicationManager.cs#L216-L239",
+          "version": "repo-lines-v1:sha256:c3c6f5e9c9c220055e63cbb4cc29f657670b69e4e0f2251ce12d6dfbfe8d598e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkZDlkZDJhYmRiYWI2MjIxNjNhMDM5OTIzMGUzZGYzZWJjZGExNWQ5OWRlNWI2N2Y3ZDgxN2FhODNjYTUyMjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzNDBmN2ZjYWY2N2EwNzdlZGIzMWQ3ZmJlYzIyMmEzMmI1NjU5OTY4MjY2ZTljMzFjYTIwYjBjOTZmOGI5YjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcyZjQwZDljOTQ2Y2Y4ODE4MWUzNzYyMWU0NzgxN2ZjYmQyNmY4NTE5NjU3YmMxMjdmODg3ZWIyODU4YjI3NGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhZjhjYTcxZDY2NjRjYTA1NDhhNTczMDk1NWEzZTFjNjFlOTA2ZjIyNGU0ZmUxYTA5YWQ4OGE2MGM2OTcwZmUifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Constants.cs#L8-L9",
+          "version": "repo-lines-v1:sha256:469ddc891b54e45da31be06c866d1b18a7710a9c8591cd9b961d373aa1d4d808:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWI0NGZjNTQ2NDQ0ODllODRjMmE4NmNiYjg1ZDZiM2NlNDM3MjUzZWU5Y2RhMWFjY2Q0N2I0M2Q2MWQyNDVlNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmZiMDA5NGE0NzZkY2JiZDI1NWFiMzM4M2UwZWM0ZDRiY2Q5OGEwOGI2OGViZGRjZmEyODIyY2I5ODM2ZDFiOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTczMjkzMDhhOTNmYzZiN2Q5YTYxMjkzMzA5YjlhNWY5NDZmMmEwOTFhYTIzMTU1YWE3MzJkZDQyYjBiNTc3ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzVjMTgyMWY3ODRhYjAyZGNjMTEyY2MzMWI5YTFlNDc0ZTY1NGE5M2VhOThiZjU5OWMyYzFlOGJlYmQyZDc1NCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

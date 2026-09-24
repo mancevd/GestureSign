@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ca4a897a9a8d0b593982fc0a04e0efe569bf468bf844dffe07de657d03e35cac",
+  "claims": [
+    {
+      "id": "claim_8cd415da56044806b5b18bf412b3d6e7",
+      "statement": "GestureSign is a two-process Windows gesture app: GestureSign.exe captures and executes; GestureSign.ControlPanel.exe edits configuration and starts the daemon.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ControlPanel/App.xaml.cs#L34-L55",
+          "version": "repo-lines-v1:sha256:61d9c103b9ef3c9f17159765cbde7448dbaea97d80c084181a3d8897c13b5fd3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzMmRjZTZjYmE0NmFmOWJjNWU3YzNhODE0YTAzNzA5ODc4NjVhM2Y5MGM3NzcyM2ExMzk0MzQzM2I3ZTY2NjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0MWIwMjhkYWQzNWQzY2YzZjhkZThkZTZhMTJhMTFiMDM2OWRiNzM5OTE3OTViYWQzNTM0NWRkYWZlOWRmMTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1YjgwMGY1MDk2YTEyMThlNDY3OWJkYWI0ZmQ3MDE3YmZjMjMzZGExMDRjNTlhNWI2NjA2ZGU0NDgyYzk3NDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlMzhmZDg2MTdjYjY4NjViY2JjN2RhN2Y2YTFlODliNzc3OGI4MTEyZDgzOGFkYjIzYjA4NGEzNjc3ZGNmNTkifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Program.cs#L24-L64",
+          "version": "repo-lines-v1:sha256:1da145c8cb4908c80743ebfc3a6d3e3417a1311d3491ae3072c90125df488ac2:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzMmRjZTZjYmE0NmFmOWJjNWU3YzNhODE0YTAzNzA5ODc4NjVhM2Y5MGM3NzcyM2ExMzk0MzQzM2I3ZTY2NjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0OWM5NjhiZGQ3NzQwZDEzNzFlYzA4YzI4ODU2NWIwYTUyMTI3MjUzNzM0YjA5ODIzNWQ3ODgyM2NjMDE4NTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwOTZhODY3MDE1YjQ4Yzg0MDkwODhiODA3NTNhYjYxNTk0MWYyNjM1ZTMwNGNkMmIyYmNmNDM2MjMzZjg2MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJkZjhjZmY5OTE2NDc3ODI5NmI1NjIyYTgzNjE0NWI4OTI2ZjhmNWZlYWUyNzM3Y2M4OTViY2U1YWZiMDI1MGQifQ"
+        },
+        {
+          "resource": "repo://README.md#L1-L4",
+          "version": "repo-lines-v1:sha256:6e123f5a39962e54fabe2ae5aa90e3efe5dd4f3f4f7e7a696ec8f141d244b797:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA0ZGM3NjI1ZTBkNzBkZGUxMGMxZTFiZmM4MDM3MmExMjI4YTA1NTA3NjUzYzZjMGE5YTFiNGE4YjZjZDgyMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2ViNzAyNTc1OTNkYTA2ZjY4MmEzZGRkYTU0YTlkMjYwZDRmYzUxNGY2NDUyMzdmNWNhNzRiMDhmOGRhNjFhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDc2Y2IyNDhjM2Y0NjYxYzY3NzkzODEzYzE5MGIyNTUyNWY0MWVlMjkzY2I3Y2ZjNmZhOWZhZWMyNzZjNmQwNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_15655e2a989647f0a189a7d74c8d2a52",
+      "statement": "setup.ps1 restores NuGet packages and local .NET Framework reference assemblies so MSBuild can build GestureSign.sln using Directory.Build.props TargetFrameworkRootPath.",
+      "evidence": [
+        {
+          "resource": "repo://Directory.Build.props#L1-L7",
+          "version": "repo-lines-v1:sha256:6546dd0cf3866fbab932f213a2489bcc5c501e1c8df1a8949aa897048583f279:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjk2ZjJjNDNiNTlmZGU5NjE2MmQwZDcxY2I3YWFlMzM5ODkwYTM3OGEwNGQzYTNjNzliYTE2NDU5NDcxZWZhYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDc4ZjI1MGE1YTJhMmM5MmMyODFhOTdiNTEzMDM0NGRkOWRiOTI3NWNmMGQ0YzlmOGQxYWNiMzNiODU3NTAyMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://setup.ps1#L1-L39",
+          "version": "repo-lines-v1:sha256:a90cae8599bc976598b0de331fd9b4b0cedcb33dd918f20b5925e51c827de205:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0ZmJjMTczOTE0M2YxMmI4Y2ZlM2MwZDc5MzIxOTZmYjNhMzlhNzM1MzQzZjkyZjViOTliZDIzZDZiYzAwZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4ZTQ5N2ZjNjllMjMzOWU5Mjc2MjQ3ZDg4OTJiM2VhMTZkOGM1ODY3NjEzNTI2MzQwODA4NjE5OWU0MmFlODciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f54d083d7e3584db9a8011f9c245c626ebf1a54c6d2d58a1aa451b4020e1342d",
+  "claims": [
+    {
+      "id": "claim_8d43103655454d21a1fa30b62d1fdaaf",
+      "statement": "Control Panel takes a mutex named Constants.ControlPanel; the first instance loads managers with a null host, starts a named-pipe server, and shows MainWindow, while a later instance restores the existing window and shuts down.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ControlPanel/App.xaml.cs#L34-L62",
+          "version": "repo-lines-v1:sha256:c79dc36959648b62a0ca753452674283aa0630ffaa81fbc6ef89440c9553f249:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzMmRjZTZjYmE0NmFmOWJjNWU3YzNhODE0YTAzNzA5ODc4NjVhM2Y5MGM3NzcyM2ExMzk0MzQzM2I3ZTY2NjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YTg1NzJiODg4YjA4Zjc5Nzk4YTE5YWNhZDFlZmRhZmVkMDI3MDQyNWEzZTFjMjJkODg4ZDEwNmQ2NTY4M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1YjgwMGY1MDk2YTEyMThlNDY3OWJkYWI0ZmQ3MDE3YmZjMjMzZGExMDRjNTlhNWI2NjA2ZGU0NDgyYzk3NDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU4ODFmNzAyNTQ1NTNlZTAxZDE3ZGZhODhhNGZkMGQyMjZmZjhhM2E3Nzc2MzYzYzA2NWI4YzJiOTQzZTExY2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c62c9346187e46d3b1d4f92101e4c52b",
+      "statement": "On uiAccess Windows 10+ builds, a first Control Panel instance tries to launch the installed Store package 41908Transpy.GestureSign and exits if that package is present.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Configuration/AppConfig.cs#L306-L308",
+          "version": "repo-lines-v1:sha256:dd5728b125498a66b825e834e93688a6f89e6767e18d19bbd352ff3448033386:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2QxMWNmN2ZjOGRmZDEzZjAxZTc0MjM5MzRkZDAyZmJmMmRmMWEwYTAwNTcxNzhlNmQ5NTk4YzRjN2JmYTU1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWRjNWI2NWIzMDNlOTRkNTQzYjEwMTIyMWY5NTkwZjdiMjVlNGFjNGE0ZWQ0NTExZTU5NGJlNDllNGFkZjE1MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOThiMWE0N2VhOTZhOWYwNTk0MTMyYzVlYjVkYjE1MDU4ZjJlYzc5N2E0NGZjZTA3ODk1MTllNjYzOGU3OWM0YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2Y1MmViOTlmZmU2NWIwMDJiODIwZTZhNjY5MmRiMzlhNjU4YTZkMTU4ZmE0ZWU3NmRjYTJlZjEwMDFkM2FlZSJ9"
+        },
+        {
+          "resource": "repo://GestureSign.ControlPanel/App.xaml.cs#L112-L134",
+          "version": "repo-lines-v1:sha256:6a076341b45e1add26d4b7ff48b03f4261c19485b321568c411debc20018588d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiY2ZhMzM2ZTE5MGFhM2UzY2U4Y2Q0OTkwNDU0ZmE3MzY5YjAxY2ViYjNjNzFmN2MxMDJlNzdlZDhkZTI4NGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMjM2YmNlYmZkMmUyODhmNzllOWIxZmY0MTZjMTMzNmNlMTJhOWY1YjZmODMzYzcwYzk2YWE3NzA1ODg4YjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxM2NiNTk1ZWE5NTAyOGIyZjdkMDk5ZWVlNzUzNGUxODJhMzJjOTgzZjlhMDdhZTg0MTlhN2Q5YjVmM2RmYTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhZDc3YzhhMGE0OTFmZjU0MTUzMmMzNWE3MDliZDU2NmM0OWZmNDVkODI0MWU0Njc0NTBiOTU5NTE3YmNjYjYifQ"
+        },
+        {
+          "resource": "repo://GestureSign.ControlPanel/App.xaml.cs#L38-L40",
+          "version": "repo-lines-v1:sha256:06c06c0c4ff0486045d9057b545e5c693bfc963c5f38a0925a7947d1a03cb4b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJkYjA2ZGFmNmQwNzE2NGRlM2QxMzdlMTRhMTA4MDU2MzkxMzRiMTllM2Q0ZDNjZjNlMWZmZTZmYWY5Yzk0OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjVlNjI4Mzk3NDU5YjFjY2M2NmVmN2Q0NDYxYTQyZDJlMDU3MDZiNjIwMDhlNGExNzFjOTlmOWVkY2Y0MDg1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDA5YTkyYTgzODMzY2NlODMyMWI1ODdhMDZkM2U3NjNmNjFmMGM3M2ZhNGExMWZhOGJmZDFkNjg5ZmNjOTY3YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjZiNmM1NzhhYWY4MzQzMzZlZDIyNjI4YTZmNmE1M2UwNmMyYWM2Y2I5OWM3MDk1MWZkNDk3M2RjYmEzYzAzMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fdff48bc09ad44e6a1fe05814a321d11",
+      "statement": "ApplicationSaved, GestureSaved, and AppConfig.ConfigChanged send LoadApplications, LoadGestures, and LoadConfiguration IPC commands to the daemon.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ControlPanel/App.xaml.cs#L46-L53",
+          "version": "repo-lines-v1:sha256:c44fc5af15dd9b4bdb02bb4f8bd2eca038f0245116e87f7b50fb30b2fc070647:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzdiMGNkMzVhNzI5NjkzMDFiMGI0NjkwMTkxMmFkOTBiYTJkMTcxMmU5Mzc1OGEyM2MxNGFkOGJiNzQwZDk3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2YzOWZkNTlmMmJkN2Q5Y2NlYjNlMDU1MmI5M2ExYzFkMGQxOTdlMTUwMGUzYTQ2ZTU4OWE3ZDY0OGM4ZjQ4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTgwNDM2ZDg1MDM0MzMxZWEyN2YzYzE2NmJiMWU4OGYyMDYxNWNlZGM0NmQyNjljOWM4ZTkwMjZkNmU0NDU3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTdiMDZiZjgzMDUwZDE1ZGZhYTUyZjgwN2M3YjAyNjI5MGZlNmRkMzRkOGNiMmZiYzc4YzNjOGQyNTA1YmQxMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_577c99437249454886e9da5f3adfd5c0",
+      "statement": "The Control Panel pipe handles Exit by shutting down the WPF app and GotGesture by converting Point[][][] into PointPattern[] and raising GotNewPattern on the UI dispatcher.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ControlPanel/MessageProcessor.cs#L23-L35",
+          "version": "repo-lines-v1:sha256:e3e3020553f88678b31683e26232665ab5c95a4c425f612261b3a9757a7aa971:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlMTZiNTIwNzBmZTQ1MGZiMTYxOTc5ZjkzYmVkZGMwOTZlYzBhMGZjODRhZjRhMDFiM2Q5Yzg1Y2FmNmE5ODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmMTRmYjM4ZDE0NTE2MDUwYjU4MWU0NjgwMmMzNGNhOGQ1ZTRiN2JiMTVlZTc3YmMxZjVhNmQ2MmU2MzgzZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhMGY5NjUwOWNjYjZhYTk3ODI1ZGU1MjMwYWM4ZDI0NTZiZGE2NDI1YjA3NzA4ZDE5MDg1ZDYwYTIzMWM4YWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzMWJhMTg0YzE5OTViNTY4YjY0OGY4YTFmZWU4YWI3NjRkYTMyNzljZTA0ZWEyMzc4ZWNiMjE4NmE2NmIwMjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4d455e4fe4214e80b8274d2c40bacd10",
+      "statement": "MainWindow hosts five tabs: AvailableActions, IgnoredApplications, AvailableGestures, Options, and About.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ControlPanel/MainWindow.xaml#L46-L65",
+          "version": "repo-lines-v1:sha256:796095aecece7e25e232add1f69d3b0565462fa5e2df3229c6fe21bd8d73eb41:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4MDIyYWU5ZjlmMTlkNzQ3MzEwNDA2YjlmMTdmNDdjMWI5NWUzOTM2YmYyZjI3MTRkM2Q5YWQ2NmVkZDBlYzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzODI0ODI5YzBlMWZkNjljMDI4ODM5NTgyMmI5MTdjZGI4MDgwZGQ3NmRmMTZmY2NjNGQxMzg0NDdlMTFjMzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1ZTViOGIwMTQ2YjA4NGU2NzBkZmNhN2IzODY0Y2ZkMzcyNzI1OTI5ZTFkZjEwNzBmMmZlMzY0ZTg1YzgzMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0ZTg0NGU4ZjlmZmMxZTM1MzFiNDdmMzA3NTk4OGEzNWQxOGE0YWZmMmViMzExYTNhNTAxYTA0ODY1NmEwMTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_110d5288e7fa42dd9865a2f7efa42b33",
+      "statement": "On load, MainWindow warns about RUNASADMIN compatibility flags and starts GestureSign.exe if the daemon mutex is free, using runas when Control Panel is elevated.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ControlPanel/MainWindow.xaml.cs#L189-L226",
+          "version": "repo-lines-v1:sha256:929480ceaa456da4b3215c8a0b9b7afaa3f36f8e6efa7185dbfb5c6dbfb70fa0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1M2RhYzc0ZDJiNjNlNDJmN2UzNmRlY2Y3ZmFiYjllNzZiMjYwNWJjNTAyYjRlOTcyYzllMThjYWRhZWQwNzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTFiZmFiY2ZiNmQ4OWZkOWY0ZTNiN2JjNGExNzRmZDkwYzk5ODE4NmU0ZmRlMmM4ZmEzNGU2ZDVjMjkzYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczY2Y1YjcxOGNmNmUwZjk0Y2ZiODMyYTk4YzQyNTFlMjFhMTkwZjMwYzNkZjNkOTRiYWUxODBiYjZiODAyMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyY2ZjMWRkYjMyNGRlZGY4ZTA3M2E3MGIxOThiODMwNjI2N2QyOGNiODdlMTU4NDNiZTZmNmM4YzBhOTBjOTAifQ"
+        },
+        {
+          "resource": "repo://GestureSign.ControlPanel/MainWindow.xaml.cs#L31-L38",
+          "version": "repo-lines-v1:sha256:2a31cc497532ce1eaa2c0cfe40c46bd8cf203c430b325cd624de267f1b62d0a0:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmE4OTgyZTBkNTI3Zjc2NzhjNzUzNGQ0ZGQ4YzJlZTY1NzI3YzA4ZTlmZDBjOWM2MTE3OTliYTJkYjZiNjk3MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmM4YWZhN2MzMTI4MTJhNDNlYzEyNTc1Y2NjMGIwZDI5NjhiMGIzOGNlNzM4YWRiMzI3MzJhNGY1MTc1NjkxOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODIyMzRjMjU5NWY3ZTU3MDVlZTFjMzFmZjRjZTI5N2VhODI5OWNmYjcyOGIwMDdiODQwNmNlNTg3ZjMzZTE2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGM0ODU3ODkwOGYxNTk4YTI5N2FiMDViOGU3ODUwOWU0ODJhNGUxNjI5NDRlMjgwZjI0ZTdmNzA2OWZkY2E4MCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

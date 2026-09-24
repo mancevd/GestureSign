@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:787630bf859234f38c141a50ae08a4831793d8b0f3addd73403f492099afce6b",
+  "claims": [
+    {
+      "id": "claim_75fccc5114a64de3ac9b6da38865b8be",
+      "statement": "GestureSign splits into GestureSign.exe (daemon mutex GestureSignDaemon) for capture and execution and GestureSign.ControlPanel.exe (mutex GestureSignControlPanel) for editing.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Constants.cs#L14-L17",
+          "version": "repo-lines-v1:sha256:9dd01f9ec9f4ebf72aea4ee31cc6663ed1a7f071ea431957561d01f8d6433170:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmE0Mjg4YzUzNTlkMTYzMmEwNTljNzZmMTY0YmU0ZWRmYTc2MTEwNzVjZmZlMzVjNDliNzM4MmUxNzQ0MTdjZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTI2MGMxOGYwNzY4ZmI1M2MzMTM3YzNjOGY0MjljNzkzZGFmZjZmZGNkNWI0ZGFmODM3ZGQ2OTA2YTk1MzdkYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzY3Mzk0MjFmODM2ODg3ZjA3NGNhNzczNzAyODVlNTY4NTMxYzExYjkxYjFkOTAzYmJlZTA3Y2E2ZjQwYjU4YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2ZiY2NiOTJlMjYzOTFlOTJmY2UwZjMyYzkzMTIwNzFjYmJhYWVhODcxMDZjMTA2YjhhMTY2ZTZhMGNjMDA4MiJ9"
+        },
+        {
+          "resource": "repo://GestureSign.ControlPanel/App.xaml.cs#L34-L62",
+          "version": "repo-lines-v1:sha256:c79dc36959648b62a0ca753452674283aa0630ffaa81fbc6ef89440c9553f249:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzMmRjZTZjYmE0NmFmOWJjNWU3YzNhODE0YTAzNzA5ODc4NjVhM2Y5MGM3NzcyM2ExMzk0MzQzM2I3ZTY2NjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YTg1NzJiODg4YjA4Zjc5Nzk4YTE5YWNhZDFlZmRhZmVkMDI3MDQyNWEzZTFjMjJkODg4ZDEwNmQ2NTY4M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1YjgwMGY1MDk2YTEyMThlNDY3OWJkYWI0ZmQ3MDE3YmZjMjMzZGExMDRjNTlhNWI2NjA2ZGU0NDgyYzk3NDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU4ODFmNzAyNTQ1NTNlZTAxZDE3ZGZhODhhNGZkMGQyMjZmZjhhM2E3Nzc2MzYzYzA2NWI4YzJiOTQzZTExY2MifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Program.cs#L24-L77",
+          "version": "repo-lines-v1:sha256:e97e3e7f85453c6e79a7c728b7743fcd547b94af84c5d5ae50fa22caa2670d0a:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzMmRjZTZjYmE0NmFmOWJjNWU3YzNhODE0YTAzNzA5ODc4NjVhM2Y5MGM3NzcyM2ExMzk0MzQzM2I3ZTY2NjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2NzhiYWU3MjU2OGYzNTI0YmZmNmNlMTZiMjMzZjdjMTZlMDYwZDg3ZTY4YzYxYjYxMmYxNjY0YjkyZDZjNmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwOTZhODY3MDE1YjQ4Yzg0MDkwODhiODA3NTNhYjYxNTk0MWYyNjM1ZTMwNGNkMmIyYmNmNDM2MjMzZjg2MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzZDczYzY2ZWY1YmE4YWZmN2Y3NGYwYTBiMGQ4M2Q4NGZiNzdiMDU2YmFlMjJkODZmNGQyMjgzNzY1OTE4MTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_461a0445fb094241b6b3bbf131cf2083",
+      "statement": "The solution is a family of .NET Framework projects: ControlPanel, Daemon, Common, CorePlugins, PointPatterns, ExtraPlugins, plus vendored ManagedWinapi and WindowsInput.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.sln#L6-L34",
+          "version": "repo-lines-v1:sha256:3995ee5cf35516f07a969b312649f7606b8fdb9dd80cb504104c1d264fb499da:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5NzA0ZmQ3YWU0YTJkNzFiMzY0ODBmNGU4M2MyYjdhMTE1ZWMyNjkxZTUxMWNlMTZlOWM1MWYzYmYxNGIxYzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlNzRmZDk1ZDU5Mzc4ODdmMzNlYzYzOGY1ZjM2NGFkYjVlYjJiMmU5NGI5MTFiYWRmMzYxYTE5NDcyMWEyZDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNlYTU2ODJmOTczYjcyZTBjM2U4ZWQwMDAyNTUyNTU5ZDZlYWIwMDQyOWQwNzQwMDQxYTRkMzhlMDlkZTg0MDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2N2JiZmNmMWNlNzA0OTg4MDRiNTdjNDUzNGEwNjQ3MTZjNjQ0NzhmMjI1ZjI5OGZjZjdkNGQ5M2Q4OWY0OWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9750183bdeea4d1bbbe751c2fea2c86c",
+      "statement": "A recognized stroke name is resolved to defined actions via ApplicationManager and executed by PluginManager after GestureManager matches captured points.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Gestures/GestureManager.cs#L84-L114",
+          "version": "repo-lines-v1:sha256:a75af96499f7f03ebe757eb8872196831815604ca2af10cc86b9dcdb6c27e067:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MTdmNjhmYWJmYWU3M2ZjYWZlZjFlYjdlNzg2OWUzOWU0NDA5ZjhkMjBmMzhiY2M4YmVmMzYyN2JlNzJhYzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2MjU2ZmQ4MWQyNTNkZmMyMzY0MGIyN2Q1Y2Q1NTk3ZjM4YmIzNzM5ZjMzYzRjZWZhYjc3OTNiYWExMGE1MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1MDY0ZTg1ZDJiZjU1NWE3NTkxNTM3ODZkNTE0NmY3YjNlN2RlZjU5MzUxOWI0ZTliMmNlNTUxODRmMmI1NWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjY2VjNzBkZjJlYzE5ZDg5YjY3YWE2MmQzYTM4Yzk1NzZmODEzOTRhN2MxOWE2NzlkZDY4Zjg1ZDMzOGRkOTMifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Plugins/PluginManager.cs#L51-L57",
+          "version": "repo-lines-v1:sha256:517d6b8919b6e82149cbd5ea7b524813c933d6459058a8e99ad49083441ef7d2:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk4ZmNmYjA4NDkwYzZmNjc2Yzk1ZmI3OWUxN2NmMDQ1YWFmMjRlOGEyN2U4NDlkYzBlMWMzM2FmNzAyMzBlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBlYjI3ZmJiZTVmN2RjNGFmMDFhYTUxNTEwOTg5NzdiOGNiOTBhNGYwOGI5Y2IxMDI3YzNmNzlmYmJkYjY5NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmI3NmE0YzFmNmE4ZGE0ZTVlZTFhMmJkY2NjZTVhY2YwNTNlNDNlNDhjMTViNzNiNjQ1ZjM2ODM1NGEyZWM3NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjI2ZjdlNzZmMTA1NDI1YzU0ZDE3MDA1NTI1YjM2Yjg4ZDFkNDdiZWFiM2IwMDBkMjI4ZDUyYzc2NDk2NjRmYiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

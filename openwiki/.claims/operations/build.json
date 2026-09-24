@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6b6fc30041cbee6e7f4cad39c4b1100ac9d0f696d1bd95a8ffd4278793a54b0e",
+  "claims": [
+    {
+      "id": "claim_812d80e6458948afb24fa92c00ed3c29",
+      "statement": "setup.ps1 restores NuGet packages and junctions .NET Framework reference assemblies under .ref-assemblies so Directory.Build.props can set TargetFrameworkRootPath and bypass framework install checks.",
+      "evidence": [
+        {
+          "resource": "repo://Directory.Build.props#L1-L7",
+          "version": "repo-lines-v1:sha256:6546dd0cf3866fbab932f213a2489bcc5c501e1c8df1a8949aa897048583f279:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjk2ZjJjNDNiNTlmZGU5NjE2MmQwZDcxY2I3YWFlMzM5ODkwYTM3OGEwNGQzYTNjNzliYTE2NDU5NDcxZWZhYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDc4ZjI1MGE1YTJhMmM5MmMyODFhOTdiNTEzMDM0NGRkOWRiOTI3NWNmMGQ0YzlmOGQxYWNiMzNiODU3NTAyMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://setup.ps1#L10-L39",
+          "version": "repo-lines-v1:sha256:2b23dad353f6f7e3298b58b57eed3d67b2bb8c274f8ff625a09b0c6f7750aef9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmOTgyZjIyZTcwZjU3NGQyZjJjOTU0YzhkNDQyMzE4MjBhMTcwMGY1NGJmOGU3MGFiY2IwZjY3NTMwMDcxNjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4ZTQ5N2ZjNjllMjMzOWU5Mjc2MjQ3ZDg4OTJiM2VhMTZkOGM1ODY3NjEzNTI2MzQwODA4NjE5OWU0MmFlODciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0YmNhYjBmMDQ0NDFlMDk3MmRhODMwZTY2ZTBlMmY3NjA3ODcwZDZiNjc1NzU5MDk0N2Q5YTNmZDQ5M2MwZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_da1b8b5662954ae4a2d93b40e2b80096",
+      "statement": "Directory.Build.targets forces ExtraPlugins projects to TargetFrameworkVersion v4.6 and retargets Windows WinMD references for CorePlugins and ControlPanel.",
+      "evidence": [
+        {
+          "resource": "repo://Directory.Build.targets#L1-L9",
+          "version": "repo-lines-v1:sha256:d358b1ef35031cb513587baee8f72c914d27377060f5c195261f9fa0fe645f7f:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjk2ZjJjNDNiNTlmZGU5NjE2MmQwZDcxY2I3YWFlMzM5ODkwYTM3OGEwNGQzYTNjNzliYTE2NDU5NDcxZWZhYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2ZlMGMzNzg2N2FhYTk3ODJhZWM2MmNiOTNiMmNmMjliOTNmN2JkN2NiOWI3YTY3OGU4MWM3N2FkZGZiZjFiMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDBkZGQ5ZmFkNzY1ZjZlYWE3OGEyMDBhY2YyYTZhMjI3YmQzNTA1YzQyMGI3NTljYTVlYzgwZWMxZjc5OWY0NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cfbe6197f138418db9042af1de71cb67",
+      "statement": "Solution configurations include Debug, Release, Portable (Common defines Portable), uiAccessRelease (Common defines uiAccess), and Centennial (ConvertedDesktopApp).",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/GestureSign.Common.csproj#L45-L47",
+          "version": "repo-lines-v1:sha256:8c05cc76fac901726b24008d9bd3c92a764c456d6e690f525efe1b469291f01b:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmMzZjgyZWFmZmQ3MTFmMTAxZDczY2MxYzRmM2RmMzg5YjU5YTBiMDliNTVmY2U1NjAyOTJjNTMxZTliMzMxYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDk3ZGNmMmJmMjk2ZTg2Y2JiOTA2ZDFhMTU5ZmY2ZWQzMzYzOWQ0MGYwYzVhMTgyMGU1YWQ0MTUyZjBiYzcyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODBjMGY4NmI1MmZhYWJhZWM2ODJlNjI0MzI3MGY3OTQxMjEzNGE2MGYzYTg2ZDJkZTc0MTZlMzZjMjM4NTAzNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzBmNzM1MDRkYjYzODNkZGYyZmFiOWQxMzU0MjEyNWNkN2Q0NzdmYzY1NjYxM2ExM2JkMTQ4MDk4YWJlOWQ2YiJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Common/GestureSign.Common.csproj#L63-L65",
+          "version": "repo-lines-v1:sha256:1ec24e4c25ea9cfd86c2aa95587ca98eff2cf32a9c36b8ae2061f0bbaa4c0a14:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2IwNDA0MTllYTExMzFkYWViNWFhODk1MDBlNWZiYjI2YzVkOTFmMmFmMDc1ODQ4MzYxODliOWEzYWNhZWQwNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzVhZjBiMzhjNGRkZGJhODE5NDJjZmIwM2MxZDk2NDFiYTFiMDZmZGM0ZjI0NTIwNTZlNmFiMjNhMjk1MzgzOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYThkN2U0NDc3MDljY2IwYzFlNDRhNDA0MDgzZjU5MmUxOGNmNDUxNzE5YmRjY2IzM2YwNTRiMjFjMDY5MjQxZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzBmNzM1MDRkYjYzODNkZGYyZmFiOWQxMzU0MjEyNWNkN2Q0NzdmYzY1NjYxM2ExM2JkMTQ4MDk4YWJlOWQ2YiJ9"
+        },
+        {
+          "resource": "repo://GestureSign.sln#L36-L41",
+          "version": "repo-lines-v1:sha256:9118beb1d57eb2f899b3443d13a8f2a529f45cbaa62280d7d53791152eb66519:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzhlMWIxMzU2ZDY4Njg2ZWViMzlkYzU5ZWM4NDVlYjVmZmIwYWQxNzY5OGIwNjlkNjdkZDdmMjgyZTcxNWM5OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDQ3NTUzZmI3NTVlMGM5M2FiY2ZkMjU2OTE2ZmE5ZTJhYWU5ZDYzN2VlODg4ZjYwYjg3MDQzYjA0OTgzZDNlNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzg0NTc2NWMwOWJjZmE3ZGNiOWVmNzQ2NzA0Y2Y4YzY5ZmVmNGMxZWMzMTBlMjY1ZmY1MDk2NDYyODRjZDY5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDFkZTZjYWQwN2Q2NTE3MzY5NDI4YWI3OTI0YjRhNmNlZGNjYmYyMzA1NTJiNDVhMWNhMTNjYzVmMzJmYzEyZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2c00973fc4bb4d979f95baec04f54bf2",
+      "statement": "Daemon pre-build copies app.uiAccessRelease.manifest (uiAccess true) for uiAccessRelease and app.common.manifest otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Daemon/GestureSign.Daemon.csproj#L216-L222",
+          "version": "repo-lines-v1:sha256:988a90cc337733a42185ed584e681f74dd58dc098a8ac3de539c283fbad82419:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ0NzVkNWQ3ZGIwNTNjMTI1ZDhjOTZlYmI4ZDEzYmQ3MDk3NWI0ZWY0ZDIyNzY3NzUxNTYxOTkxYTJiYzZlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2NlOTBiYjI1N2NhNDVjYzU5MDc3YTViOTAxZDg2NDZhOTVjN2EzYjdiNzBhZDk2MGQ0MDI2MjliZmRhMjkyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjBkZDgzZWE0NTUxMjA3NTAxNzdjMmU5NjI1NzQzNTZiZTNmM2M3MGQzY2Y4MTdjNjkxYTM0ZmE0MmFlNzQ5NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODBhYzcxMDMxODEwZGNhMjJmZDFjMmQ2OTYzZWM0MzI3NTI3Y2M5NmFhMWY5MDZjY2IzNWNkMzgzNDViMWQ5MCJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Properties/app.uiAccessRelease.manifest#L19-L19",
+          "version": "repo-lines-v1:sha256:d2a5b87d12b6996a2f27a151787861bbcf7b378037f8c4a1af870491a8b92d31:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJhNWI4N2QxMmI2OTk2YTJmMjdhMTUxNzg3ODYxYmJjZjdiMzc4MDM3ZjhjNGExYWY4NzA0OTFhOGI5MmQzMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJhNWI4N2QxMmI2OTk2YTJmMjdhMTUxNzg3ODYxYmJjZjdiMzc4MDM3ZjhjNGExYWY4NzA0OTFhOGI5MmQzMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjYwYTIyYmFhZGFiYTBiYjExNjY1Nzc3NDY2ODg1ZjFjOTExMWI5YWU4NzYxYWQwYjhiMTA5ZDc5ZTIwOTA0NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmQ4NGQ2OGJjM2ZkZmE4OGYzZTRhMDRjOGVjYTU4MTAxMzJkMjc0ZGRiMjcwMjllYmE5ZDk0YWU4YmU3MWQ5ZCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

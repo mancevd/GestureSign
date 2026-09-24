@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f3a835c32ce92416e6d01c4cd36e461e5f91bcc69569d2e325d32c13ca85d1e5",
+  "claims": [
+    {
+      "id": "claim_783a50b1c8e942a88974351dfa4242f1",
+      "statement": "GestureManager, ApplicationManager, and PluginManager are process-wide singletons constructed in GestureSign.Common.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Applications/ApplicationManager.cs#L44-L47",
+          "version": "repo-lines-v1:sha256:dd4d55f4fc7abab948241c88096ceb20c58e0b46c113830c529d69dc45438a5d:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQzNWFhNDA5MGVlZDZiOWQ5MzhmNTk5ZTlmMjE5ZDVlYWQ2NDk4Yjk2MzcwNmQxZjFmNDdmZGY3MDJiNzhkOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODI1MWJmYWJjZmI2ZDg5ZmQ5ZjRlM2I3YmM0YTE3NGZkOTBjOTk4MTg2ZTRmZGUyYzhmYTM0ZTZkNWMyOTNhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDNkNzNjNjZlZjViYThhZmY3Zjc0ZjBhMGIwZDgzZDg0ZmI3N2IwNTZiYWUyMmQ4NmY0ZDIyODM3NjU5MTgxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2ZjMGFkMWVlYzU2YjI0YTEwN2ZhZmQ1ODMyY2NiYTY4NTNhZGU2MzE4NGYyNDg0ZTA1MTM5ZWE1NWU4MDY4NiJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Gestures/GestureManager.cs#L68-L72",
+          "version": "repo-lines-v1:sha256:a4f5e470330ecb06356c44a16f575da9aca6c01d929d790dc598fffa358f1e59:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2ViNzAyNTc1OTNkYTA2ZjY4MmEzZGRkYTU0YTlkMjYwZDRmYzUxNGY2NDUyMzdmNWNhNzRiMDhmOGRhNjFhNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODI1MWJmYWJjZmI2ZDg5ZmQ5ZjRlM2I3YmM0YTE3NGZkOTBjOTk4MTg2ZTRmZGUyYzhmYTM0ZTZkNWMyOTNhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTZlODdhOTI4MWIyOWViMmI1OWZlMGI3YzViYmI4OWQwNDIzNGIwZmEyOTQ4NmRjYWQ4YTlkNmMwODczNGFkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDI0YjY2M2E2MzdiYzk3NzVlZjVjYzdmZTVlZDNkZDkzZjVkYjliNzVmNmFlMWNiMTMyNGY3ZjA4MmVjN2NmNSJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Plugins/PluginManager.cs#L21-L36",
+          "version": "repo-lines-v1:sha256:7644f8db3d974ca55ce5f569f1a21ecd2e7e061364eff71d2e908d2a0d46d243:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5MTE5ODc5ODk4Nzg1MGJiN2VkZTk3MmY2N2M5MGFlODNlNjJiOTc5ODk3N2NhMGU3NmVhOTc5ODM2NDljNTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTFiZmFiY2ZiNmQ4OWZkOWY0ZTNiN2JjNGExNzRmZDkwYzk5ODE4NmU0ZmRlMmM4ZmEzNGU2ZDVjMjkzYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2NWFiZDhjYTdmMThiOTAzOGY5NjBkMTRiNDk1OWE2NTA4NGI1NTBhZjA5OWU0NTNhMTAxYTQ5MzUwN2YxNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyNGI2NjNhNjM3YmM5Nzc1ZWY1Y2M3ZmU1ZWQzZGQ5M2Y1ZGI5Yjc1ZjZhZTFjYjEzMjRmN2YwODJlYzdjZjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cbcc79dfa6954f9e81b806586ea2b4f4",
+      "statement": "Managers subscribe to PointCapture only when Load is given a non-null capture or HostControl; Control Panel passes null so plugins are not bound to live recognition.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Applications/ApplicationManager.cs#L153-L161",
+          "version": "repo-lines-v1:sha256:31b700a4801e6ef2e3eff6c5a5c43ce74516cbea26b76469e38e6e7f462bfab6:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2ZmNzFkMzJjZjE0YTUxMTg5OTMyYTVkYWUzNTI0NWEzYjE2MDY3OTQ0OGQwMTA5Y2MyZDA1MDM5NDZhZjMyMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzlhODU3MmI4ODhiMDhmNzk3OThhMTlhY2FkMWVmZGFmZWQwMjcwNDI1YTNlMWMyMmQ4ODhkMTA2ZDY1NjgzYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDA2YzY0NzE2NjcwM2U0ZGJjNTczYjg4ZDNmODA4YmJjZDI2YTJmOGFmMWI3YjI1ZGZiMzYzOWNhM2E4NTRiNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDc3OWMwZGE5ZTBlYTA3MjYyNWFjM2VkOWZlMTFhMDIzYWEwMWQ2NWYwZmExNmQwMDVkNGQ3YTM1NDQ4MTU3YiJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Gestures/GestureManager.cs#L170-L179",
+          "version": "repo-lines-v1:sha256:599f891ed6f21727cae0a62a47948a90ed6fbf2223be7b58e420197a118cd2b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmZjcxZDMyY2YxNGE1MTE4OTkzMmE1ZGFlMzUyNDVhM2IxNjA2Nzk0NDhkMDEwOWNjMmQwNTAzOTQ2YWYzMjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YTg1NzJiODg4YjA4Zjc5Nzk4YTE5YWNhZDFlZmRhZmVkMDI3MDQyNWEzZTFjMjJkODg4ZDEwNmQ2NTY4M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNmM2NDcxNjY3MDNlNGRiYzU3M2I4OGQzZjgwOGJiY2QyNmEyZjhhZjFiN2IyNWRmYjM2MzljYTNhODU0YjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg4YzYyYzkzZWFlNTRiNTNjNzQ2N2ZlZTllNjdhNDliODRkNzlkMGE2ZGRkOGI4YWJjZGJlZTk5MTIxZmI2NzMifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Plugins/PluginManager.cs#L262-L270",
+          "version": "repo-lines-v1:sha256:fc7b66f24a4e96e69f6f8b232fbdc9df5a86952e3f519e9e0fd497dc2959e796:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmJlZGNjODdlZDRhN2I0NDRlNmU4YTA1MjdkOTVkZWVkZDE3NGNmZTkyNjgwZDZlYjAyMzJmMmI0YzcyNWM3NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODI1MWJmYWJjZmI2ZDg5ZmQ5ZjRlM2I3YmM0YTE3NGZkOTBjOTk4MTg2ZTRmZGUyYzhmYTM0ZTZkNWMyOTNhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2Q3Zjg2MzNjNTdhMTdiMGY5NmU2MGQ4YjZlYWY4MjU0OGM1MjE1M2I0MGFjNGNmMzc5Y2QwMTlmNjZjM2Y4NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDJlZjRkYTE2ZjYwY2VkZDYyZWZiYWM2MTk5ODJmMTcxYmQxYzcxOGFiNTg5NTQxODJjYWViZDljODBiZjBjYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_23bc4498bcc34a358a43cf88833d4961",
+      "statement": "HostControl is a bag of IApplicationManager, IGestureManager, IPointCapture, IPluginManager, and ITrayManager that plugins receive as IHostControl.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Plugins/HostControl.cs#L13-L55",
+          "version": "repo-lines-v1:sha256:6dc475636ca538d28ce48debef5db0f8ef686d1199364813bd77ecd948709bdb:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzMzMyODRhZDhjN2VjZGVkYWYzZjMxNjQ4ZmZlOTExZGM5ZDI2MWM1NTNmODdlMDg5ZTgyYWNkMzZlNzlmYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNzAwYWE1ZDBiNmYwY2RjMzQxZGE2MDU1YTI0ZmUyYzQxZWQ0Yjg5Y2Q3MTI2ODIwNjk4NjU0N2MyMDkzZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYzQ3MmE1YmQ3ZjZjZjg2MGVhNDk0NGNhYmI2MDRlOTVjMTZmYjQ3MTM0OTk0MGVhODI0NWU4ODMxMjM1NDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliN2ViOTJjMjNiMDgwYmU2Nzc3OGJmMjlhMGFiMWYxODVkNGE0MmRlNGVlNTlkMjViNTQ0NzA5MDIyYWNkNWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5be94f935a6f46ff88f3ace0ab2a92b7",
+      "statement": "PointPatternAnalyzer interpolates strokes to a configurable Precision (default 100) and scores each stored PointsPatternSet to produce PointPatternMatchResult values.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.PointPatterns/PointPatternAnalyzer.cs#L13-L17",
+          "version": "repo-lines-v1:sha256:3f023a7abe69f6631f700c1e1098dc3f6efebd4948bef3f5df1f1938881c4511:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2FjMjgzNjFjOWM4N2YzZTdiNjY5ZDQxYjc3MTMwYWRkYWZlNzM5MjYwNDUzZWJmMjQ5YzA3MTljNDhlYTRlMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODI1MWJmYWJjZmI2ZDg5ZmQ5ZjRlM2I3YmM0YTE3NGZkOTBjOTk4MTg2ZTRmZGUyYzhmYTM0ZTZkNWMyOTNhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTA0MTQ2ZDljMzU1YTg3MDNkMjg3NWExOGQ2ZjczOWUwNTRjNmU1YjBjY2M0NzUwMTI5ZDMxMGNlNjZmNjAxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDdjN2ExOGUzNTVmYTM4MzZmODhlNGRmMTI0ODdiNzMyN2I5MzFmMTdmMDRhMWE0YTk0Y2U2NTRiOThmZmM0YSJ9"
+        },
+        {
+          "resource": "repo://GestureSign.PointPatterns/PointPatternAnalyzer.cs#L44-L59",
+          "version": "repo-lines-v1:sha256:3b6faf7deb1015688cf208d8e49bb0aa9bc1c3e0b58595c8ce9922d2b6593a36:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5ZTI0NWRhZGYwZjJiZWIxZWI1ZGFkNjYyOWFmNWVlOTA2M2I1ZjE3ZDQ2YzJiY2EwNzEyNDcwM2MwMGEzMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTFiZmFiY2ZiNmQ4OWZkOWY0ZTNiN2JjNGExNzRmZDkwYzk5ODE4NmU0ZmRlMmM4ZmEzNGU2ZDVjMjkzYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNmM2NDcxNjY3MDNlNGRiYzU3M2I4OGQzZjgwOGJiY2QyNmEyZjhhZjFiN2IyNWRmYjM2MzljYTNhODU0YjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxNGQwYTFlNzA5Mjg3ODJmODM3NGE3OWM4YzRjNzZhZTE4ZjFjMzVhNWVhNDA0MDY4OGU3Mjk1ZDU2ZDI3M2QifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

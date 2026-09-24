@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a54aec0bb2fee2d2330f70a237c170cf374b3cf75bb325f614d5f1581f24b5eb",
+  "claims": [
+    {
+      "id": "claim_e6b6565488504f348bf03af190f05395",
+      "statement": "uiAccessRelease copies a manifest with asInvoker uiAccess true; other daemon configs copy asInvoker uiAccess false.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Daemon/GestureSign.Daemon.csproj#L216-L222",
+          "version": "repo-lines-v1:sha256:988a90cc337733a42185ed584e681f74dd58dc098a8ac3de539c283fbad82419:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ0NzVkNWQ3ZGIwNTNjMTI1ZDhjOTZlYmI4ZDEzYmQ3MDk3NWI0ZWY0ZDIyNzY3NzUxNTYxOTkxYTJiYzZlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2NlOTBiYjI1N2NhNDVjYzU5MDc3YTViOTAxZDg2NDZhOTVjN2EzYjdiNzBhZDk2MGQ0MDI2MjliZmRhMjkyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjBkZDgzZWE0NTUxMjA3NTAxNzdjMmU5NjI1NzQzNTZiZTNmM2M3MGQzY2Y4MTdjNjkxYTM0ZmE0MmFlNzQ5NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODBhYzcxMDMxODEwZGNhMjJmZDFjMmQ2OTYzZWM0MzI3NTI3Y2M5NmFhMWY5MDZjY2IzNWNkMzgzNDViMWQ5MCJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Properties/app.uiAccessRelease.manifest#L19-L19",
+          "version": "repo-lines-v1:sha256:d2a5b87d12b6996a2f27a151787861bbcf7b378037f8c4a1af870491a8b92d31:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJhNWI4N2QxMmI2OTk2YTJmMjdhMTUxNzg3ODYxYmJjZjdiMzc4MDM3ZjhjNGExYWY4NzA0OTFhOGI5MmQzMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJhNWI4N2QxMmI2OTk2YTJmMjdhMTUxNzg3ODYxYmJjZjdiMzc4MDM3ZjhjNGExYWY4NzA0OTFhOGI5MmQzMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjYwYTIyYmFhZGFiYTBiYjExNjY1Nzc3NDY2ODg1ZjFjOTExMWI5YWU4NzYxYWQwYjhiMTA5ZDc5ZTIwOTA0NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmQ4NGQ2OGJjM2ZkZmE4OGYzZTRhMDRjOGVjYTU4MTAxMzJkMjc0ZGRiMjcwMjllYmE5ZDk0YWU4YmU3MWQ5ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a188a2d2324e460ca1dbdb16e1a75a27",
+      "statement": "The uiAccess compile symbol sets AppConfig.UiAccess on Windows 8+ and PointCapture then constructs PointerInputTargetWindow.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Configuration/AppConfig.cs#L306-L308",
+          "version": "repo-lines-v1:sha256:dd5728b125498a66b825e834e93688a6f89e6767e18d19bbd352ff3448033386:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2QxMWNmN2ZjOGRmZDEzZjAxZTc0MjM5MzRkZDAyZmJmMmRmMWEwYTAwNTcxNzhlNmQ5NTk4YzRjN2JmYTU1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWRjNWI2NWIzMDNlOTRkNTQzYjEwMTIyMWY5NTkwZjdiMjVlNGFjNGE0ZWQ0NTExZTU5NGJlNDllNGFkZjE1MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOThiMWE0N2VhOTZhOWYwNTk0MTMyYzVlYjVkYjE1MDU4ZjJlYzc5N2E0NGZjZTA3ODk1MTllNjYzOGU3OWM0YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2Y1MmViOTlmZmU2NWIwMDJiODIwZTZhNjY5MmRiMzlhNjU4YTZkMTU4ZmE0ZWU3NmRjYTJlZjEwMDFkM2FlZSJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Input/PointCapture.cs#L224-L226",
+          "version": "repo-lines-v1:sha256:c5276ceb7a4fab207e77f5e4dca3fb1e3af30b90589ff724a57e4882b93a532b:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmE1NTliMjU4OTMzNzNjMzVhMGYyYjIzYWJkOGJjMmM5YmYwMDQ2MWViMGFjOTFmNGQ4NzIyYjg4ODBlNjVjMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjhmZGNjZDAxYzU5N2JmY2MwMzY1NTg0NDQ5NjAzN2Q3ZDQ0YTI4MzRkZjdiMWNhYTM2ODZkMTcyNDkyMzEwNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGJkNzg3MTM3YWFmNzc5OWVkYjFhMmJhMTY1ZjhhNjQwNzFjOWZiMWYwMjNjYWZkYTA3YjQ0ZDcyZGRhY2FlMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTcxNjcyNTJkMTEwNzU0ZjViOTBiNGQ2ZWRhZmE4OGQ0ZDIzNTdjN2Y1MTAyYjU4M2ViZGE4OTk3NTEwNzcyZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f483d8562204eefb72c4caa049ef374",
+      "statement": "Control Panel warns if AppCompat RUNASADMIN is set on either exe, starts the daemon with runas when the UI is elevated, and RunAsAdmin is an AppConfig flag used by StartupHelper.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ControlPanel/Common/StartupHelper.cs#L19-L19",
+          "version": "repo-lines-v1:sha256:d339d877d5da34b0a247b4834335aead23d5e14d17c8d3bbfc5d75639611b4d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDMzOWQ4NzdkNWRhMzRiMGEyNDdiNDgzNDMzNWFlYWQyM2Q1ZTE0ZDE3YzhkM2JiZmM1ZDc1NjM5NjExYjRkNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDMzOWQ4NzdkNWRhMzRiMGEyNDdiNDgzNDMzNWFlYWQyM2Q1ZTE0ZDE3YzhkM2JiZmM1ZDc1NjM5NjExYjRkNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGI4YzdjZjcxOWZjMjAyMDIzMjEzYTZlNjE4ZDYyYzAyMjg3Y2M4ODEyZWViMjdjMjA2Yjc2NzA3NjE1N2E0NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2FlZTNmN2ZlOTcxZGM4MDg3YTYyZGI3ZDgxZDcyNTdiZTlkMmIxODJlNzlmNzQ3OTI2YWM1ODhhZmQwMmU4MyJ9"
+        },
+        {
+          "resource": "repo://GestureSign.ControlPanel/MainWindow.xaml.cs#L172-L214",
+          "version": "repo-lines-v1:sha256:6f64b2f2525a9df67248dfcabff627ae247bfc5aab436b79c1a4e10771fe62ac:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5ODdmNDgzNmJjYzI0MDlmNGVmMzc5MGI0Y2VkZTJjNzcwY2M5YTk5ZGM4YzkzYWRlOWQwNDlhNDBkZTU0YTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyODY5MWNlMWVmMjYwZGJmZWFhZjk0MTNhYmM1NjRjNTRiNDViYTM5ZjMzM2FjNGZmMWJkODEwMjQ0MmRjZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzZDczYzY2ZWY1YmE4YWZmN2Y3NGYwYTBiMGQ4M2Q4NGZiNzdiMDU2YmFlMjJkODZmNGQyMjgzNzY1OTE4MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhYzRiZjM3NDA0OTg0MTZkZjZmNTUzMzM4ZWE2ODc4MGEyOGRmYjcyNWIzYThlNzRkOTc2NzdkZjgzMmU5MmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7cdafdce36a24268a87b841fe6790ecc",
+      "statement": "On UiAccess Windows 10+, Control Panel launches Store package 41908Transpy.GestureSign if installed and then shuts down.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ControlPanel/App.xaml.cs#L112-L134",
+          "version": "repo-lines-v1:sha256:6a076341b45e1add26d4b7ff48b03f4261c19485b321568c411debc20018588d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiY2ZhMzM2ZTE5MGFhM2UzY2U4Y2Q0OTkwNDU0ZmE3MzY5YjAxY2ViYjNjNzFmN2MxMDJlNzdlZDhkZTI4NGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMjM2YmNlYmZkMmUyODhmNzllOWIxZmY0MTZjMTMzNmNlMTJhOWY1YjZmODMzYzcwYzk2YWE3NzA1ODg4YjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxM2NiNTk1ZWE5NTAyOGIyZjdkMDk5ZWVlNzUzNGUxODJhMzJjOTgzZjlhMDdhZTg0MTlhN2Q5YjVmM2RmYTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhZDc3YzhhMGE0OTFmZjU0MTUzMmMzNWE3MDliZDU2NmM0OWZmNDVkODI0MWU0Njc0NTBiOTU5NTE3YmNjYjYifQ"
+        },
+        {
+          "resource": "repo://GestureSign.ControlPanel/App.xaml.cs#L38-L40",
+          "version": "repo-lines-v1:sha256:06c06c0c4ff0486045d9057b545e5c693bfc963c5f38a0925a7947d1a03cb4b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJkYjA2ZGFmNmQwNzE2NGRlM2QxMzdlMTRhMTA4MDU2MzkxMzRiMTllM2Q0ZDNjZjNlMWZmZTZmYWY5Yzk0OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjVlNjI4Mzk3NDU5YjFjY2M2NmVmN2Q0NDYxYTQyZDJlMDU3MDZiNjIwMDhlNGExNzFjOTlmOWVkY2Y0MDg1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDA5YTkyYTgzODMzY2NlODMyMWI1ODdhMDZkM2U3NjNmNjFmMGM3M2ZhNGExMWZhOGJmZDFkNjg5ZmNjOTY3YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjZiNmM1NzhhYWY4MzQzMzZlZDIyNjI4YTZmNmE1M2UwNmMyYWM2Y2I5OWM3MDk1MWZkNDk3M2RjYmEzYzAzMiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d9e28b66555ed5ba893ffecb84f9fab3540d34aed920185b59b1418fcc55d615",
+  "claims": [
+    {
+      "id": "claim_3517c5d464074e2c9219280e1d8bd587",
+      "statement": "TriggerManager loads HotKeyManager, MouseTrigger, and ContinuousGestureTrigger and on TriggerFired calls PluginManager.ExecuteAction with a one-point stroke.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Daemon/Triggers/TriggerManager.cs#L37-L59",
+          "version": "repo-lines-v1:sha256:a918d02036a114b61ffbb643135701ec32ed103543248496afdafacaa42a26df:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlNjRiM2Y0MmQwNzc2NjQ1MTc1NWRiMjYxMjRmYTRkNWQwN2ViZDk2NjhmNThkNWYwOThmNTdlMmFmZDQ2ZDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwMzEwZTI2ODgwOTc2MThiNjg0YWNmOGM4OTkxZWJlZWRjZWU1Y2M5NTZjZDAyOGU4NmU0NTY2YjZiZDViOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNmM2NDcxNjY3MDNlNGRiYzU3M2I4OGQzZjgwOGJiY2QyNmEyZjhhZjFiN2IyNWRmYjM2MzljYTNhODU0YjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyNmY3ZTc2ZjEwNTQyNWM1NGQxNzAwNTUyNWIzNmI4OGQxZDQ3YmVhYjNiMDAwZDIyOGQ1MmM3NjQ5NjY0ZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_162ffdc59f07404e8c29b9806b093c2a",
+      "statement": "Hotkeys register from foreground plus global actions, unload when UserDisabled, and fire after refreshing the foreground application.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Daemon/Triggers/HotKeyManager.cs#L15-L42",
+          "version": "repo-lines-v1:sha256:aa84799555769848864d36809313bdbda333184d49faea3ce346789a493e67fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2MmRkYWNmODhiNzU3MGM1MmY0ZTY5NzJlYTFiODQ2MTkyMWNmMmE5MTU0MTVmYWMyYTI1YjFhZmU0MWNhMTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTFiZmFiY2ZiNmQ4OWZkOWY0ZTNiN2JjNGExNzRmZDkwYzk5ODE4NmU0ZmRlMmM4ZmEzNGU2ZDVjMjkzYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1YmM1ZGU5MGNjNzAwNjZlZGQyYTgwZjhjODVjMjVjZTNmYmIxYmI1MGE0ZDVjODIzZGZkZDEwMjQxM2VjNzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiMTA4NjkwOGZmNWU1NGE3YWIyMGM0YThmMjc5OTk1OGNhODI5YmRlNDJkNTNjZTU1MjIwYWJlZDU1ZmQzZjMifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Triggers/HotKeyManager.cs#L90-L98",
+          "version": "repo-lines-v1:sha256:19e656b2ad4dfa6c5444fe62514b168c5d42d5919b1ebd8866b5d1ca2eebd05a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTdhNWRmNGFmZGM0OTVjODkwZGE2YmIzOWE3Y2Q2ZDA0Y2Y5NmZiN2EwOTAyNWUzMTdkYjQ0MTdjMmQ1OGExMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzlhODU3MmI4ODhiMDhmNzk3OThhMTlhY2FkMWVmZGFmZWQwMjcwNDI1YTNlMWMyMmQ4ODhkMTA2ZDY1NjgzYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWEwNzQyYjFiYzBkMWE5YzkxYjJlMTRiNTc3ZDJhN2U1N2Q1MDc2MGI2OTQ3MjBlZGM0NDQ1YTI0MDdhZjYzOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGY2YjZlYjg3MjU2Yjc4MzdlZjY2NTE0YjI4M2E5ZDY2MmNiNzc2ZWMyNjc4MTE1NmFlODNmMjQ4MTBmYjU5NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7eeee0a5ee1a433f9c1e2351ade900c4",
+      "statement": "MouseTrigger matches MouseHotkey during mouse CapturingInvalid or TriggerFired; wheel and mouse-up execute, mouse-down only consumes the hook.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Daemon/Triggers/MouseTrigger.cs#L19-L60",
+          "version": "repo-lines-v1:sha256:e829eb44d7414fd4d61d690b02d2810a0b0af0f241011621a54ce5ed17bc444b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzMmM5YjFjYzZiNzQwZTIxYTUwYzQ0NTc4NmYwYjhjOWU5NDMxNjY4ZGM4YjhiZmI1Yzg3MWY0NzBhNDU5YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2NzhiYWU3MjU2OGYzNTI0YmZmNmNlMTZiMjMzZjdjMTZlMDYwZDg3ZTY4YzYxYjYxMmYxNjY0YjkyZDZjNmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1NmQzYmZhNDViZjNkZjhjY2JmN2YxMDY2MzhjNDcyNTc5MDlmMTk1YWE1OGI5NDkzMjQzYzFlODhmZGNjMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmNmI2ZWI4NzI1NmI3ODM3ZWY2NjUxNGIyODNhOWQ2NjJjYjc3NmVjMjY3ODExNTZhZTgzZjI0ODEwZmI1OTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aba54c14bd7848a7aa8e55f902908ffb",
+      "statement": "ContinuousGestureTrigger fires Left/Right/Up/Down on multi-contact Capturing moves matching ContactCount and Gestures, using a DPI-scaled distance threshold.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Daemon/Triggers/ContinuousGestureTrigger.cs#L37-L97",
+          "version": "repo-lines-v1:sha256:0d52b7af84d1da42b16a83a009387499d9f4fbd8435871dc9121fe7e6833182c:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2OGExMjdiYmY0MDIyNjc1ZmRiMWViODExNTFiNzA1ZmY0ODdhMTljNjVlNzU3MWQwNGYxMjUxODAxNGQ0ZTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTFiZmFiY2ZiNmQ4OWZkOWY0ZTNiN2JjNGExNzRmZDkwYzk5ODE4NmU0ZmRlMmM4ZmEzNGU2ZDVjMjkzYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMzNTZhYzA1MjE3MDFlYzFjNTRjMTAyOTJmZGUwZTVjMWQ0ZGE0Y2FiNjRhYTRhYThkYzQzOGNkNzJhMmUwMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyZWQ0N2M5NGViMzQ0M2JhMDJjN2JmNDFmMTUwZWRhZDM0OGMyYTE5Y2NjZGM3NjNkMDA5YmY3MDA1YWYxMWQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

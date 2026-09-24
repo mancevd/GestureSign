@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:60c5c2aa014cdf9ff92ba6ab38d8b54bbad30cd59448180b1ea61d1b993c1d71",
+  "claims": [
+    {
+      "id": "claim_e948f986368e4e6d8929d4e1ed68bb49",
+      "statement": "CaptureStarted can cancel ignored, full-screen, or under-finger-limit strokes; EndCapture then runs BeforePointsCaptured and GestureRecognized when GestureName is set.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Applications/ApplicationManager.cs#L65-L116",
+          "version": "repo-lines-v1:sha256:63391916e9aeeee59686d8adece9a0546333f037a0ddfc9256a691ebee902661:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzNWVlNGY3YmY5MTM4YzNkMTZlMDBmNTlkMjUxNTA1NzlmYjdjZmE3ZWE3ZjM5NDYyYTZiOTA2MjU5YTgxMGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwMDYzODAwYjBjMTFjMzgyOWFjY2EyZThlZTQ1NTMxODFiNTc0ODdmNDkzOWMzMGU3OGVlNjFiMjA0ZWYxOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiNzZhNGMxZjZhOGRhNGU1ZWUxYTJiZGNjY2U1YWNmMDUzZTQzZTQ4YzE1YjczYjY0NWYzNjgzNTRhMmVjNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5MzI5Y2U0NjJkYjUyM2JmMzJhOWNhZjdjMzJjOTQyMDZhMTZjZTgxZjQ4YTUwMzIxOTYzYmZjNDdjZTdlNmMifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Input/PointCapture.cs#L549-L581",
+          "version": "repo-lines-v1:sha256:f62ff74245fc12fa8c43641bab9c419ba7d1a7aa2f49caee1f7ca0c0bb49bf68:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3ZDZkMDkwNjc3YzQwYTg5MGMzZWU3MTE4OWUzYTY3NDY2NDRmNzM3MWU0M2EwOGEzNDgwZWJiMjIwZGQ3NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YTg1NzJiODg4YjA4Zjc5Nzk4YTE5YWNhZDFlZmRhZmVkMDI3MDQyNWEzZTFjMjJkODg4ZDEwNmQ2NTY4M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0ZDEzODY5ODhiYTJmNzk5ZWMyNWMwMDJhYzQxNWZhMzQyMTY4MmFhODM5MDY4MTgwNzZhMTgwMDdkY2U4NzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2ZTNiYjJlZWIwZDAwZTg5Yjc2YWZjNTA1YzZiYWFhYmM4NTcyNDQyY2Q2NmIwN2Y5ZWM1ZmMyNGFmZTM0YjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_78bf919ea46c487f81ff8e388c336889",
+      "statement": "GestureRecognized looks up actions by gesture name and ExecuteAction skips Training, UserDisabled commands except ToggleDisableGestures, WaitForIdle 200 ms, optionally activates the window, then Deserialize and Gestured.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Plugins/PluginManager.cs#L51-L107",
+          "version": "repo-lines-v1:sha256:f694a98f90922f02871c2ccd5366422af4cf73df901dff75a0328972543d647f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5OGZjZmIwODQ5MGM2ZjY3NmM5NWZiNzllMTdjZjA0NWFhZjI0ZThhMjdlODQ5ZGMwZTFjMzNhZjcwMjMwZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyYWMzMDcyMjk1Y2EzMTkwZWU5MjMyNjc5YjgzY2NiMTI4MTI5NGZiZGM1OWMyZGMyMzEwZmIwMTRmNjU4MDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiNzZhNGMxZjZhOGRhNGU1ZWUxYTJiZGNjY2U1YWNmMDUzZTQzZTQ4YzE1YjczYjY0NWYzNjgzNTRhMmVjNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1ZmQ0YzM4MjEwMGZlMDVhMTIwNGUxNDgyNDI3YTEzODJjYmU0NjBmNzM4N2MyZGUyMTc1MmNiZWM3ZDg3ZTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ff418994727140bdadb33b2ce8461571",
+      "statement": "Plugin action work is serialized on a single _lastActionTask chain with faulted continuations logged.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Plugins/PluginManager.cs#L116-L125",
+          "version": "repo-lines-v1:sha256:473859dfe7d8db4260946e900d387e795e3f8b6142b18cba57dcf27e3a4aaae0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlZWIxNTRlMjU4YzIyOGQyZTY1ZDU2MjQ1OTFiNmY5MTNlNThlMjAxYmEyYTJjNTEwMDY3NDY3NmRiZmRjZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YTg1NzJiODg4YjA4Zjc5Nzk4YTE5YWNhZDFlZmRhZmVkMDI3MDQyNWEzZTFjMjJkODg4ZDEwNmQ2NTY4M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmYjNkNTAwMzA2NDcwOTY5ZTIyYWY2NzQ1ZDI5ZDQxNDc5M2U0YWM0YmMzMzc0Yzc5MmYyYjg4OGYzZDM1Y2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ1NWVkNDE0Zjk3MTY4NGNmN2RhOGNiYzNjMmFlZmZmYzA3NjQ3MWYyNTMzZTFmNDBmYmQ5YjQyNDY3YjNiMWQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

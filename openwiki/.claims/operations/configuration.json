@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d0713ddd081cc773f666971040b6f9e4b88be353007794df55863fb266b085aa",
+  "claims": [
+    {
+      "id": "claim_04cffeba804e43ff9b7f556805cb753e",
+      "statement": "Portable builds store config under the exe AppData folder; non-Portable builds use roaming ApplicationData and local LocalApplicationData GestureSign directories.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Configuration/AppConfig.cs#L304-L321",
+          "version": "repo-lines-v1:sha256:f8ae98ca71fcc476dc5435e7edb5fa58d228d016de64273ff37159ed55cefccc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4NzY1YTc2Njc2NWJkYmQyYjZjYmRhNTI5OWUzNTZhYjA5M2FlOGUyNDNhYWEyZmM1OTY3OWM3ZTM4ODhlMDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1MjFmZGEzYTFiOTUwMDcyZWVmNTNiNmJlMzk5OTIxYzg3NmU0M2FkNjJhYTdjZjQxZGU2YTAzYWUxY2E2NjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyNGI2NjNhNjM3YmM5Nzc1ZWY1Y2M3ZmU1ZWQzZGQ5M2Y1ZGI5Yjc1ZjZhZTFjYjEzMjRmN2YwODJlYzdjZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkZGU2YTYzNzllYmY3YjZhNWU4YjFiZmYwZTBiMThkZjNlM2M1YjBjYjllMDNiODNmNGNlN2VmYjdmMTljMmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d67d6a38a6c3420dace05e1c2af42c61",
+      "statement": "AppConfig.Reload and SaveFile raise ConfigChanged; saves debounce 100 ms, wait on a locked config file, and treat ConfigurationErrorsException as FileWriteException.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Configuration/AppConfig.cs#L332-L367",
+          "version": "repo-lines-v1:sha256:0dd4f9a783578ae1955468223ec53679e31c9c37f7c87fffe8db423565f344a5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzZDA2ZjAxMDczOWM1MWRkZTJjYmI4OWIwZWUxYThhNjRhYmQ3M2QxODZjZjMxZDEzYTJmZTllYzU4ZjVjZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0OTJiMDMzNjZhMDczOGI0ODI2ZGFkYWY0YzQyNTMxYWM5Mjc0OTk1OTQ1ZjBmZjM2YzVmNTk2ZmUwZTBmN2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxYjRjNmY3ZThmOWIxMjkxMGM3YTg2ZjNiNzI5YjY5MTVjNGM0YzgwYzljNDIxNDdmYzk1ZWZhMWExMGY4ZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmMmI0ZTYxZTg0MDEwNGM1ZTVhMTMwMjg0NGQ4ZTA2ODEyZDM4YzRhN2I2NjRhZDZjMzRhNWQxZjU1ZDc5YWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fcf8a375c3104424ba57278007a9cced",
+      "statement": "FileManager JSON save copies the previous file into Backup\\timestamp plus extension before overwrite; primary user files are Gestures.gest, Actions.gsa, and GestureSign.config.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Configuration/FileManager.cs#L102-L111",
+          "version": "repo-lines-v1:sha256:77ef6509c5b869e8c63c897abcc45cd2fc26c2a83d3c34f563b5e415eeed82ee:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiMzIxMGZlYTNjMzFmYTk1NmE1MTM5NTc0OTI0ZTk5ZTc3MjYyODliYWM1OThjYjQxZjMwYzFhY2NjYmQ4YWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzODAzMzVkYWFmOGJlY2Q1MWM4NmQ0NTNhOTViYmE1OGI1ZDU3ZTQ1NzU3MmY3NTNiMjVjMDE4NWM3ZGU2MGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzZDczYzY2ZWY1YmE4YWZmN2Y3NGYwYTBiMGQ4M2Q4NGZiNzdiMDU2YmFlMjJkODZmNGQyMjgzNzY1OTE4MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiMDJiZDM1ZWJkMjNkYjdjZDZkZWIzOTRlMTM0MjBiN2QzMTI5ODYxNWE2NjM1MTk4Yjg4Zjg0ZjU0NzMwMmEifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Configuration/FileManager.cs#L23-L52",
+          "version": "repo-lines-v1:sha256:d68d33c41547785f6e5e2f82a6a16c9e7fb530922beb479c9fb81144c6996f3e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3M2Q0N2NmZWRiMzZmNjNhODQ2NjFiMzRkNWY0NGU5NTI4ODAyMWY1MzY1MTg2MTdhNWU0Y2Q5ZjQ5NGYxNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5ZjUwZWYyNGFmMzM1MDg5MjAwZWZkZmI0NDljOTU0Y2Y5ZmExYzgzNzIyOGYwYzFmYTA4MzI2MDQ1MzA0N2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNmM2NDcxNjY3MDNlNGRiYzU3M2I4OGQzZjgwOGJiY2QyNmEyZjhhZjFiN2IyNWRmYjM2MzljYTNhODU0YjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2OTc5MjNjN2ZmMmNjYWYzZTcxNDI2ZjUyNWYwZWI5MzU3NWI4ZDExODg5MDAzMmE0NjMwZWY4ZWM2N2ZhNzgifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Common/Constants.cs#L5-L13",
+          "version": "repo-lines-v1:sha256:0ab51dd07c586acdc1e8005b2c31ec567af13530a910e7aa3a006a592817d9f9:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTU0NDdlMzE1YjczMDE3ZmRlMTI2OWQ2MmRjM2I4MTYyODE4MjY5NTVhOTE0ZGU3MzM2NjBjNTU2NzlkMWY3NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmJhZGVjYWZiZjI5MWEzN2UwNDlkNzcxNGZhN2QyMDFlNTAzMzNkOWZlM2U3OTVlYWM5N2NhZDA2OTM1OGNkZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTRjMjczOWVlODE0MjI1NTNjNGFlMzMyMWI0ZTJiZTZmZDhkOTA1MmIwNDNkNGYzNWIzZTkxMjJhNjU0NjZjMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjQ1NWRlM2ZkZmFiYWM4N2M5ZTEyNzNlNTU2Y2UwOGZhNmRmMTdjYWUzOTVhMzg4NWQxMWVhYTY1NjdjZjc5NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b921adc7a1a24588bc32b315a4fc6d15",
+      "statement": "StartupHelper can create a Startup .lnk to the daemon, elevate schtasks to register StartGestureSign, or query Store StartupTask GestureSignTask.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ControlPanel/Common/StartupHelper.cs#L136-L138",
+          "version": "repo-lines-v1:sha256:88764e5fba3a6a40be87a1db00f3e8542ed05a53b6e16d4739f6447333594fba:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2IzODdiOWM5NDRiOTZmZGVjY2JkZjRlZjQxNjc1MTFjMjE3OWVmYzFhNTQxMWZhZWEwY2RiMTNhYTU1MjMzZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2RmNjY1NmQ3OWIwYThmNWU0OTk1MGMxNDFjYWM1ZTljM2I5NjZlZTU0YjFmZGZiMjRhYTZkYWMyMmY5NTAyNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzRkMTM4Njk4OGJhMmY3OTllYzI1YzAwMmFjNDE1ZmEzNDIxNjgyYWE4MzkwNjgxODA3NmExODAwN2RjZTg3MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2MzNjRjYWE1OGEyYzk1YjdjYmU2MDRlZjViNGM4YWUzNmE4OTc4Y2QxMGI3MDUzMDA1NDAxMWYxYjY5ZmQ2NSJ9"
+        },
+        {
+          "resource": "repo://GestureSign.ControlPanel/Common/StartupHelper.cs#L15-L17",
+          "version": "repo-lines-v1:sha256:a0acc519188e1093b916c7e267a2cddde2f67b0de6226d264e575013f283c058:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmJkZGRkMTllYzFkNDMyNmJmNThmNmJhMmJiZjM5ZDhjZmYyNDViZDg4NGI1ZmU4M2E1MTVkZDAyMDExYjg2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzQ5MGViNmIwMzFiMzdiNWQ2ZTA0MGViOTA0MDYwZmRlNzg1YWVkODZhZDQ5MWRkZjliMmU1N2Y3YWIyYjBiYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDA5ZTllNmFlZWYyZTU1NDE4NDBkMDIxMGJmYjc3NmM0NDQ4YmQwYWIwYmFhNzlmOGRhMTg4ODI2Yzc5OGQyMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWUwMTk3ZTliMThlZWQwNjFlZDU1OWI5NGVkODMwNzlmNjk2ZWMxNjhmNzAwNWFjMmZhNTMxYTg5MWNmNGZiMiJ9"
+        },
+        {
+          "resource": "repo://GestureSign.ControlPanel/Common/StartupHelper.cs#L77-L107",
+          "version": "repo-lines-v1:sha256:887ceb298987be46f64d32ea1f3ecea8518cd3aba5eac5a6a8464898c43ad739:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3NzM3YzVkMWU2MmE0ZDcyMDdhNTE4MTkzZDNkOWUzYWQ5NTBkNmI3MDkyZDkzM2NlMWRlMDgyNWY1ZmU0MDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0YTcxZGZmMDBkOWZkYTczYzliYzAxNzBmNDZjM2M2OGY0ZGYzMmM3OGYxMDk4Yjc0MTc3YzAzNjczMDgwZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiNWJiM2UzMjU5NjU4MDA5NTE4YjhiNDA4YWVjMGRjOWZkMWY3ZDA1ZTc1ZDZmODgyMjE3ZTc2YzcyNTVmNDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhZWFjZmRiZTQyYzJkNTJiNTNjNDgwMzYwZjQ1ZWRiMmFjNWZmNTAzZjcwOTY1ZTg4YWY5N2I4NjQ0ZGEzZGIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

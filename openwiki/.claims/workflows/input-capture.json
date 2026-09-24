@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d5a59e4d26435bb7fce79427b5528e18ff62f3e6b42c0767534a282bd9e73cfb",
+  "claims": [
+    {
+      "id": "claim_d507dbff8fcf492db9aef9b7f68e2011",
+      "statement": "InputProvider always hosts MessageWindow Raw Input and optionally a mouse hook; PointEventTranslator emits PointDown/Move/Up tagged with TouchScreen, TouchPad, Mouse, or Pen.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Input/Devices.cs#L5-L14",
+          "version": "repo-lines-v1:sha256:7820a6c0e3c54f63acbd56887f9a92d49003ed4fd255fd79f87073018ea50008:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyNTBjYjczMTBjMDJjYzFmYTRkNTBjYTgyODgwYzU5ZWFiNzRkOGM1ODU2ZjkwN2VlMTExNmEzY2FjMWI1M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFiOWM5YmI1ZjJiZjQ3Y2ZkMDk3M2ZmMzlhOTZkMTcyYjUxODg4NGNmMmQ5NDA5MGFmMzhjOWQ4YjZmYmJlMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Input/InputProvider.cs#L21-L39",
+          "version": "repo-lines-v1:sha256:56b3390c7f62b36ffffabb0f4ca8ce8a21ad558456bb17b2af3e7a3cebb3c17d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhMmMzMWI3NWRmM2JjZjA0ZjMyMzA5NGZiMDU5YjAwYWE1ODcxZmY0YmVhMzlmNTA0M2U2YzhkZGE0ODczZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYWRmOGM4YjY0OGE5MDA3YTdkYzYzY2Y1YTA3MDUxYmJiODE0MzllNzY4MjQ1YzRjZWI1MzM0NTRkZjNkMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwZmU1YjcyY2QzM2ZiMWMyODFjZTMxZjFmY2VmY2FlM2E4MWQ5Y2ZmYTVkNTliOGNiZWRmYzZiOWRlMzU4NGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkYTZlYjEzZTBjZDg5MWMwMzZhZmUyOGVjZWIwNjc4NjM5MmM1NmEwMjc2MjUyZWMzOGJkZDAwZWIwNmIxMTMifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Input/PointEventTranslator.cs#L17-L24",
+          "version": "repo-lines-v1:sha256:73772173c01c0270c901fb31606ab18f0422105fcd65da5d4dac11b43ffa386d:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZmNDM5NmI1ZTExZWM2MjI0OTE2ZDNiM2MzODYyZjM3Y2ZiYmIxZDgzYzg0MDg1OGZhMjY1ZGYxZmEzMzgxYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODI1MWJmYWJjZmI2ZDg5ZmQ5ZjRlM2I3YmM0YTE3NGZkOTBjOTk4MTg2ZTRmZGUyYzhmYTM0ZTZkNWMyOTNhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2JmNmZjZWI4ODVkZjcwMDkyNjFhYjc0ZDFhMWE4N2E4MTIwMWM1MTQ1MTg4YjU2N2E3NjE2ODNjOWU2ZDBlMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWM5ZTNjYjcyMjU1M2E1NzlkNzc2YzJmNDIxODRkYzRhNzA1OTk3MzczMDY1N2M0ODg4NGRlMTA1MWRjYWUzOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e3efaa20a41740c497d7eae0bcf6f9ee",
+      "statement": "Session lock sets CaptureState.Disabled; unlock/logon restores Ready. Other states are Ready, Capturing, CapturingInvalid, and TriggerFired.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/Input/CaptureState.cs#L3-L10",
+          "version": "repo-lines-v1:sha256:f73a1c1270bfe03f16d1547dcccb8b0cf84fc911045b4001ad82ae500c2b800d:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmM2OTQ5ODQ3N2JiMjY3ZTBkNzJkZWQwOGNiYTdhNDY0NTFhN2ZiYWNmN2MxYTYyN2NkMzExOGNiMTU2M2I0YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQxOWE2ZGNjMDRlMjEzYTNjN2E3N2E0NTZiMDFlNzZkMWVmNzhjZDAwYmJlYzFkOGY4MTQ1OGZlOTNlZGM1NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzA5OWMxOThhYTBjZDVlZmJhMzM5OTAwYzIwMjE3OTgxNzMzNzgyNmUxYWY2YWM1OGY0YTAzNzA3MDNlZjgzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Input/PointCapture.cs#L298-L313",
+          "version": "repo-lines-v1:sha256:34c74f98e172e1fc79ba2e4e17d5eab265fab2403148f4159de948ee72ddca11:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0ZmIzZjk3ZWUyYTgwMzJjNDNmNzQ0YzRjYjcyZDVhZWEyNzYwMjk0OGVmZjk5MGYyOTFmZTk4M2Y0ZjcxMjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YTg1NzJiODg4YjA4Zjc5Nzk4YTE5YWNhZDFlZmRhZmVkMDI3MDQyNWEzZTFjMjJkODg4ZDEwNmQ2NTY4M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzZDczYzY2ZWY1YmE4YWZmN2Y3NGYwYTBiMGQ4M2Q4NGZiNzdiMDU2YmFlMjJkODZmNGQyMjgzNzY1OTE4MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyNmY3ZTc2ZjEwNTQyNWM1NGQxNzAwNTUyNWIzNmI4OGQxZDQ3YmVhYjNiMDAwZDIyOGQ1MmM3NjQ5NjY0ZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e0643970fef84a0e98fd30583e338c7e",
+      "statement": "TryBeginCapture raises CaptureStarted (cancellable) then CapturingInvalid; EndCapture raises BeforePointsCaptured, optional GotGesture in Training, and GestureRecognized when GestureName is set.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Daemon/Input/PointCapture.cs#L505-L587",
+          "version": "repo-lines-v1:sha256:3b7d8e2872db9b6168568f5cdec9c408cf592bee5e1a8c24646d529392f829ad:eyJzZWxlY3RlZExpbmVDb3VudCI6ODMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyN2Q4MzMyNDc3ZTNlMmY0ZGY1ODUyOWViZjQ0NGQ5Zjg0MTBjNjllY2RjZDZmNmZkYzMyZGI0MjdkYzhkOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmM2E2NWQxMTU3YWUwYWFjOGJmNWY5Y2E0ZmM3NDU2OWMyZDgzZmI3ZjE0ZDgzMjQ0ZGQxYzRiZmE3Y2Q1MjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwOWQzOWU3NzAzNmNkZmY2Y2JkZGM1ZTkwZGU5OGIwMWE3Yjg3ZjI3NDllN2FlZTY1YjBhMTQ1NmZmYmEzMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY1OTFmYWE5ODk4Zjc1OTlkMDViMGY0OGExMTc0Y2IyOGVhZjBhZTg3MGI4YThiOTFmNjM2OWJmN2M0YTkyOTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b41d91fb8125415284fe71684cacb09a",
+      "statement": "When UiAccess is set, BlockTouchInputThreshold is applied to PointerInputTargetWindow after a 100 ms debounce; threshold >= 2 blocks touch.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Daemon/Filtration/PointerInputTargetWindow.cs#L29-L38",
+          "version": "repo-lines-v1:sha256:947ce930c8cc72fe166e5402bb406182943597c63f2a5d289f1cba69b7b24d95:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjMjFiYjc3MTQzMzUyNTBkNTFjYmIyY2JiOGFjNDFmNmU0Mjc1YTRmYTBkZjAwN2YzNzdmNmQ1Mjk5OTkzNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmNzNkMWVlZDZiNTdmMzhlY2E4NDc5ZDJiMGI0ODQ2YzYwNmU5YWMwNWMxMmNlYzFmZWJiYTFiYWVjMGZjZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmNWI3ZWVkZGZiNmFkZTg2YTljZWE1ZDRkYTI1NTE5MTI1NDM0NmU2NjY2ODE4OWYwMWYyOTkwZTIwNGZlNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlZmJhNTVkNjlkYmI4ZjllNjA3NGY2NWE3NjcwNmUyYTg5YWQzNjYwMmI4N2FhNDQ0MWFjOGYzOTMzYTc3ZWUifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Input/PointCapture.cs#L224-L233",
+          "version": "repo-lines-v1:sha256:44e31a33e861eaa9a166b6395ed92f081c77dd9a60b519f4495e0c12ac8d6116:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNTU5YjI1ODkzMzczYzM1YTBmMmIyM2FiZDhiYzJjOWJmMDA0NjFlYjBhYzkxZjRkODcyMmI4ODgwZTY1YzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0ZmUwNTk5MGU4ODMwNTBiYjY2NzY1ZTQ3MDVmM2Q5NTZlYmRmMGQ0YjIyZmI2OTRhZThhZWEwNjc5OTBmOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRiZDc4NzEzN2FhZjc3OTllZGIxYTJiYTE2NWY4YTY0MDcxYzlmYjFmMDIzY2FmZGEwN2I0NGQ3MmRkYWNhZTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcyMDY2ZjQxNzkwNGQwMWExNjVhZmNmZTMzYmQwMjg1MGNjNzRjYWY5OTA2ZWIwOGQ5NGU1N2I4MWVmYTdiMWMifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Input/PointCapture.cs#L440-L448",
+          "version": "repo-lines-v1:sha256:d372dc742194a4d08b4458867741e26b8960a449fcc3d91b65a739b42010e9d7:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDA5MWI2NWQ2MDNmODc5OWRiMDBkNWFlYmEwZjAyOWJjMWIxZmIyMzgxYjg4M2VjMzVkNWU3ZjNiNzE3NTZhZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODI1MWJmYWJjZmI2ZDg5ZmQ5ZjRlM2I3YmM0YTE3NGZkOTBjOTk4MTg2ZTRmZGUyYzhmYTM0ZTZkNWMyOTNhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWMwOGE4ODQ3YzZmZDNkMzc2ZmQ1ZjMwYTZmZGNjYjg3OWEyNTA0OGJlMDRhZThmMDMyOWI1ZWIyYWUxYmM5ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGRlNjc5OTk0NGE4YzIxYjhjNjFiNmU2Njc5Y2Y3YTRjZjgzYjdkZWY1ODhmZGZhYTgxZjRlNTdjNzk4YmYxNiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}

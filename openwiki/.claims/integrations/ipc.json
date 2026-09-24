@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:61c522d4949133276ab889bad0e6c75e4b6a7df8e8cf5e060650c50fb90e5265",
+  "claims": [
+    {
+      "id": "claim_70bd8329b5fd4386a899057681e322b4",
+      "statement": "IPC messages are a command byte plus optional BinaryFormatter payload on a pipe named with the current user SID.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/InterProcessCommunication/NamedPipe.cs#L190-L194",
+          "version": "repo-lines-v1:sha256:1b3a4f46c35aaaaf068215bac89d7a10339ae9dabbb45c23d8df712f8ae5df9f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTgxNTIwY2M5ZmJhOWM1ZTgwYmE5YWE4NjA2OTBmNzUxODVhMjE1MzgyZTMzOTIyYmQwMDJlNWJkNGMyYjcxNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODI1MWJmYWJjZmI2ZDg5ZmQ5ZjRlM2I3YmM0YTE3NGZkOTBjOTk4MTg2ZTRmZGUyYzhmYTM0ZTZkNWMyOTNhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDNkNzNjNjZlZjViYThhZmY3Zjc0ZjBhMGIwZDgzZDg0ZmI3N2IwNTZiYWUyMmQ4NmY0ZDIyODM3NjU5MTgxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjE1MDA5ZDE4MDVhZGI0MTBhMjYwMzNjYjE1MWVhZDRiODMyYWUzNzM5MjJhYWY3ZWY2MjJmMDNjNmVjZTZjZCJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Common/InterProcessCommunication/NamedPipe.cs#L67-L95",
+          "version": "repo-lines-v1:sha256:737eeb1365afbafa903be6e3b04b5c870e44f6a3c28ef709cdf3729d070d3d71:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmZTY0MTc2MTVhZTEyYWZiZGVlZTRiNTEzN2Y5Y2VmMjJmMzRmOTAzMDBlNDQ1ZjkwYzIzY2I4MDQ3NjhkMTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlMzk3ZjcyY2YyMzM1MDQzMDg0ZDNhMWZmNzlmNDkyOTVjMDAyNDJhYzY2Mzc2MmJjYjJhM2Q5YTc2MzBiNDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiMzcxMTE4MTQ1NDk2NjJlYTA3MzVjYmJlNjlmMGM0MDQ5N2NmN2Q0MzUxMmU5ZDc4MjRlNjU0ZDhhOTMwNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1OGU5YWYyNWVmODc5MDliYmYwZWRjYTU5ZGE4ZjRkYTBmMDNmN2Y1YjNiMWY4ODg0ZjhmOTkyNDE5NTM1NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_387eb06139414b448e3e56bd4227232f",
+      "statement": "The daemon posts StartTeaching, StopTraining, LoadApplications, LoadGestures, LoadConfiguration, and StartControlPanel on the UI context; the Control Panel handles Exit and GotGesture on the dispatcher.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ControlPanel/MessageProcessor.cs#L15-L38",
+          "version": "repo-lines-v1:sha256:849e5e985800f3218a461530f05b55c83c1add6668fcdaba489deb48ca0a66f1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzYjE0YWY2NjA2YTBkYTIxNmNlZTU2MTEwNmU3YWFkNzMxYWI0ZTNlNDk2YjA1Nzg5MzAzNzVjZjY2Y2QwMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmNGVjOThiMDNkYzdkODZiYzA0NTlkY2IyMWI4YmI4NzFjOWE3Nzc2NTA2Mzg3MzMwMGQ5ZDYwZjllOTQzZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5ZjU0ODQwN2U5MjEyYzcxMWNkYmU4Zjg5M2FkOTkwNGNiYTYxMTRjZmE0NTM3MDRmZmUzZTUxMWVhZjllZDQifQ"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/MessageProcessor.cs#L20-L46",
+          "version": "repo-lines-v1:sha256:be64d27c1ad7323f959d9e63062fc3f5ba42b5658522b0dd792b741dee812053:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzYjE0YWY2NjA2YTBkYTIxNmNlZTU2MTEwNmU3YWFkNzMxYWI0ZTNlNDk2YjA1Nzg5MzAzNzVjZjY2Y2QwMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhNTZkYmYyOTlmZGE1YTE4ZTEyYWUwYjJkY2Q3OTM4ODI1ZDlmYzRhYmU2MTM3MzczZjI4MzcyNmYwNWUwZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0NTFlOGE2MWJmNjY1YzQyMzZhMDA5MDBmYWUyYzM4NjBiMzQ5ZWM0YTJlMTg5MTIwZDg0OTlkNTFhODNhM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzZWNhNzU0MDM1MzEwMDRiYjlmODQ4OTZjNjQ1NmU2N2ViZGUwNDhlYWJhNTc5ZmNkYmQ1ODBkNjA1N2YxODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7bfb4b3d308346fb958d05141e26d04d",
+      "statement": "A separate GestureSignDaemonDeviceState pipe replies with SynDeviceState and HidDevice.EnumerateDevices for the Options UI.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.ControlPanel/MainWindowControls/Options.cs#L177-L179",
+          "version": "repo-lines-v1:sha256:72ee17a7aac8cad2aa42646d70f6d335f74baa31a064816cc70df0bee517bf23:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjMzZTgzNzVmNDdkYzI0ZDY1ODVlMDhmODQ5OTMxMmE2Y2Y2Y2FjNTZkYWVhZGMwOTM1MWEwMDBhYjAyY2I5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDUzM2M1YmZhNDg5MzUxODZkYmQ4M2Q1MzY2ODI4MmRmMDRlMjA4MmNlN2EwMzYwYjFkMWIyMGJlNjY3MTZkZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTNmZDg5YjdiM2Q4Yjg2MWEyZGQ0MTkyZWEwZjkyMGJkYmExYmUxNjJmMzQ1MTgwZjBhODFmYjU3YjVjZDA4NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGM5N2EzZjBiNGEwZWMyMTY4Y2QzYjQ0OTE0ODlhOWRhMDAwZjZkM2ZjZDQ3MTFjZDRkMTNjZWQ1YjUwNGJiOCJ9"
+        },
+        {
+          "resource": "repo://GestureSign.Daemon/Input/InputProvider.cs#L38-L39",
+          "version": "repo-lines-v1:sha256:98e37b89e584bc9726cb74c81d0e77b37f0683eb14854c1732a736f5edeec1aa:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDE1OWMyMzlkZmFmMWM1NGYzOWY4MGQ5OGRhOGE5ZDM1ODMyMGM3NDc2OGFmZDFmNjljNzVkMzBhNzE2N2E4NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJhZGY4YzhiNjQ4YTkwMDdhN2RjNjNjZjVhMDcwNTFiYmI4MTQzOWU3NjgyNDVjNGNlYjUzMzQ1NGRmM2QwMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzRjNzljZDE0NWRiNTM3NzE1YTg4MGQ1MWZlNGExZjRkMjhkZjA5YWRjMGMwMzA5YTg3MmNlNTY5MjcwY2NkNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWRhNmViMTNlMGNkODkxYzAzNmFmZTI4ZWNlYjA2Nzg2MzkyYzU2YTAyNzYyNTJlYzM4YmRkMDBlYjA2YjExMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_596df273bd4344139e8f4cad3a79e5af",
+      "statement": "IpcCommands includes ConfigReload, which is not handled by either MessageProcessor.",
+      "evidence": [
+        {
+          "resource": "repo://GestureSign.Common/InterProcessCommunication/IpcCommands.cs#L3-L15",
+          "version": "repo-lines-v1:sha256:6970f76b1ecd3cfec64595d23b3ba7d88088f8a72883ed6d528b5d759c62abd5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyNWY4NmNhN2Y1YzdjNWQ2ODJmMmEwNmYxNzM3Yzc1ZmUzOWNjMTJkMzc5ODliZjNmYjFlYzVlMzlmMTVlY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmZTA4MDk5OGE5MmQ0MGVkZjA2NDczODNmOWNhMDg2ZDI3YWVhZmQ5YjZiNjIxYzJmMDAwOTFhNWRjYWZlZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-24T12:53:26.620Z"
+  }
+}
