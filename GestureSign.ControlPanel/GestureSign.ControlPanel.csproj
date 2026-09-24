@@ -155,7 +155,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\Archive.cs" />
+    <Compile Include="Common\ControlPanelCommands.cs" />
     <Compile Include="Common\DragScrolling.cs" />
+    <Compile Include="Common\RibbonHelper.cs" />
     <Compile Include="Common\StartupHelper.cs" />
     <Compile Include="Common\TouchWindow.cs" />
     <Compile Include="Converters\ActionTitleConverter.cs" />
@@ -163,6 +165,7 @@
     <Compile Include="Converters\GestureButtonImageConverter.cs" />
     <Compile Include="Converters\GroupHeaderConverter.cs" />
     <Compile Include="Converters\GestureImageConverter.cs" />
+    <Compile Include="Converters\InverseBooleanConverter.cs" />
     <Compile Include="Dialogs\ActionDialog.xaml.cs">
       <DependentUpon>ActionDialog.xaml</DependentUpon>
     </Compile>
@@ -319,6 +322,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\RadioButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Office.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

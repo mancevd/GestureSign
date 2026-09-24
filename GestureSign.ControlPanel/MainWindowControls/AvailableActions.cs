@@ -17,6 +17,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
+using Input = System.Windows.Input;
 using System.Windows.Threading;
 
 namespace GestureSign.ControlPanel.MainWindowControls
@@ -27,10 +28,75 @@ namespace GestureSign.ControlPanel.MainWindowControls
     public partial class AvailableActions : UserControl
     {
         // public static event EventHandler StartCapture;
+        public static readonly DependencyProperty IsSortedByGestureProperty =
+            DependencyProperty.Register(nameof(IsSortedByGesture), typeof(bool), typeof(AvailableActions),
+                new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnIsSortedByGestureChanged));
+
+        public bool IsSortedByGesture
+        {
+            get { return (bool)GetValue(IsSortedByGestureProperty); }
+            set { SetValue(IsSortedByGestureProperty, value); }
+        }
+
+        private static void OnIsSortedByGestureChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = (AvailableActions)d;
+            bool byGesture = (bool)e.NewValue;
+            control.SortByGestureMenuItem.IsChecked = byGesture;
+            control.SortByNameMenuItem.IsChecked = !byGesture;
+        }
+
         public AvailableActions()
         {
             InitializeComponent();
             DataContext = this;
+            RegisterCommands();
+        }
+
+        private void RegisterCommands()
+        {
+            Bind(ControlPanelCommands.NewApplication, (s, e) => NewApplicationButton_OnClick(s, e));
+            Bind(ControlPanelCommands.EditApplication, (s, e) => EditApplication(), () => lstAvailableApplication.SelectedItem is IApplication);
+            Bind(ControlPanelCommands.DeleteApplication, (s, e) => DeleteMenuItem_Click(s, e), () => lstAvailableApplication.SelectedItem is UserApp);
+
+            Bind(ControlPanelCommands.NewAction, (s, e) => NewCommandMenuItem_Click(s, e));
+            Bind(ControlPanelCommands.AddCommand, (s, e) => FromSelectedMenuItem_Click(s, e), () => lstAvailableActions.SelectedItem is CommandInfo);
+            Bind(ControlPanelCommands.EditCommand, (s, e) => EditCommand(), () => lstAvailableActions.SelectedItems.Count != 0);
+            Bind(ControlPanelCommands.DeleteCommand, (s, e) => cmdDeleteCommand_Click(s, e), () => lstAvailableActions.SelectedItems.Count != 0);
+            Bind(ControlPanelCommands.MoveUp, (s, e) => MoveUpButton_Click(s, e), () => GetSelectedCommandIndex() > 0);
+            Bind(ControlPanelCommands.MoveDown, (s, e) => MoveDownButton_Click(s, e), CanMoveDown);
+
+            Bind(Input.ApplicationCommands.Cut, (s, e) => CutActionMenuItem_Click(s, e), () => lstAvailableActions.SelectedIndex != -1);
+            Bind(Input.ApplicationCommands.Copy, (s, e) => CopyActionMenuItem_Click(s, e), () => lstAvailableActions.SelectedIndex != -1);
+            Bind(Input.ApplicationCommands.Paste, (s, e) => PasteToNewActionMenuItem_Click(s, e),
+                () => _commandClipboard.Count != 0 && lstAvailableApplication.SelectedItem is IApplication);
+            Bind(ControlPanelCommands.PasteToSelected, (s, e) => PasteToSelectedActionMenuItem_Click(s, e),
+                () => _commandClipboard.Count != 0 && lstAvailableActions.SelectedItem is CommandInfo);
+
+            Bind(ControlPanelCommands.Import, (s, e) => DownloadButton_Click(s, e));
+            Bind(ControlPanelCommands.Export, (s, e) => ExportActionMenuItem_Click(s, e));
+
+            lstAvailableApplication.InputBindings.Add(new Input.KeyBinding(ControlPanelCommands.DeleteApplication, Input.Key.Delete, Input.ModifierKeys.None));
+            lstAvailableActions.InputBindings.Add(new Input.KeyBinding(ControlPanelCommands.DeleteCommand, Input.Key.Delete, Input.ModifierKeys.None));
+        }
+
+        private void Bind(Input.ICommand command, Input.ExecutedRoutedEventHandler executed, Func<bool> canExecute = null)
+        {
+            CommandBindings.Add(new Input.CommandBinding(command, executed, (s, e) => e.CanExecute = canExecute == null || canExecute()));
+        }
+
+        private int GetSelectedCommandIndex()
+        {
+            var selectedInfo = lstAvailableActions.SelectedItem as CommandInfo;
+            if (selectedInfo?.Action == null) return -1;
+            return selectedInfo.Action.Commands.ToList().IndexOf(selectedInfo.Command);
+        }
+
+        private bool CanMoveDown()
+        {
+            var selectedInfo = lstAvailableActions.SelectedItem as CommandInfo;
+            int index = GetSelectedCommandIndex();
+            return index >= 0 && index < selectedInfo.Action.Commands.Count() - 1;
         }
 
         private IApplication _cutActionSource;
@@ -139,40 +205,6 @@ namespace GestureSign.ControlPanel.MainWindowControls
             ApplicationManager.Instance.SaveApplications();
         }
 
-        private void btnAddAction_Click(object sender, RoutedEventArgs e)
-        {
-            var selectedApplication = lstAvailableApplication.SelectedItem as IApplication;
-            if (selectedApplication == null)
-            {
-                lstAvailableApplication.SelectedIndex = 0;
-                selectedApplication = lstAvailableApplication.SelectedItem as IApplication;
-                if (selectedApplication == null) return;
-            }
-            var ci = lstAvailableActions.SelectedItem as CommandInfo;
-            if (ci == null)
-            {
-                var newCommand = new Command
-                {
-                    Name = LocalizationProvider.Instance.GetTextValue("Action.NewCommand")
-                };
-                Dispatcher.Invoke(() =>
-                {
-                    lstAvailableActions.SelectedItem = null;
-                    var newAction = new GestureSign.Common.Applications.Action();
-                    newAction.AddCommand(newCommand);
-                    selectedApplication.AddAction(newAction);
-                    ApplicationManager.Instance.SaveApplications();
-                }, DispatcherPriority.Input);
-            }
-            else
-            {
-                var element = (FrameworkElement)sender;
-                element.ContextMenu.PlacementTarget = element;
-                element.ContextMenu.Placement = System.Windows.Controls.Primitives.PlacementMode.Top;
-                element.ContextMenu.IsOpen = true;
-            }
-        }
-
         private void NewCommandMenuItem_Click(object sender, RoutedEventArgs e)
         {
             var selectedApplication = lstAvailableApplication.SelectedItem as IApplication;
@@ -214,18 +246,7 @@ namespace GestureSign.ControlPanel.MainWindowControls
 
         private void EnableRelevantButtons()
         {
-            cmdDelete.IsEnabled = cmdEdit.IsEnabled = lstAvailableActions.SelectedItems.Count != 0;
-
-            var selectedInfo = (lstAvailableActions.SelectedItem as CommandInfo);
-            if (selectedInfo == null)
-                MoveUpButton.IsEnabled = MoveDownButton.IsEnabled = false;
-            else
-            {
-                int index = selectedInfo.Action.Commands.ToList().IndexOf(selectedInfo.Command);
-
-                MoveUpButton.IsEnabled = index > 0;
-                MoveDownButton.IsEnabled = index < selectedInfo.Action.Commands.Count() - 1;
-            }
+            Input.CommandManager.InvalidateRequerySuggested();
         }
 
         private bool SetClipboardAction()
@@ -405,6 +426,7 @@ namespace GestureSign.ControlPanel.MainWindowControls
                         if (current != null)
                             current.IsChecked = false;
                 }
+            IsSortedByGesture = ReferenceEquals(clickedMenuItem, SortByGestureMenuItem);
         }
 
         private void SortMenuItem_Checked(object sender, RoutedEventArgs e)

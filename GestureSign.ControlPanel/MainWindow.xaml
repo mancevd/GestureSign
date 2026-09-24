@@ -3,110 +3,560 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:localization="clr-namespace:GestureSign.Common.Localization;assembly=GestureSign.Common"
                     xmlns:common="clr-namespace:GestureSign.ControlPanel.Common"
+                    xmlns:converters="clr-namespace:GestureSign.ControlPanel.Converters"
                     xmlns:mainWindowControl="clr-namespace:GestureSign.ControlPanel.MainWindowControls"
                     xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                     FlowDirection="{StaticResource DefaultFlowDirection}"
                     Title="{localization:LocalisedText Title}"
-                    Height="500"
-                    Width="660"
-                    ShowIconOnTitleBar="False"
+                    Height="680"
+                    Width="1040"
+                    MinWidth="840"
+                    MinHeight="520"
+                    TitleCaps="False"
+                    TitleAlignment="Center"
+                    ShowIconOnTitleBar="True"
                     ShowTitleBar="True"
                     Icon="Resources/normal.ico"
                     BorderThickness="1"
-                    BorderBrush="{StaticResource AccentColorBrush}"
-                    MinWidth="586"
-                    MinHeight="420"
+                    BorderBrush="{StaticResource Office.AccentBrush}"
+                    WindowTitleBrush="{StaticResource Office.TitleBarBrush}"
+                    NonActiveWindowTitleBrush="{StaticResource Office.TitleBarInactiveBrush}"
+                    NonActiveBorderBrush="{StaticResource Office.RibbonBorderBrush}"
+                    FontFamily="{DynamicResource DefaultFont}"
+                    FontSize="12"
+                    Foreground="{StaticResource Office.TextBrush}"
                     Loaded="MetroWindow_Loaded">
     <controls:MetroWindow.Resources>
         <ResourceDictionary>
-            <Path x:Key="QuestionIcon"
-                  Width="15"
-                  Height="24"
-                  Stretch="Uniform"
-                  Fill="#FF000000"
-                  Data="M450.3 772.2L450.3 864.8 542.8 864.8 542.8 772.2 450.3 772.2zM689.4 452.3C703 427.9 709.8 401.3 709.8 372.4 709.8 322.5 690.5 279.9 652 244.7 613.5 209.5 561.9 191.9 497.2 191.9 436.1 191.9 387 208.3 349.9 241.1 312.7 273.9 290.4 321.1 282.8 382.8L366.3 392.7C373.5 346.7 388.7 312.8 411.9 291.2 435.1 269.5 464 258.7 498.6 258.7 534.4 258.7 564.6 270.6 589.3 294.6 613.9 318.5 626.3 346.2 626.3 377.8 626.3 395.3 622 411.4 613.6 426.1 605.2 440.9 586.9 460.6 558.8 485.5 530.7 510.3 511.2 529.2 500.4 542.1 485.6 559.8 474.9 577.4 468.3 594.9 459.3 618.1 454.8 645.6 454.8 677.5 454.8 682.9 454.9 691 455.2 701.8L533.3 701.8C533.9 669.4 536.2 645.9 540.1 631.4 544 617 550 604.2 558.1 593.1 566.2 582 583.5 564.7 610 541.2 649.4 506.3 675.9 476.7 689.4 452.3L689.4 452.3z" />
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <converters:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+            <Style x:Key="AboutTextStyle" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="IsReadOnly" Value="True" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Margin" Value="-2,0,0,14" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="Foreground" Value="{StaticResource Office.SecondaryTextBrush}" />
+                <Setter Property="HorizontalAlignment" Value="Left" />
+            </Style>
         </ResourceDictionary>
     </controls:MetroWindow.Resources>
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands>
             <Button Click="Hyperlink_Click"
                     CommandParameter="{localization:LocalisedText About.HelpPageUrl}"
-                    Margin="0,0,20,0">
-                <Rectangle Width="12"
-                           Height="18"
-                           Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
-                    <Rectangle.OpacityMask>
-                        <VisualBrush Visual="{StaticResource QuestionIcon}" />
-                    </Rectangle.OpacityMask>
-                </Rectangle>
+                    ToolTip="{localization:LocalisedText Ribbon.Help}"
+                    Margin="0,0,8,0">
+                <Path Width="14"
+                      Height="14"
+                      Stretch="Uniform"
+                      Data="{StaticResource Icon.Help}"
+                      Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}" />
             </Button>
         </controls:WindowCommands>
     </controls:MetroWindow.RightWindowCommands>
-    <Grid>
-        <TabControl>
-            <TabItem Header="{localization:LocalisedText Action.Header}"
-                     controls:ControlsHelper.HeaderFontSize="32">
-                <mainWindowControl:AvailableActions x:Name="AvailableActions"></mainWindowControl:AvailableActions>
-            </TabItem>
-            <TabItem Header="{localization:LocalisedText Ignored.Header}"
-                     controls:ControlsHelper.HeaderFontSize="32">
-                <mainWindowControl:IgnoredApplications x:Name="ignoredApplications" />
-            </TabItem>
-            <TabItem Header="{localization:LocalisedText Gesture.Header}"
-                     controls:ControlsHelper.HeaderFontSize="32">
-                <mainWindowControl:AvailableGestures x:Name="availableGestures"></mainWindowControl:AvailableGestures>
-            </TabItem>
-            <TabItem Header="{localization:LocalisedText Options.Header}"
-                     controls:ControlsHelper.HeaderFontSize="32">
-                <mainWindowControl:Options Width="Auto"
-                                           Height="Auto" />
-            </TabItem>
-            <TabItem Header="{localization:LocalisedText About.Header}"
-                     controls:ControlsHelper.HeaderFontSize="32">
-                <ScrollViewer PanningMode="VerticalFirst">
-                    <StackPanel>
-                        <TextBlock TextWrapping="Wrap"
-                                   Text="GestureSign"
-                                   Margin="15,10,0,0"
-                                   FontWeight="Bold"
-                                   FontSize="16" />
-                        <TextBlock HorizontalAlignment="Left"
-                                   FontSize="14"
-                                   Margin="15,10,0,0">
-                            <Hyperlink Click="Hyperlink_Click"
-                                       CommandParameter="{localization:LocalisedText About.HomepageUrl}">
-                                <Run Text="{localization:LocalisedText About.Homepage}" />
-                            </Hyperlink> 
-                            <Run Text="/" />
-                            <Hyperlink Click="Hyperlink_Click"
-                                       CommandParameter="ms-windows-store://pdp/?productid=9n45wqvk2qqw">
-                                <Run Text="{localization:LocalisedText About.Store}" />
-                            </Hyperlink>
-                        </TextBlock>
-                        <TextBlock HorizontalAlignment="Left"
-                                   FontSize="14"
-                                   Margin="15,10,0,0">
-                            <Hyperlink Click="SendFeedback_Click">
-                                <Run Text="{localization:LocalisedText About.SendFeedback}" />
-                            </Hyperlink>
-                        </TextBlock>
-                        <TextBox x:Name="AboutTextBox"
-                                 HorizontalAlignment="Left"
-                                 Margin="10,10,0,0"
-                                 BorderThickness="0"
-                                 IsReadOnly="True"
-                                 Text="{localization:LocalisedText About.Information}" />
-                        <TextBox  HorizontalAlignment="Left"
-                                  Margin="10,10,0,0"
-                                  Text="Project Page&#xA;https://github.com/TransposonY/GestureSign&#xA;&#xA;Thanks to the following project:&#xA;http://highsign.codeplex.com/&#xA;License:http://highsign.codeplex.com/license&#xA;&#xA;MahApps.Metro&#xA;https://github.com/MahApps/MahApps.Metro&#xA;License:http://www.opensource.org/licenses/MS-PL&#xA;&#xA;WGestures&#xA;https://github.com/yingDev/WGestures&#xA;License:https://github.com/yingDev/WGestures/blob/master/LICENSE"
-                                  VerticalAlignment="Top"
-                                  BorderThickness="0"
-                                  IsReadOnly="True"
-                                  Width="319" />
 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Tab row -->
+        <Border Grid.Row="0"
+                Background="{StaticResource Office.RibbonBackgroundBrush}"
+                Padding="0,2,0,0">
+            <DockPanel LastChildFill="False">
+                <Button x:Name="FileButton"
+                        DockPanel.Dock="Left"
+                        Style="{StaticResource Office.RibbonFileButtonStyle}"
+                        Content="{localization:LocalisedText Ribbon.File}"
+                        Click="FileButton_Click" />
+                <StackPanel x:Name="RibbonTabs"
+                            DockPanel.Dock="Left"
+                            Orientation="Horizontal">
+                    <RadioButton x:Name="ActionsTab"
+                                 GroupName="RibbonTabs"
+                                 Style="{StaticResource Office.RibbonTabStyle}"
+                                 Content="{localization:LocalisedText Ribbon.Tabs.Actions}"
+                                 IsChecked="True"
+                                 Checked="RibbonTab_Checked"
+                                 MouseDoubleClick="RibbonTab_MouseDoubleClick" />
+                    <RadioButton x:Name="GesturesTab"
+                                 GroupName="RibbonTabs"
+                                 Style="{StaticResource Office.RibbonTabStyle}"
+                                 Content="{localization:LocalisedText Ribbon.Tabs.Gestures}"
+                                 Checked="RibbonTab_Checked"
+                                 MouseDoubleClick="RibbonTab_MouseDoubleClick" />
+                    <RadioButton x:Name="IgnoredTab"
+                                 GroupName="RibbonTabs"
+                                 Style="{StaticResource Office.RibbonTabStyle}"
+                                 Content="{localization:LocalisedText Ribbon.Tabs.Ignored}"
+                                 Checked="RibbonTab_Checked"
+                                 MouseDoubleClick="RibbonTab_MouseDoubleClick" />
+                    <RadioButton x:Name="HelpTab"
+                                 GroupName="RibbonTabs"
+                                 Style="{StaticResource Office.RibbonTabStyle}"
+                                 Content="{localization:LocalisedText Ribbon.Tabs.Help}"
+                                 Checked="RibbonTab_Checked"
+                                 MouseDoubleClick="RibbonTab_MouseDoubleClick" />
+                </StackPanel>
+                <ToggleButton x:Name="CollapseRibbonButton"
+                              DockPanel.Dock="Right"
+                              Margin="0,0,8,0"
+                              VerticalAlignment="Center"
+                              Style="{StaticResource Office.IconButtonStyle}"
+                              common:RibbonHelper.Icon="{StaticResource Icon.ChevronUp}"
+                              ToolTip="{localization:LocalisedText Ribbon.ToggleRibbon}"
+                              Click="CollapseRibbonButton_Click" />
+            </DockPanel>
+        </Border>
+
+        <!-- Ribbon body -->
+        <Border x:Name="RibbonBody"
+                Grid.Row="1"
+                Height="92"
+                Background="{StaticResource Office.RibbonBackgroundBrush}"
+                BorderBrush="{StaticResource Office.RibbonBorderBrush}"
+                BorderThickness="0,1,0,1"
+                SnapsToDevicePixels="True"
+                ClipToBounds="True">
+            <Grid Margin="4,0">
+                <!-- Actions -->
+                <StackPanel x:Name="ActionsRibbon"
+                            Orientation="Horizontal">
+                    <HeaderedContentControl Style="{StaticResource Office.RibbonGroupStyle}"
+                                            Header="{localization:LocalisedText Ribbon.Groups.Applications}">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource Office.RibbonLargeButtonStyle}"
+                                    Content="{localization:LocalisedText Ribbon.NewApplication}"
+                                    common:RibbonHelper.Icon="{StaticResource Icon.Application}"
+                                    common:RibbonHelper.IconBrush="{StaticResource Office.IconAccentBrush}"
+                                    Command="common:ControlPanelCommands.NewApplication"
+                                    CommandTarget="{Binding ElementName=AvailableActions}" />
+                            <StackPanel Style="{StaticResource Office.SmallStackStyle}">
+                                <Button Style="{StaticResource Office.RibbonSmallButtonStyle}"
+                                        Content="{localization:LocalisedText Ribbon.Edit}"
+                                        common:RibbonHelper.Icon="{StaticResource Icon.Pencil}"
+                                        Command="common:ControlPanelCommands.EditApplication"
+                                        CommandTarget="{Binding ElementName=AvailableActions}" />
+                                <Button Style="{StaticResource Office.RibbonSmallButtonStyle}"
+                                        Content="{localization:LocalisedText Ribbon.Delete}"
+                                        common:RibbonHelper.Icon="{StaticResource Icon.Delete}"
+                                        common:RibbonHelper.IconBrush="{StaticResource Office.IconDeleteBrush}"
+                                        Command="common:ControlPanelCommands.DeleteApplication"
+                                        CommandTarget="{Binding ElementName=AvailableActions}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </HeaderedContentControl>
+                    <HeaderedContentControl Style="{StaticResource Office.RibbonGroupStyle}"
+                                            Header="{localization:LocalisedText Ribbon.Groups.Actions}">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource Office.RibbonLargeButtonStyle}"
+                                    Content="{localization:LocalisedText Ribbon.NewAction}"
+                                    common:RibbonHelper.Icon="{StaticResource Icon.Action}"
+                                    common:RibbonHelper.IconBrush="{StaticResource Office.IconActionBrush}"
+                                    Command="common:ControlPanelCommands.NewAction"
+                                    CommandTarget="{Binding ElementName=AvailableActions}" />
+                            <StackPanel Style="{StaticResource Office.SmallStackStyle}">
+                                <Button Style="{StaticResource Office.RibbonSmallButtonStyle}"
+                                        Content="{localization:LocalisedText Ribbon.AddCommand}"
+                                        common:RibbonHelper.Icon="{StaticResource Icon.PlusBox}"
+                                        common:RibbonHelper.IconBrush="{StaticResource Office.IconAddBrush}"
+                                        Command="common:ControlPanelCommands.AddCommand"
+                                        CommandTarget="{Binding ElementName=AvailableActions}" />
+                                <Button Style="{StaticResource Office.RibbonSmallButtonStyle}"
+                                        Content="{localization:LocalisedText Ribbon.EditCommand}"
+                                        common:RibbonHelper.Icon="{StaticResource Icon.Pencil}"
+                                        Command="common:ControlPanelCommands.EditCommand"
+                                        CommandTarget="{Binding ElementName=AvailableActions}" />
+                                <Button Style="{StaticResource Office.RibbonSmallButtonStyle}"
+                                        Content="{localization:LocalisedText Ribbon.Delete}"
+                                        common:RibbonHelper.Icon="{StaticResource Icon.Delete}"
+                                        common:RibbonHelper.IconBrush="{StaticResource Office.IconDeleteBrush}"
+                                        Command="common:ControlPanelCommands.DeleteCommand"
+                                        CommandTarget="{Binding ElementName=AvailableActions}" />
+                            </StackPanel>
+                            <StackPanel Style="{StaticResource Office.SmallStackStyle}">
+                                <Button Style="{StaticResource Office.RibbonSmallButtonStyle}"
+                                        Content="{localization:LocalisedText Ribbon.MoveUp}"
+                                        common:RibbonHelper.Icon="{StaticResource Icon.ArrowUp}"
+                                        Command="common:ControlPanelCommands.MoveUp"
+                                        CommandTarget="{Binding ElementName=AvailableActions}" />
+                                <Button Style="{StaticResource Office.RibbonSmallButtonStyle}"
+                                        Content="{localization:LocalisedText Ribbon.MoveDown}"
+                                        common:RibbonHelper.Icon="{StaticResource Icon.ArrowDown}"
+                                        Command="common:ControlPanelCommands.MoveDown"
+                                        CommandTarget="{Binding ElementName=AvailableActions}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </HeaderedContentControl>
+                    <HeaderedContentControl Style="{StaticResource Office.RibbonGroupStyle}"
+                                            Header="{localization:LocalisedText Ribbon.Groups.Clipboard}">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource Office.RibbonLargeButtonStyle}"
+                                    Content="{localization:LocalisedText Ribbon.Paste}"
+                                    common:RibbonHelper.Icon="{StaticResource Icon.Paste}"
+                                    common:RibbonHelper.IconBrush="{StaticResource Office.IconAccentBrush}"
+                                    Command="ApplicationCommands.Paste"
+                                    CommandTarget="{Binding ElementName=AvailableActions}" />
+                            <StackPanel Style="{StaticResource Office.SmallStackStyle}">
+                                <Button Style="{StaticResource Office.RibbonSmallButtonStyle}"
+                                        Content="{localization:LocalisedText Ribbon.Cut}"
+                                        common:RibbonHelper.Icon="{StaticResource Icon.Cut}"
+                                        Command="ApplicationCommands.Cut"
+                                        CommandTarget="{Binding ElementName=AvailableActions}" />
+                                <Button Style="{StaticResource Office.RibbonSmallButtonStyle}"
+                                        Content="{localization:LocalisedText Ribbon.Copy}"
+                                        common:RibbonHelper.Icon="{StaticResource Icon.Copy}"
+                                        Command="ApplicationCommands.Copy"
+                                        CommandTarget="{Binding ElementName=AvailableActions}" />
+                                <Button Style="{StaticResource Office.RibbonSmallButtonStyle}"
+                                        Content="{localization:LocalisedText Ribbon.PasteToSelected}"
+                                        common:RibbonHelper.Icon="{StaticResource Icon.Paste}"
+                                        Command="common:ControlPanelCommands.PasteToSelected"
+                                        CommandTarget="{Binding ElementName=AvailableActions}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </HeaderedContentControl>
+                    <HeaderedContentControl Style="{StaticResource Office.RibbonGroupStyle}"
+                                            Header="{localization:LocalisedText Ribbon.Groups.Sort}">
+                        <StackPanel Style="{StaticResource Office.SmallStackStyle}">
+                            <RadioButton GroupName="ActionSort"
+                                         Style="{StaticResource Office.RibbonSmallToggleStyle}"
+                                         Content="{localization:LocalisedText Ribbon.SortByName}"
+                                         common:RibbonHelper.Icon="{StaticResource Icon.Sort}"
+                                         IsChecked="{Binding ElementName=AvailableActions, Path=IsSortedByGesture, Converter={StaticResource InverseBooleanConverter}}" />
+                            <RadioButton GroupName="ActionSort"
+                                         Style="{StaticResource Office.RibbonSmallToggleStyle}"
+                                         Content="{localization:LocalisedText Ribbon.SortByGesture}"
+                                         common:RibbonHelper.Icon="{StaticResource Icon.Gesture}"
+                                         IsChecked="{Binding ElementName=AvailableActions, Path=IsSortedByGesture}" />
+                        </StackPanel>
+                    </HeaderedContentControl>
+                    <HeaderedContentControl Style="{StaticResource Office.RibbonGroupStyle}"
+                                            Header="{localization:LocalisedText Ribbon.Groups.ImportExport}">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource Office.RibbonLargeButtonStyle}"
+                                    Content="{localization:LocalisedText Ribbon.Import}"
+                                    common:RibbonHelper.Icon="{StaticResource Icon.Import}"
+                                    common:RibbonHelper.IconBrush="{StaticResource Office.IconAccentBrush}"
+                                    Command="common:ControlPanelCommands.Import"
+                                    CommandTarget="{Binding ElementName=AvailableActions}" />
+                            <Button Style="{StaticResource Office.RibbonLargeButtonStyle}"
+                                    Content="{localization:LocalisedText Ribbon.Export}"
+                                    common:RibbonHelper.Icon="{StaticResource Icon.Export}"
+                                    common:RibbonHelper.IconBrush="{StaticResource Office.IconAccentBrush}"
+                                    Command="common:ControlPanelCommands.Export"
+                                    CommandTarget="{Binding ElementName=AvailableActions}" />
+                        </StackPanel>
+                    </HeaderedContentControl>
+                </StackPanel>
+
+                <!-- Gestures -->
+                <StackPanel x:Name="GesturesRibbon"
+                            Orientation="Horizontal"
+                            Visibility="Collapsed">
+                    <HeaderedContentControl Style="{StaticResource Office.RibbonGroupStyle}"
+                                            Header="{localization:LocalisedText Ribbon.Groups.Gestures}">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource Office.RibbonLargeButtonStyle}"
+                                    Content="{localization:LocalisedText Ribbon.EditGesture}"
+                                    common:RibbonHelper.Icon="{StaticResource Icon.Gesture}"
+                                    common:RibbonHelper.IconBrush="{StaticResource Office.IconAccentBrush}"
+                                    Command="common:ControlPanelCommands.EditGesture"
+                                    CommandTarget="{Binding ElementName=availableGestures}" />
+                            <Button Style="{StaticResource Office.RibbonLargeButtonStyle}"
+                                    Content="{localization:LocalisedText Ribbon.Delete}"
+                                    common:RibbonHelper.Icon="{StaticResource Icon.Delete}"
+                                    common:RibbonHelper.IconBrush="{StaticResource Office.IconDeleteBrush}"
+                                    Command="common:ControlPanelCommands.DeleteGesture"
+                                    CommandTarget="{Binding ElementName=availableGestures}" />
+                        </StackPanel>
+                    </HeaderedContentControl>
+                    <HeaderedContentControl Style="{StaticResource Office.RibbonGroupStyle}"
+                                            Header="{localization:LocalisedText Ribbon.Groups.View}">
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton GroupName="GestureViewRibbon"
+                                         Style="{StaticResource Office.RibbonLargeToggleStyle}"
+                                         Content="{localization:LocalisedText Ribbon.LargeIcons}"
+                                         common:RibbonHelper.Icon="{StaticResource Icon.ViewGrid}"
+                                         IsChecked="{Binding ElementName=availableGestures, Path=IsDetailsView, Converter={StaticResource InverseBooleanConverter}}" />
+                            <RadioButton GroupName="GestureViewRibbon"
+                                         Style="{StaticResource Office.RibbonLargeToggleStyle}"
+                                         Content="{localization:LocalisedText Ribbon.Details}"
+                                         common:RibbonHelper.Icon="{StaticResource Icon.ViewList}"
+                                         IsChecked="{Binding ElementName=availableGestures, Path=IsDetailsView}" />
+                        </StackPanel>
+                    </HeaderedContentControl>
+                    <HeaderedContentControl Style="{StaticResource Office.RibbonGroupStyle}"
+                                            Header="{localization:LocalisedText Ribbon.Groups.ImportExport}">
+                        <Button Style="{StaticResource Office.RibbonLargeButtonStyle}"
+                                Content="{localization:LocalisedText Ribbon.ImportGestures}"
+                                common:RibbonHelper.Icon="{StaticResource Icon.Import}"
+                                common:RibbonHelper.IconBrush="{StaticResource Office.IconAccentBrush}"
+                                Command="common:ControlPanelCommands.Import"
+                                CommandTarget="{Binding ElementName=availableGestures}" />
+                    </HeaderedContentControl>
+                </StackPanel>
+
+                <!-- Ignored applications -->
+                <StackPanel x:Name="IgnoredRibbon"
+                            Orientation="Horizontal"
+                            Visibility="Collapsed">
+                    <HeaderedContentControl Style="{StaticResource Office.RibbonGroupStyle}"
+                                            Header="{localization:LocalisedText Ribbon.Groups.IgnoredApps}">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource Office.RibbonLargeButtonStyle}"
+                                    Content="{localization:LocalisedText Ribbon.NewIgnoredApp}"
+                                    common:RibbonHelper.Icon="{StaticResource Icon.Cancel}"
+                                    common:RibbonHelper.IconBrush="{StaticResource Office.IconDeleteBrush}"
+                                    Command="common:ControlPanelCommands.NewIgnoredApplication"
+                                    CommandTarget="{Binding ElementName=ignoredApplications}" />
+                            <StackPanel Style="{StaticResource Office.SmallStackStyle}">
+                                <Button Style="{StaticResource Office.RibbonSmallButtonStyle}"
+                                        Content="{localization:LocalisedText Ribbon.Edit}"
+                                        common:RibbonHelper.Icon="{StaticResource Icon.Pencil}"
+                                        Command="common:ControlPanelCommands.EditIgnoredApplication"
+                                        CommandTarget="{Binding ElementName=ignoredApplications}" />
+                                <Button Style="{StaticResource Office.RibbonSmallButtonStyle}"
+                                        Content="{localization:LocalisedText Ribbon.Delete}"
+                                        common:RibbonHelper.Icon="{StaticResource Icon.Delete}"
+                                        common:RibbonHelper.IconBrush="{StaticResource Office.IconDeleteBrush}"
+                                        Command="common:ControlPanelCommands.DeleteIgnoredApplication"
+                                        CommandTarget="{Binding ElementName=ignoredApplications}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </HeaderedContentControl>
+                    <HeaderedContentControl Style="{StaticResource Office.RibbonGroupStyle}"
+                                            Header="{localization:LocalisedText Ribbon.Groups.ImportExport}">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource Office.RibbonLargeButtonStyle}"
+                                    Content="{localization:LocalisedText Ribbon.Import}"
+                                    common:RibbonHelper.Icon="{StaticResource Icon.Import}"
+                                    common:RibbonHelper.IconBrush="{StaticResource Office.IconAccentBrush}"
+                                    Command="common:ControlPanelCommands.Import"
+                                    CommandTarget="{Binding ElementName=ignoredApplications}" />
+                            <Button Style="{StaticResource Office.RibbonLargeButtonStyle}"
+                                    Content="{localization:LocalisedText Ribbon.Export}"
+                                    common:RibbonHelper.Icon="{StaticResource Icon.Export}"
+                                    common:RibbonHelper.IconBrush="{StaticResource Office.IconAccentBrush}"
+                                    Command="common:ControlPanelCommands.Export"
+                                    CommandTarget="{Binding ElementName=ignoredApplications}" />
+                        </StackPanel>
+                    </HeaderedContentControl>
+                </StackPanel>
+
+                <!-- Help -->
+                <StackPanel x:Name="HelpRibbon"
+                            Orientation="Horizontal"
+                            Visibility="Collapsed">
+                    <HeaderedContentControl Style="{StaticResource Office.RibbonGroupStyle}"
+                                            Header="{localization:LocalisedText Ribbon.Groups.Help}">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource Office.RibbonLargeButtonStyle}"
+                                    Content="{localization:LocalisedText Ribbon.Help}"
+                                    common:RibbonHelper.Icon="{StaticResource Icon.Help}"
+                                    common:RibbonHelper.IconBrush="{StaticResource Office.IconAccentBrush}"
+                                    CommandParameter="{localization:LocalisedText About.HelpPageUrl}"
+                                    Click="Hyperlink_Click" />
+                            <StackPanel Style="{StaticResource Office.SmallStackStyle}">
+                                <Button Style="{StaticResource Office.RibbonSmallButtonStyle}"
+                                        Content="{localization:LocalisedText About.Homepage}"
+                                        common:RibbonHelper.Icon="{StaticResource Icon.Home}"
+                                        CommandParameter="{localization:LocalisedText About.HomepageUrl}"
+                                        Click="Hyperlink_Click" />
+                                <Button Style="{StaticResource Office.RibbonSmallButtonStyle}"
+                                        Content="{localization:LocalisedText About.Store}"
+                                        common:RibbonHelper.Icon="{StaticResource Icon.Store}"
+                                        CommandParameter="ms-windows-store://pdp/?productid=9n45wqvk2qqw"
+                                        Click="Hyperlink_Click" />
+                            </StackPanel>
+                        </StackPanel>
+                    </HeaderedContentControl>
+                    <HeaderedContentControl Style="{StaticResource Office.RibbonGroupStyle}"
+                                            Header="{localization:LocalisedText Ribbon.Groups.Feedback}">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource Office.RibbonLargeButtonStyle}"
+                                    Content="{localization:LocalisedText About.SendFeedback}"
+                                    common:RibbonHelper.Icon="{StaticResource Icon.Feedback}"
+                                    common:RibbonHelper.IconBrush="{StaticResource Office.IconAccentBrush}"
+                                    Click="SendFeedback_Click" />
+                            <Button Style="{StaticResource Office.RibbonLargeButtonStyle}"
+                                    Content="{localization:LocalisedText About.Header}"
+                                    common:RibbonHelper.Icon="{StaticResource Icon.Info}"
+                                    Click="AboutButton_Click" />
+                        </StackPanel>
+                    </HeaderedContentControl>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Workspace -->
+        <Grid Grid.Row="2"
+              Background="{StaticResource Office.WorkspaceBackgroundBrush}">
+            <mainWindowControl:AvailableActions x:Name="AvailableActions"
+                                                Margin="6" />
+            <Border x:Name="GesturesWorkspace"
+                    Style="{StaticResource Office.PaneStyle}"
+                    Margin="6"
+                    Visibility="Collapsed">
+                <DockPanel>
+                    <Border DockPanel.Dock="Top"
+                            Style="{StaticResource Office.PaneHeaderStyle}">
+                        <TextBlock Style="{StaticResource Office.PaneTitleStyle}"
+                                   Text="{localization:LocalisedText Ribbon.Tabs.Gestures}" />
+                    </Border>
+                    <mainWindowControl:AvailableGestures x:Name="availableGestures" />
+                </DockPanel>
+            </Border>
+            <Border x:Name="IgnoredWorkspace"
+                    Style="{StaticResource Office.PaneStyle}"
+                    Margin="6"
+                    Visibility="Collapsed">
+                <DockPanel>
+                    <Border DockPanel.Dock="Top"
+                            Style="{StaticResource Office.PaneHeaderStyle}">
+                        <TextBlock Style="{StaticResource Office.PaneTitleStyle}"
+                                   Text="{localization:LocalisedText Ribbon.Groups.IgnoredApps}" />
+                    </Border>
+                    <mainWindowControl:IgnoredApplications x:Name="ignoredApplications" />
+                </DockPanel>
+            </Border>
+        </Grid>
+
+        <!-- Status bar -->
+        <Border Grid.Row="3"
+                Height="24"
+                Background="{StaticResource Office.StatusBarBrush}"
+                BorderBrush="{StaticResource Office.PaneBorderBrush}"
+                BorderThickness="0,1,0,0">
+            <DockPanel>
+                <StackPanel x:Name="GestureViewSwitch"
+                            DockPanel.Dock="Right"
+                            Orientation="Horizontal"
+                            Margin="0,0,8,0"
+                            Visibility="Collapsed">
+                    <RadioButton GroupName="GestureViewStatus"
+                                 Style="{StaticResource Office.IconButtonStyle}"
+                                 common:RibbonHelper.Icon="{StaticResource Icon.ViewGrid}"
+                                 ToolTip="{localization:LocalisedText Ribbon.LargeIcons}"
+                                 IsChecked="{Binding ElementName=availableGestures, Path=IsDetailsView, Converter={StaticResource InverseBooleanConverter}}" />
+                    <RadioButton GroupName="GestureViewStatus"
+                                 Style="{StaticResource Office.IconButtonStyle}"
+                                 common:RibbonHelper.Icon="{StaticResource Icon.ViewList}"
+                                 ToolTip="{localization:LocalisedText Ribbon.Details}"
+                                 IsChecked="{Binding ElementName=availableGestures, Path=IsDetailsView}" />
+                </StackPanel>
+                <TextBlock x:Name="StatusText"
+                           Style="{StaticResource Office.StatusTextStyle}"
+                           Margin="10,0" />
+            </DockPanel>
+        </Border>
+
+        <!-- Backstage (File) -->
+        <Grid x:Name="Backstage"
+              Grid.RowSpan="4"
+              Panel.ZIndex="10"
+              Background="{StaticResource Office.PaneBackgroundBrush}"
+              Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="210" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Border Background="{StaticResource Office.AccentBrush}">
+                <StackPanel Margin="0,10,0,0">
+                    <Button x:Name="BackstageBackButton"
+                            Style="{StaticResource Office.BackstageItemStyle}"
+                            Content="{localization:LocalisedText Ribbon.Back}"
+                            common:RibbonHelper.Icon="{StaticResource Icon.ArrowLeft}"
+                            Margin="0,0,0,10"
+                            Click="BackstageBackButton_Click" />
+                    <RadioButton x:Name="OptionsPageButton"
+                                 GroupName="Backstage"
+                                 Style="{StaticResource Office.BackstageItemStyle}"
+                                 Content="{localization:LocalisedText Options.Header}"
+                                 common:RibbonHelper.Icon="{StaticResource Icon.Options}"
+                                 IsChecked="True" />
+                    <RadioButton x:Name="AboutPageButton"
+                                 GroupName="Backstage"
+                                 Style="{StaticResource Office.BackstageItemStyle}"
+                                 Content="{localization:LocalisedText About.Header}"
+                                 common:RibbonHelper.Icon="{StaticResource Icon.Info}" />
+                    <Rectangle Height="1"
+                               Margin="20,10"
+                               Fill="White"
+                               Opacity="0.3" />
+                    <Button Style="{StaticResource Office.BackstageItemStyle}"
+                            Content="{localization:LocalisedText Ribbon.Help}"
+                            common:RibbonHelper.Icon="{StaticResource Icon.Help}"
+                            CommandParameter="{localization:LocalisedText About.HelpPageUrl}"
+                            Click="Hyperlink_Click" />
+                    <Button Style="{StaticResource Office.BackstageItemStyle}"
+                            Content="{localization:LocalisedText About.SendFeedback}"
+                            common:RibbonHelper.Icon="{StaticResource Icon.Feedback}"
+                            Click="SendFeedback_Click" />
+                </StackPanel>
+            </Border>
+
+            <DockPanel Grid.Column="1"
+                       Margin="40,24,24,0"
+                       Visibility="{Binding ElementName=OptionsPageButton, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <TextBlock DockPanel.Dock="Top"
+                           Style="{StaticResource Office.BackstageTitleStyle}"
+                           Text="{localization:LocalisedText Options.Header}" />
+                <mainWindowControl:Options Width="Auto"
+                                           Height="Auto"
+                                           MaxWidth="560"
+                                           HorizontalAlignment="Left" />
+            </DockPanel>
+
+            <ScrollViewer Grid.Column="1"
+                          Margin="40,24,24,0"
+                          PanningMode="VerticalFirst"
+                          VerticalScrollBarVisibility="Auto"
+                          Visibility="{Binding ElementName=AboutPageButton, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <StackPanel HorizontalAlignment="Left"
+                            MaxWidth="560">
+                    <TextBlock Style="{StaticResource Office.BackstageTitleStyle}"
+                               Text="{localization:LocalisedText About.Header}" />
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0,0,0,12">
+                        <Image Source="Resources/normal.ico"
+                               Width="32"
+                               Height="32"
+                               Margin="0,0,12,0" />
+                        <TextBlock Text="GestureSign"
+                                   FontSize="20"
+                                   FontWeight="SemiBold"
+                                   VerticalAlignment="Center" />
                     </StackPanel>
-                </ScrollViewer>
-            </TabItem>
-        </TabControl>
+                    <TextBox x:Name="AboutTextBox"
+                             Style="{StaticResource AboutTextStyle}"
+                             Text="{localization:LocalisedText About.Information}" />
+                    <TextBlock Margin="0,0,0,18"
+                               FontSize="12">
+                        <Hyperlink Click="Hyperlink_Click"
+                                   CommandParameter="{localization:LocalisedText About.HomepageUrl}">
+                            <Run Text="{localization:LocalisedText About.Homepage}" />
+                        </Hyperlink>
+                        <Run Text="   " />
+                        <Hyperlink Click="Hyperlink_Click"
+                                   CommandParameter="ms-windows-store://pdp/?productid=9n45wqvk2qqw">
+                            <Run Text="{localization:LocalisedText About.Store}" />
+                        </Hyperlink>
+                        <Run Text="   " />
+                        <Hyperlink Click="SendFeedback_Click">
+                            <Run Text="{localization:LocalisedText About.SendFeedback}" />
+                        </Hyperlink>
+                    </TextBlock>
+                    <TextBox Style="{StaticResource AboutTextStyle}"
+                             Text="Project Page&#xA;https://github.com/TransposonY/GestureSign&#xA;&#xA;Thanks to the following project:&#xA;http://highsign.codeplex.com/&#xA;License:http://highsign.codeplex.com/license&#xA;&#xA;MahApps.Metro&#xA;https://github.com/MahApps/MahApps.Metro&#xA;License:http://www.opensource.org/licenses/MS-PL&#xA;&#xA;WGestures&#xA;https://github.com/yingDev/WGestures&#xA;License:https://github.com/yingDev/WGestures/blob/master/LICENSE" />
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </common:TouchWindow>

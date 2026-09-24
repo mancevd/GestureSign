@@ -47,7 +47,7 @@
 
             <system:Double x:Key="HeaderFontSize">40</system:Double>
             <system:Double x:Key="SubHeaderFontSize">29.333</system:Double>
-            <system:Double x:Key="WindowTitleFontSize">16</system:Double>
+            <system:Double x:Key="WindowTitleFontSize">12</system:Double>
             <system:Double x:Key="NormalFontSize">14</system:Double>
             <system:Double x:Key="ContentFontSize">12</system:Double>
             <system:Double x:Key="FlatButtonFontSize">14</system:Double>
@@ -79,6 +79,7 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
                 <ResourceDictionary Source="UserControls/RadioButtonStyle.xaml" />
+                <ResourceDictionary Source="Themes/Office.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -279,4 +279,56 @@ Email:ccfyzh@gmail.com
       <TaskUserDisabled>The task has been disabled by user, please enable it in the Startup section of Task Manager. </TaskUserDisabled>
     </Messages>
   </Options>
+  <Ribbon>
+    <File>File</File>
+    <Back>Back</Back>
+    <ToggleRibbon>Show or hide the ribbon (Ctrl+F1)</ToggleRibbon>
+    <Tabs>
+      <Actions>Actions</Actions>
+      <Gestures>Gestures</Gestures>
+      <Ignored>Ignored Apps</Ignored>
+      <Help>Help</Help>
+    </Tabs>
+    <Groups>
+      <Applications>Applications</Applications>
+      <Actions>Actions</Actions>
+      <Clipboard>Clipboard</Clipboard>
+      <Sort>Sort</Sort>
+      <ImportExport>Import/Export</ImportExport>
+      <Gestures>Gestures</Gestures>
+      <View>View</View>
+      <IgnoredApps>Ignored Applications</IgnoredApps>
+      <Help>Help</Help>
+      <Feedback>Feedback</Feedback>
+    </Groups>
+    <NewApplication>New Application</NewApplication>
+    <Edit>Edit</Edit>
+    <Delete>Delete</Delete>
+    <NewAction>New Action</NewAction>
+    <AddCommand>Add Command</AddCommand>
+    <EditCommand>Edit Command</EditCommand>
+    <MoveUp>Move Up</MoveUp>
+    <MoveDown>Move Down</MoveDown>
+    <Paste>Paste</Paste>
+    <Cut>Cut</Cut>
+    <Copy>Copy</Copy>
+    <PasteToSelected>Paste Into Action</PasteToSelected>
+    <SortByName>By Name</SortByName>
+    <SortByGesture>By Gesture</SortByGesture>
+    <Import>Import</Import>
+    <Export>Export</Export>
+    <EditGesture>Redraw Gesture</EditGesture>
+    <ImportGestures>Import Gestures</ImportGestures>
+    <LargeIcons>Large Icons</LargeIcons>
+    <Details>Details</Details>
+    <NewIgnoredApp>New Ignored App</NewIgnoredApp>
+    <Help>Help</Help>
+    <ApplicationsPane>Applications</ApplicationsPane>
+    <EnableAll>Enable all</EnableAll>
+    <Status>
+      <Applications>{0} applications</Applications>
+      <Gestures>{0} gestures</Gestures>
+      <Ignored>{0} ignored applications</Ignored>
+    </Status>
+  </Ribbon>
 </Language>

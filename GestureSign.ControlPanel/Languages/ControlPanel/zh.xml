@@ -283,4 +283,56 @@ QQ交流群：576981420
       <TaskUserDisabled>开机启动已被用户禁用，请先在任务管理器中启用。</TaskUserDisabled>
     </Messages>
   </Options>
+  <Ribbon>
+    <File>文件</File>
+    <Back>返回</Back>
+    <ToggleRibbon>显示或隐藏功能区 (Ctrl+F1)</ToggleRibbon>
+    <Tabs>
+      <Actions>动作</Actions>
+      <Gestures>手势</Gestures>
+      <Ignored>忽略的程序</Ignored>
+      <Help>帮助</Help>
+    </Tabs>
+    <Groups>
+      <Applications>程序</Applications>
+      <Actions>动作</Actions>
+      <Clipboard>剪贴板</Clipboard>
+      <Sort>排序</Sort>
+      <ImportExport>导入/导出</ImportExport>
+      <Gestures>手势</Gestures>
+      <View>视图</View>
+      <IgnoredApps>忽略的程序</IgnoredApps>
+      <Help>帮助</Help>
+      <Feedback>反馈</Feedback>
+    </Groups>
+    <NewApplication>新建程序</NewApplication>
+    <Edit>编辑</Edit>
+    <Delete>删除</Delete>
+    <NewAction>新建动作</NewAction>
+    <AddCommand>添加命令</AddCommand>
+    <EditCommand>编辑命令</EditCommand>
+    <MoveUp>上移</MoveUp>
+    <MoveDown>下移</MoveDown>
+    <Paste>粘贴</Paste>
+    <Cut>剪切</Cut>
+    <Copy>复制</Copy>
+    <PasteToSelected>粘贴到动作</PasteToSelected>
+    <SortByName>按名称</SortByName>
+    <SortByGesture>按手势</SortByGesture>
+    <Import>导入</Import>
+    <Export>导出</Export>
+    <EditGesture>重绘手势</EditGesture>
+    <ImportGestures>导入手势</ImportGestures>
+    <LargeIcons>大图标</LargeIcons>
+    <Details>详细信息</Details>
+    <NewIgnoredApp>新建忽略程序</NewIgnoredApp>
+    <Help>帮助</Help>
+    <ApplicationsPane>程序</ApplicationsPane>
+    <EnableAll>全部启用</EnableAll>
+    <Status>
+      <Applications>{0} 个程序</Applications>
+      <Gestures>{0} 个手势</Gestures>
+      <Ignored>{0} 个忽略的程序</Ignored>
+    </Status>
+  </Ribbon>
 </Language>

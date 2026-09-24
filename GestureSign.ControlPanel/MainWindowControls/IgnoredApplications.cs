@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Threading;
 
 namespace GestureSign.ControlPanel.MainWindowControls
@@ -23,6 +24,23 @@ namespace GestureSign.ControlPanel.MainWindowControls
         public IgnoredApplications()
         {
             InitializeComponent();
+            RegisterCommands();
+        }
+
+        private void RegisterCommands()
+        {
+            Bind(ControlPanelCommands.NewIgnoredApplication, (s, e) => btnAddIgnoredApp_Click(s, e));
+            Bind(ControlPanelCommands.EditIgnoredApplication, (s, e) => EditIgnoredApp(), () => lstIgnoredApplications.SelectedItem != null);
+            Bind(ControlPanelCommands.DeleteIgnoredApplication, (s, e) => btnDeleteIgnoredApp_Click(s, e), () => lstIgnoredApplications.SelectedItem != null);
+            Bind(ControlPanelCommands.Import, (s, e) => DownloadButton_Click(s, e));
+            Bind(ControlPanelCommands.Export, (s, e) => ExportIgnoredButton_Click(s, e));
+
+            lstIgnoredApplications.InputBindings.Add(new KeyBinding(ControlPanelCommands.DeleteIgnoredApplication, Key.Delete, ModifierKeys.None));
+        }
+
+        private void Bind(System.Windows.Input.ICommand command, ExecutedRoutedEventHandler executed, Func<bool> canExecute = null)
+        {
+            CommandBindings.Add(new CommandBinding(command, executed, (s, e) => e.CanExecute = canExecute == null || canExecute()));
         }
 
         private void UserControl_Initialized(object sender, EventArgs eArgs)
@@ -61,8 +79,7 @@ namespace GestureSign.ControlPanel.MainWindowControls
 
         private void lstIgnoredApplications_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            this.btnEditIgnoredApp.IsEnabled = this.btnDeleteIgnoredApp.IsEnabled =
-                this.lstIgnoredApplications.SelectedItem != null;
+            CommandManager.InvalidateRequerySuggested();
         }
 
         private void EnabledIgnoredAppCheckBoxs_Click(object sender, RoutedEventArgs e)

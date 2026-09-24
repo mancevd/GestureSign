@@ -23,14 +23,42 @@ namespace GestureSign.ControlPanel.MainWindowControls
     /// </summary>
     public partial class AvailableGestures : UserControl
     {
+        public static readonly DependencyProperty IsDetailsViewProperty =
+            DependencyProperty.Register(nameof(IsDetailsView), typeof(bool), typeof(AvailableGestures),
+                new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnIsDetailsViewChanged));
+
+        public bool IsDetailsView
+        {
+            get { return (bool)GetValue(IsDetailsViewProperty); }
+            set { SetValue(IsDetailsViewProperty, value); }
+        }
+
+        private static void OnIsDetailsViewChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = (AvailableGestures)d;
+            bool details = (bool)e.NewValue;
+            control.DetailsMenuItem.IsChecked = details;
+            control.LargeIconsMenuItem.IsChecked = !details;
+        }
+
         public AvailableGestures()
         {
             InitializeComponent();
+
+            Bind(ControlPanelCommands.EditGesture, (s, e) => EditGesture(), () => lstAvailableGestures.SelectedItems.Count > 0);
+            Bind(ControlPanelCommands.DeleteGesture, (s, e) => btnDelGesture_Click(s, e), () => lstAvailableGestures.SelectedItems.Count > 0);
+            Bind(ControlPanelCommands.Import, (s, e) => ImportGestureMenuItem_Click(s, e));
+            lstAvailableGestures.InputBindings.Add(new KeyBinding(ControlPanelCommands.DeleteGesture, Key.Delete, ModifierKeys.None));
+        }
+
+        private void Bind(ICommand command, ExecutedRoutedEventHandler executed, Func<bool> canExecute = null)
+        {
+            CommandBindings.Add(new CommandBinding(command, executed, (s, e) => e.CanExecute = canExecute == null || canExecute()));
         }
 
         private void lstAvailableGestures_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            this.btnEditGesture.IsEnabled = this.btnDelGesture.IsEnabled = lstAvailableGestures.SelectedItems.Count > 0;
+            CommandManager.InvalidateRequerySuggested();
         }
 
         private void btnDelGesture_Click(object sender, RoutedEventArgs e)
@@ -103,6 +131,7 @@ namespace GestureSign.ControlPanel.MainWindowControls
                         if (current != null)
                             current.IsChecked = false;
                 }
+            IsDetailsView = ReferenceEquals(clickedMenuItem, DetailsMenuItem);
         }
 
         private void ListViewItem_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)

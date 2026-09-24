@@ -1,5 +1,7 @@
 ﻿using GestureSign.Common;
+using GestureSign.Common.Applications;
 using GestureSign.Common.Configuration;
+using GestureSign.Common.Gestures;
 using GestureSign.Common.Localization;
 using GestureSign.Common.Log;
 using GestureSign.ControlPanel.Common;
@@ -9,11 +11,13 @@ using Microsoft.Win32;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Threading;
 
 namespace GestureSign.ControlPanel
@@ -26,10 +30,16 @@ namespace GestureSign.ControlPanel
         public MainWindow()
         {
             InitializeComponent();
+            UpdateRibbonTab();
         }
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            ApplicationManager.Instance.CollectionChanged += (o, args) => Dispatcher.InvokeAsync(UpdateStatusText);
+            ApplicationManager.ApplicationSaved += (o, args) => Dispatcher.InvokeAsync(UpdateStatusText);
+            GestureManager.GestureSaved += (o, args) => Dispatcher.InvokeAsync(UpdateStatusText);
+            UpdateStatusText();
+
             if (CheckIfApplicationRunAsAdmin())
             {
                 var result = MessageBox.Show(LocalizationProvider.Instance.GetTextValue("Messages.CompatWarning"),
@@ -76,6 +86,115 @@ namespace GestureSign.ControlPanel
         private void SendFeedback_Click(object sender, RoutedEventArgs e)
         {
             SendFeedback();
+        }
+
+        private void RibbonTab_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateRibbonTab();
+        }
+
+        private void UpdateRibbonTab()
+        {
+            if (RibbonBody == null) return;
+
+            ActionsRibbon.Visibility = ActionsTab.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            GesturesRibbon.Visibility = GesturesTab.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            IgnoredRibbon.Visibility = IgnoredTab.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            HelpRibbon.Visibility = HelpTab.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+
+            // The Help tab only swaps commands; it keeps whichever workspace was last shown.
+            if (HelpTab.IsChecked == true) return;
+
+            AvailableActions.Visibility = ActionsTab.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            GesturesWorkspace.Visibility = GesturesTab.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            IgnoredWorkspace.Visibility = IgnoredTab.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            GestureViewSwitch.Visibility = GesturesWorkspace.Visibility;
+            UpdateStatusText();
+        }
+
+        private void UpdateStatusText()
+        {
+            if (StatusText == null) return;
+
+            string format;
+            int count;
+            if (GesturesWorkspace.Visibility == Visibility.Visible)
+            {
+                format = "Ribbon.Status.Gestures";
+                count = GestureManager.Instance.Gestures?.Length ?? 0;
+            }
+            else if (IgnoredWorkspace.Visibility == Visibility.Visible)
+            {
+                format = "Ribbon.Status.Ignored";
+                count = ApplicationManager.Instance.GetIgnoredApplications().Count();
+            }
+            else
+            {
+                format = "Ribbon.Status.Applications";
+                count = ApplicationManager.Instance.GetAvailableUserApplications().Length;
+            }
+            StatusText.Text = string.Format(LocalizationProvider.Instance.GetTextValue(format), count);
+        }
+
+        private void RibbonTab_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            ToggleRibbon();
+        }
+
+        private void CollapseRibbonButton_Click(object sender, RoutedEventArgs e)
+        {
+            SetRibbonCollapsed(CollapseRibbonButton.IsChecked == true);
+        }
+
+        private void ToggleRibbon()
+        {
+            SetRibbonCollapsed(RibbonBody.Visibility == Visibility.Visible);
+        }
+
+        private void SetRibbonCollapsed(bool collapsed)
+        {
+            RibbonBody.Visibility = collapsed ? Visibility.Collapsed : Visibility.Visible;
+            CollapseRibbonButton.IsChecked = collapsed;
+            RibbonHelper.SetIcon(CollapseRibbonButton, (Geometry)FindResource(collapsed ? "Icon.ChevronDown" : "Icon.ChevronUp"));
+        }
+
+        private void FileButton_Click(object sender, RoutedEventArgs e)
+        {
+            Backstage.Visibility = Visibility.Visible;
+            OptionsPageButton.Focus();
+        }
+
+        private void AboutButton_Click(object sender, RoutedEventArgs e)
+        {
+            AboutPageButton.IsChecked = true;
+            Backstage.Visibility = Visibility.Visible;
+            AboutPageButton.Focus();
+        }
+
+        private void BackstageBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            CloseBackstage();
+        }
+
+        private void CloseBackstage()
+        {
+            Backstage.Visibility = Visibility.Collapsed;
+            FileButton.Focus();
+        }
+
+        protected override void OnPreviewKeyDown(KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape && Backstage.Visibility == Visibility.Visible)
+            {
+                CloseBackstage();
+                e.Handled = true;
+            }
+            else if (e.Key == Key.F1 && Keyboard.Modifiers == ModifierKeys.Control)
+            {
+                ToggleRibbon();
+                e.Handled = true;
+            }
+            base.OnPreviewKeyDown(e);
         }
 
         private bool ExistsNewerErrorLog()
