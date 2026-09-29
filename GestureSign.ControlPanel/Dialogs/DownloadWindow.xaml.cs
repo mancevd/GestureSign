@@ -26,6 +26,7 @@ namespace GestureSign.ControlPanel.Dialogs
         private object _thisLock = new object();
         private bool _isDownloaded;
         private string _tempDirectory;
+        private List<ContinuousGesture> _continuousGestures = new List<ContinuousGesture>();
 
         private string[] _source = new string[] { "https://transposony.coding.net/p/GestureSignSettings/d/GestureSignSettings/git/archive/master",
             "https://github.com/TransposonY/GestureSignSettings/archive/master.zip" };
@@ -125,8 +126,13 @@ namespace GestureSign.ControlPanel.Dialogs
                 }
             }
 
+            // Setting files predate the continuous gesture catalog and embed continuous gestures in actions.
+            var continuousGestures = new List<ContinuousGesture>();
+            ContinuousGestureCatalog.MigrateLegacy(newApps, continuousGestures);
+
             Dispatcher.InvokeAsync(() =>
             {
+                _continuousGestures = continuousGestures;
                 ApplicationSelector.Initialize(newApps, gestures);
                 ProgressRing.Visibility = Visibility.Collapsed;
                 ApplicationSelector.Visibility = Visibility.Visible;
@@ -155,8 +161,11 @@ namespace GestureSign.ControlPanel.Dialogs
                             var newApps = FileManager.LoadObject<List<IApplication>>(ofdApplications.FileName, false, true, true);
                             if (newApps != null)
                             {
+                                // Pre-catalog files embed continuous gestures in actions.
+                                var continuousGestures = new List<ContinuousGesture>();
+                                ContinuousGestureCatalog.MigrateLegacy(newApps, continuousGestures);
                                 Hide();
-                                ExportImportDialog exportImportDialog = new ExportImportDialog(false, false, newApps, GestureManager.Instance.Gestures);
+                                ExportImportDialog exportImportDialog = new ExportImportDialog(false, false, newApps, GestureManager.Instance.Gestures, continuousGestures);
                                 exportImportDialog.ShowDialog();
                                 Close();
                             }
@@ -165,11 +174,12 @@ namespace GestureSign.ControlPanel.Dialogs
                             {
                                 IEnumerable<IApplication> applications;
                                 IEnumerable<IGesture> gestures;
-                                Archive.LoadFromArchive(ofdApplications.FileName, out applications, out gestures);
+                                List<ContinuousGesture> continuousGestures;
+                                Archive.LoadFromArchive(ofdApplications.FileName, out applications, out gestures, out continuousGestures);
                                 if (applications != null && gestures != null)
                                 {
                                     Hide();
-                                    ExportImportDialog exportImportDialog = new ExportImportDialog(false, false, applications, gestures);
+                                    ExportImportDialog exportImportDialog = new ExportImportDialog(false, false, applications, gestures, continuousGestures);
                                     exportImportDialog.ShowDialog();
                                     Close();
                                 }
@@ -187,11 +197,13 @@ namespace GestureSign.ControlPanel.Dialogs
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
             int newActionCount = 0;
+            bool iconUpdated = false;
             List<IApplication> newApplications = new List<IApplication>();
             var seletedApplications = ApplicationSelector.SeletedApplications;
 
             var gestures = seletedApplications.GetRelatedGestures(ApplicationSelector.GestureMap.Values.Select(gi => gi.Gesture));
             GestureManager.Instance.ImportGestures(gestures, seletedApplications);
+            ContinuousGestureManager.Instance.Import(seletedApplications.GetRelatedContinuousGestures(_continuousGestures), seletedApplications);
 
             foreach (IApplication newApp in seletedApplications)
             {
@@ -201,6 +213,10 @@ namespace GestureSign.ControlPanel.Dialogs
                     if (matchApp.Length == 0)
                     {
                         newApplications.Add(newApp);
+                    }
+                    else if (ApplicationIcon.TryApplyImported(matchApp[0], newApp))
+                    {
+                        iconUpdated = true;
                     }
                 }
                 else
@@ -213,6 +229,8 @@ namespace GestureSign.ControlPanel.Dialogs
                             existingApp.AddAction(newAction);
                             newActionCount++;
                         }
+                        if (ApplicationIcon.TryApplyImported(existingApp, newApp))
+                            iconUpdated = true;
                     }
                     else
                     {
@@ -225,8 +243,9 @@ namespace GestureSign.ControlPanel.Dialogs
             {
                 ApplicationManager.Instance.AddApplicationRange(newApplications);
             }
-            if (newApplications.Count + newActionCount != 0)
+            if (newApplications.Count + newActionCount != 0 || iconUpdated)
                 ApplicationManager.Instance.SaveApplications();
+
 
             this.ShowModalMessageExternal(LocalizationProvider.Instance.GetTextValue("ExportImportDialog.ImportCompleteTitle"),
                 String.Format(LocalizationProvider.Instance.GetTextValue("ExportImportDialog.ImportComplete"), newActionCount, newApplications.Count));

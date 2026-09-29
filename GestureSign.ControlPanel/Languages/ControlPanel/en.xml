@@ -37,7 +37,6 @@ This may lead to function failure(e.g. Start application at Windows startup).
     <Store>Microsoft Store</Store>
     <HelpPageUrl>https://gesturesign.win/#/guide</HelpPageUrl>
     <Version>Version  </Version>
-    <ReleaseDate>ReleaseDate  </ReleaseDate>
     <Information>Author:TransposonY
 Translator:TransposonY
 Email:ccfyzh@gmail.com
@@ -79,6 +78,11 @@ Email:ccfyzh@gmail.com
     <LimitNumberOfFingers>Number Of Fingers</LimitNumberOfFingers>
     <LimitNumberOfFingersInfo>At least {0} fingers</LimitNumberOfFingersInfo>
     <MatchActivatedWindow>Match Activated Window</MatchActivatedWindow>
+    <Icon>Icon</Icon>
+    <ChooseIcon>Choose Image...</ChooseIcon>
+    <ClearIcon>Clear Icon</ClearIcon>
+    <IconFileFilter>Image and Icon Files</IconFileFilter>
+
     <Messages>
       <EmptyStringTitle>No Match String</EmptyStringTitle>
       <EmptyString>Please provide Match String for the application</EmptyString>
@@ -159,6 +163,26 @@ Email:ccfyzh@gmail.com
     <Down>Swipe Down</Down>
     <Fingers>{0} Fingers </Fingers>
     <Sort>Sort by</Sort>
+    <Search>Search gesture or command...</Search>
+    <FingerCount>Fingers</FingerCount>
+    <AllFingers>All</AllFingers>
+    <SixOrMoreFingers>6+</SixOrMoreFingers>
+    <Applications>Applications</Applications>
+    <NewApplication>New Application</NewApplication>
+    <MoveUp>Move Up</MoveUp>
+    <MoveDown>Move Down</MoveDown>
+    <RibbonApplication>Application</RibbonApplication>
+    <RibbonAction>Action</RibbonAction>
+    <RibbonFilter>Filter by fingers</RibbonFilter>
+    <RibbonBackup>Backup</RibbonBackup>
+    <Enabled>Enabled</Enabled>
+    <ColumnName>Name</ColumnName>
+    <ColumnGesture>Gesture</ColumnGesture>
+    <ColumnCommand>Command</ColumnCommand>
+    <ColumnOn>On</ColumnOn>
+    <ClickToSelectGesture>Click to select a gesture</ClickToSelectGesture>
+    <ActionsSummary>{0} actions</ActionsSummary>
+    <FingersStatus>Fingers: {0}</FingersStatus>
     <Messages>
       <DeleteConfirmTitle>Delete Confirm</DeleteConfirmTitle>
       <DeleteCommandConfirm>Are you sure you want to delete these {0} Commands?</DeleteCommandConfirm>
@@ -208,6 +232,37 @@ Email:ccfyzh@gmail.com
       <ImportComplete>{0} similar gestures have been ignored, {1} new gesture have been added</ImportComplete>
     </Messages>
   </Gesture>
+  <ContinuousGesture>
+    <Header>Continuous Gestures</Header>
+    <New>New</New>
+    <Name>Name</Name>
+    <Fingers>Fingers</Fingers>
+    <Direction>Direction</Direction>
+    <UsedBy>Used by</UsedBy>
+    <Empty>No continuous gestures yet. Click "New" to create a multi-finger swipe and bind it to actions.</Empty>
+    <Dialog>
+      <NewTitle>New Continuous Gesture</NewTitle>
+      <EditTitle>Edit Continuous Gesture</EditTitle>
+      <NameWatermark>Please enter a name</NameWatermark>
+      <Motion>Motion</Motion>
+      <BoundActions>Bound Actions</BoundActions>
+      <NoBoundActions>No action is bound to this gesture</NoBoundActions>
+      <RemoveBinding>Remove</RemoveBinding>
+      <Application>Application</Application>
+      <Action>Action</Action>
+      <AddBinding>Add</AddBinding>
+      <CurrentlyBound>{0}  (currently: {1})</CurrentlyBound>
+      <ReplaceHint>An action has at most one continuous gesture; binding it here replaces its current one.</ReplaceHint>
+    </Dialog>
+    <Messages>
+      <DeleteConfirmTitle>Delete Confirm</DeleteConfirmTitle>
+      <DeleteConfirm>Delete "{0}"? Actions using it will no longer respond to a continuous gesture.</DeleteConfirm>
+      <InvalidTitle>Cannot Save</InvalidTitle>
+      <EmptyName>Please enter a name.</EmptyName>
+      <DuplicateName>A continuous gesture named "{0}" already exists.</DuplicateName>
+      <DuplicateMotion>"{0}" already uses this finger count and direction.</DuplicateMotion>
+    </Messages>
+  </ContinuousGesture>
   <RuningApplicationsFlyout>
     <Title>Runing Applications</Title>
   </RuningApplicationsFlyout>
@@ -244,6 +299,8 @@ Email:ccfyzh@gmail.com
     <DrawingButton>Draw gesture by holding: </DrawingButton>
     <TouchScreen>TouchScreen Gesture</TouchScreen>
     <TouchPad>Precision Touchpad Gesture</TouchPad>
+    <TouchPadTapToClick>Tap with a single finger to click</TouchPadTapToClick>
+    <TouchPadTapToClickTip>Turn off "Tap with a single finger to single-click" in Windows touchpad settings. GestureSign then clicks only for single-finger taps, so multi-finger taps (e.g. one finger resting while another taps) trigger just their gesture.</TouchPadTapToClickTip>
     <PenGesture>Pen Gesture</PenGesture>
     <DeviceNotFound>(Device Not Found)</DeviceNotFound>
     <PenGestureButtonDescription>Start drawing gesture by:</PenGestureButtonDescription>
@@ -271,6 +328,7 @@ Email:ccfyzh@gmail.com
       <OffLabel>Hide</OffLabel>
     </ShowTrayIconSwitch>
     <GestureTrail>Show Gesture Trail</GestureTrail>
+    <HideTwoFingerTrail>Hide 2-Finger Gesture Trail</HideTwoFingerTrail>
     <Messages>
       <LoadSettingErrorTitle>Error</LoadSettingErrorTitle>
       <LoadSettingError>Can not load setting</LoadSettingError>
@@ -279,56 +337,4 @@ Email:ccfyzh@gmail.com
       <TaskUserDisabled>The task has been disabled by user, please enable it in the Startup section of Task Manager. </TaskUserDisabled>
     </Messages>
   </Options>
-  <Ribbon>
-    <File>File</File>
-    <Back>Back</Back>
-    <ToggleRibbon>Show or hide the ribbon (Ctrl+F1)</ToggleRibbon>
-    <Tabs>
-      <Actions>Actions</Actions>
-      <Gestures>Gestures</Gestures>
-      <Ignored>Ignored Apps</Ignored>
-      <Help>Help</Help>
-    </Tabs>
-    <Groups>
-      <Applications>Applications</Applications>
-      <Actions>Actions</Actions>
-      <Clipboard>Clipboard</Clipboard>
-      <Sort>Sort</Sort>
-      <ImportExport>Import/Export</ImportExport>
-      <Gestures>Gestures</Gestures>
-      <View>View</View>
-      <IgnoredApps>Ignored Applications</IgnoredApps>
-      <Help>Help</Help>
-      <Feedback>Feedback</Feedback>
-    </Groups>
-    <NewApplication>New Application</NewApplication>
-    <Edit>Edit</Edit>
-    <Delete>Delete</Delete>
-    <NewAction>New Action</NewAction>
-    <AddCommand>Add Command</AddCommand>
-    <EditCommand>Edit Command</EditCommand>
-    <MoveUp>Move Up</MoveUp>
-    <MoveDown>Move Down</MoveDown>
-    <Paste>Paste</Paste>
-    <Cut>Cut</Cut>
-    <Copy>Copy</Copy>
-    <PasteToSelected>Paste Into Action</PasteToSelected>
-    <SortByName>By Name</SortByName>
-    <SortByGesture>By Gesture</SortByGesture>
-    <Import>Import</Import>
-    <Export>Export</Export>
-    <EditGesture>Redraw Gesture</EditGesture>
-    <ImportGestures>Import Gestures</ImportGestures>
-    <LargeIcons>Large Icons</LargeIcons>
-    <Details>Details</Details>
-    <NewIgnoredApp>New Ignored App</NewIgnoredApp>
-    <Help>Help</Help>
-    <ApplicationsPane>Applications</ApplicationsPane>
-    <EnableAll>Enable all</EnableAll>
-    <Status>
-      <Applications>{0} applications</Applications>
-      <Gestures>{0} gestures</Gestures>
-      <Ignored>{0} ignored applications</Ignored>
-    </Status>
-  </Ribbon>
 </Language>

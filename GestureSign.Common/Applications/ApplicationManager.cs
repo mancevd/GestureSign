@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using GestureSign.Common.Configuration;
+using GestureSign.Common.Gestures;
 using GestureSign.Common.Input;
 using ManagedWinapi.Windows;
 
@@ -228,6 +229,7 @@ namespace GestureSign.Common.Applications
                             if (!LoadLegacy())
                                 if (!LoadDefaults())
                                     _applications = new List<IApplication>();
+                    AdoptLegacyContinuousGestures();
                     OnLoadApplicationsCompleted?.Invoke(this, EventArgs.Empty);
                 };
 
@@ -239,6 +241,15 @@ namespace GestureSign.Common.Applications
                         Path.Combine(AppConfig.ApplicationDataPath, Constants.ActionFileName), true, true);
                 return _applications != null;
             }).ContinueWith(antecendent => loadCompleted(antecendent.Result));
+        }
+
+        /// <summary>Moves continuous gestures embedded in pre-catalog actions into the continuous gesture catalog.</summary>
+        private void AdoptLegacyContinuousGestures()
+        {
+            var catalog = ContinuousGestureManager.Instance;
+            catalog.LoadingTask.Wait();
+            if (catalog.AdoptLegacy(_applications))
+                FileManager.SaveObject(_applications, Path.Combine(AppConfig.ApplicationDataPath, Constants.ActionFileName), true);
         }
 
         private bool LoadDefaults()
@@ -405,6 +416,8 @@ namespace GestureSign.Common.Applications
             app.Name = string.IsNullOrWhiteSpace(versionInfo.ProductName) ? Path.GetFileNameWithoutExtension(executablefilePath) : versionInfo.ProductName;
             app.MatchUsing = MatchUsing.ExecutableFilename;
             app.MatchString = Path.GetFileName(executablefilePath);
+            app.Icon = ApplicationIcon.FromAssociatedIcon(executablefilePath);
+
 
             var matchApplications = FindMatchApplications<TApp>(app.MatchUsing, app.MatchString);
             if (matchApplications.Length != 0)

@@ -30,6 +30,9 @@ namespace GestureSign.ControlPanel.ViewModel
                 {
                     Application.Current.Dispatcher.Invoke(Update);
                 };
+                // Action summaries resolve continuous gesture names through the catalog.
+                ContinuousGestureManager.Saved += (o, e) => Application.Current.Dispatcher.InvokeAsync(Update);
+                ContinuousGestureManager.LoadCompleted += (o, e) => Application.Current.Dispatcher.InvokeAsync(Update);
                 GestureManager.Instance.LoadingTask.Wait();
                 Application.Current.Dispatcher.Invoke(Update);
             });
@@ -48,6 +51,9 @@ namespace GestureSign.ControlPanel.ViewModel
             get { return _gestureItems; }
             set { _gestureItems = value; }
         }
+
+        /// <summary>Raised on the UI thread after gestures, applications or continuous gestures were (re)loaded or saved.</summary>
+        public static event EventHandler GestureMapChanged;
 
         public static Dictionary<string, GestureItem> GestureMap { get; private set; } = new Dictionary<string, GestureItem>();
 
@@ -99,6 +105,7 @@ namespace GestureSign.ControlPanel.ViewModel
             }
             GestureMap = GestureItems.ToDictionary(gi => gi.Gesture.Name);
             GlobalPropertyChanged?.Invoke(typeof(GestureItemProvider), nameof(InstanceGestureMap));
+            GestureMapChanged?.Invoke(typeof(GestureItemProvider), EventArgs.Empty);
         }
     }
 }
