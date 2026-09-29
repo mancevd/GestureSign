@@ -3,7 +3,6 @@ using GestureSign.Common.Configuration;
 using GestureSign.Common.Gestures;
 using GestureSign.ControlPanel.Common;
 using GestureSign.ControlPanel.Dialogs;
-using IWshRuntimeLibrary;
 using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
@@ -11,7 +10,6 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 using System.Windows.Threading;
 
 namespace GestureSign.ControlPanel.MainWindowControls
@@ -24,23 +22,6 @@ namespace GestureSign.ControlPanel.MainWindowControls
         public IgnoredApplications()
         {
             InitializeComponent();
-            RegisterCommands();
-        }
-
-        private void RegisterCommands()
-        {
-            Bind(ControlPanelCommands.NewIgnoredApplication, (s, e) => btnAddIgnoredApp_Click(s, e));
-            Bind(ControlPanelCommands.EditIgnoredApplication, (s, e) => EditIgnoredApp(), () => lstIgnoredApplications.SelectedItem != null);
-            Bind(ControlPanelCommands.DeleteIgnoredApplication, (s, e) => btnDeleteIgnoredApp_Click(s, e), () => lstIgnoredApplications.SelectedItem != null);
-            Bind(ControlPanelCommands.Import, (s, e) => DownloadButton_Click(s, e));
-            Bind(ControlPanelCommands.Export, (s, e) => ExportIgnoredButton_Click(s, e));
-
-            lstIgnoredApplications.InputBindings.Add(new KeyBinding(ControlPanelCommands.DeleteIgnoredApplication, Key.Delete, ModifierKeys.None));
-        }
-
-        private void Bind(System.Windows.Input.ICommand command, ExecutedRoutedEventHandler executed, Func<bool> canExecute = null)
-        {
-            CommandBindings.Add(new CommandBinding(command, executed, (s, e) => e.CanExecute = canExecute == null || canExecute()));
         }
 
         private void UserControl_Initialized(object sender, EventArgs eArgs)
@@ -79,7 +60,8 @@ namespace GestureSign.ControlPanel.MainWindowControls
 
         private void lstIgnoredApplications_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            CommandManager.InvalidateRequerySuggested();
+            this.btnEditIgnoredApp.IsEnabled = this.btnDeleteIgnoredApp.IsEnabled =
+                this.lstIgnoredApplications.SelectedItem != null;
         }
 
         private void EnabledIgnoredAppCheckBoxs_Click(object sender, RoutedEventArgs e)
@@ -97,7 +79,7 @@ namespace GestureSign.ControlPanel.MainWindowControls
 
         private void ExportIgnoredButton_Click(object sender, RoutedEventArgs e)
         {
-            ExportImportDialog exportImportDialog = new ExportImportDialog(true, true, ApplicationManager.Instance.Applications, GestureSign.Common.Gestures.GestureManager.Instance.Gestures);
+            ExportImportDialog exportImportDialog = new ExportImportDialog(true, true, ApplicationManager.Instance.Applications, GestureSign.Common.Gestures.GestureManager.Instance.Gestures, ContinuousGestureManager.Instance.ContinuousGestures);
             exportImportDialog.ShowDialog();
         }
 
@@ -131,6 +113,7 @@ namespace GestureSign.ControlPanel.MainWindowControls
             {
                 var newApps = new List<IApplication>();
                 var newGestures = GestureManager.Instance.Gestures.ToList();
+                var newContinuousGestures = new List<ContinuousGesture>();
                 try
                 {
                     string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
@@ -142,6 +125,8 @@ namespace GestureSign.ControlPanel.MainWindowControls
                                 var apps = FileManager.LoadObject<List<IApplication>>(file, false, true);
                                 if (apps != null)
                                 {
+                                    // Pre-catalog files embed continuous gestures in actions.
+                                    ContinuousGestureCatalog.MigrateLegacy(apps, newContinuousGestures);
                                     newApps.AddRange(apps);
                                 }
                                 break;
@@ -149,18 +134,19 @@ namespace GestureSign.ControlPanel.MainWindowControls
                                 Dispatcher.InvokeAsync(() => lstIgnoredApplications.SelectedItem = ApplicationManager.Instance.AddApplication(new IgnoredApp() { IsEnabled = true }, file), DispatcherPriority.Input);
                                 break;
                             case ".lnk":
-                                WshShell shell = new WshShell();
-                                IWshShortcut link = (IWshShortcut)shell.CreateShortcut(file);
-                                if (Path.GetExtension(link.TargetPath).ToLower() == ".exe")
+                                string targetPath = ShortcutHelper.GetTargetPath(file);
+                                if (Path.GetExtension(targetPath).Equals(".exe", StringComparison.OrdinalIgnoreCase))
                                 {
-                                    Dispatcher.InvokeAsync(() => lstIgnoredApplications.SelectedItem = ApplicationManager.Instance.AddApplication(new IgnoredApp() { IsEnabled = true }, link.TargetPath), DispatcherPriority.Input);
+                                    Dispatcher.InvokeAsync(() => lstIgnoredApplications.SelectedItem = ApplicationManager.Instance.AddApplication(new IgnoredApp() { IsEnabled = true }, targetPath), DispatcherPriority.Input);
                                 }
                                 break;
                             case GestureSign.Common.Constants.ArchivesExtension:
                                 {
                                     IEnumerable<IApplication> applications;
                                     IEnumerable<IGesture> gestures;
-                                    Common.Archive.LoadFromArchive(file, out applications, out gestures);
+                                    List<ContinuousGesture> continuousGestures;
+                                    Common.Archive.LoadFromArchive(file, out applications, out gestures, out continuousGestures);
+                                    ContinuousGestureCatalog.Merge(newContinuousGestures, continuousGestures, applications);
 
                                     if (applications != null)
                                         newApps.AddRange(applications);
@@ -185,7 +171,7 @@ namespace GestureSign.ControlPanel.MainWindowControls
                 {
                     Dispatcher.InvokeAsync(() =>
                     {
-                        ExportImportDialog exportImportDialog = new ExportImportDialog(false, true, newApps, newGestures);
+                        ExportImportDialog exportImportDialog = new ExportImportDialog(false, true, newApps, newGestures, newContinuousGestures);
                         exportImportDialog.ShowDialog();
                     }, System.Windows.Threading.DispatcherPriority.Background);
                 }

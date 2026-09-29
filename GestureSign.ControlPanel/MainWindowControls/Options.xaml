@@ -17,7 +17,7 @@
                 <ResourceDictionary>
                     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
                     <Style TargetType="controls:ToggleSwitch"
-                           BasedOn="{StaticResource {x:Type controls:ToggleSwitch}}">
+                           BasedOn="{StaticResource MahApps.Styles.ToggleSwitch}">
                         <Setter Property="FontFamily"
                                 Value="{StaticResource DefaultFont}" />
                         <Setter Property="Margin"
@@ -47,16 +47,16 @@
                     <ObjectDataProvider x:Key="MouseActionDescription"
                                         ObjectType="{x:Type viewModel:MouseActionDescription}" />
                     <ResourceDictionary.MergedDictionaries>
-                        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatSlider.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.FlatSlider.xaml" />
                     </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>
             </StackPanel.Resources>
             <controls:ToggleSwitch x:Name="GestureTrailSwitch"
                                    Header="{localization:LocalisedText Options.GestureTrail}"
-                                   OnLabel="{localization:LocalisedText Options.OnLabel}"
-                                   OffLabel="{localization:LocalisedText Options.OffLabel}"
-                                   Click="GestureTrailSwitch_Click" />
-            <StackPanel Visibility="{Binding ElementName=GestureTrailSwitch,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}"
+                                   OnContent="{localization:LocalisedText Options.OnLabel}"
+                                   OffContent="{localization:LocalisedText Options.OffLabel}"
+                                   Toggled="GestureTrailSwitch_Click" />
+            <StackPanel Visibility="{Binding ElementName=GestureTrailSwitch,Path=IsOn,Converter={StaticResource BooleanToVisibilityConverter}}"
                         Margin="0,10,0,0">
                 <DockPanel HorizontalAlignment="Center"
                            Width="300">
@@ -109,6 +109,11 @@
                         Maximum="30"
                         ValueChanged="VisualFeedbackWidthSlider_ValueChanged"
                         SmallChange="1" />
+                <controls:ToggleSwitch x:Name="HideTwoFingerTrailSwitch"
+                                       Header="{localization:LocalisedText Options.HideTwoFingerTrail}"
+                                       OnContent="{localization:LocalisedText Options.OnLabel}"
+                                       OffContent="{localization:LocalisedText Options.OffLabel}"
+                                       Toggled="HideTwoFingerTrailSwitch_Click" />
             </StackPanel>
             <TextBlock x:Name="MinimumPointDistanceText"
                        HorizontalAlignment="Center"
@@ -136,9 +141,9 @@
                       DropDownClosed="LanguageComboBox_DropDownClosed" />
             <controls:ToggleSwitch x:Name="MouseSwitch"
                                    Header="{localization:LocalisedText Options.MouseGesture}"
-                                   OnLabel="{localization:LocalisedText Options.OnLabel}"
-                                   OffLabel="{localization:LocalisedText Options.OffLabel}"
-                                   Click="MouseSwitch_Click">
+                                   OnContent="{localization:LocalisedText Options.OnLabel}"
+                                   OffContent="{localization:LocalisedText Options.OffLabel}"
+                                   Toggled="MouseSwitch_Click">
             </controls:ToggleSwitch>
             <TextBlock x:Name="DrawingButtonTextBlock"
                        Text="{localization:LocalisedText Options.DrawingButton}"
@@ -146,7 +151,7 @@
                        VerticalAlignment="Top"
                        FontSize="14"
                        Margin="0,0,0,5"
-                       Visibility="{Binding ElementName=MouseSwitch,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}">
+                       Visibility="{Binding ElementName=MouseSwitch,Path=IsOn,Converter={StaticResource BooleanToVisibilityConverter}}">
             </TextBlock>
             <ComboBox x:Name="DrawingButtonComboBox"
                       ItemsSource="{Binding Source={StaticResource MouseActionDescription},Path=DrawingDescription}"
@@ -157,12 +162,12 @@
                       DisplayMemberPath="Value"
                       SelectedValuePath="Key"
                       DropDownClosed="DrawingButtonComboBox_DropDownClosed"
-                      Visibility="{Binding ElementName=MouseSwitch,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}">
+                      Visibility="{Binding ElementName=MouseSwitch,Path=IsOn,Converter={StaticResource BooleanToVisibilityConverter}}">
             </ComboBox>
             <controls:ToggleSwitch x:Name="TouchScreenSwitch"
-                                   OnLabel="{localization:LocalisedText Options.OnLabel}"
-                                   OffLabel="{localization:LocalisedText Options.OffLabel}"
-                                   Click="TouchScreenSwitch_Click">
+                                   OnContent="{localization:LocalisedText Options.OnLabel}"
+                                   OffContent="{localization:LocalisedText Options.OffLabel}"
+                                   Toggled="TouchScreenSwitch_Click">
                 <controls:ToggleSwitch.Header>
                     <TextBlock FontSize="{StaticResource ToggleSwitchHeaderFontSize}"
                                FontWeight="Normal">
@@ -174,9 +179,9 @@
                 </controls:ToggleSwitch.Header>
             </controls:ToggleSwitch>
             <controls:ToggleSwitch x:Name="TouchPadSwitch"
-                                   OnLabel="{localization:LocalisedText Options.OnLabel}"
-                                   OffLabel="{localization:LocalisedText Options.OffLabel}"
-                                   Click="TouchPadSwitch_Click">
+                                   OnContent="{localization:LocalisedText Options.OnLabel}"
+                                   OffContent="{localization:LocalisedText Options.OffLabel}"
+                                   Toggled="TouchPadSwitch_Click">
                 <controls:ToggleSwitch.Header>
                     <TextBlock FontSize="{StaticResource ToggleSwitchHeaderFontSize}"
                                FontWeight="Normal">
@@ -187,10 +192,18 @@
                     </TextBlock>
                 </controls:ToggleSwitch.Header>
             </controls:ToggleSwitch>
+            <CheckBox x:Name="TouchPadTapToClickCheckBox"
+                      Click="TouchPadTapToClickCheckBox_Click"
+                      HorizontalAlignment="Center"
+                      Margin="0,5,0,15"
+                      FontSize="14"
+                      Content="{localization:LocalisedText Options.TouchPadTapToClick}"
+                      ToolTip="{localization:LocalisedText Options.TouchPadTapToClickTip}"
+                      Visibility="{Binding ElementName=TouchPadSwitch,Path=IsOn,Converter={StaticResource BooleanToVisibilityConverter}}" />
             <controls:ToggleSwitch x:Name="PenGestureSwitch"
-                                   OnLabel="{localization:LocalisedText Options.OnLabel}"
-                                   OffLabel="{localization:LocalisedText Options.OffLabel}"
-                                   Click="PenGestureSwitch_Click">
+                                   OnContent="{localization:LocalisedText Options.OnLabel}"
+                                   OffContent="{localization:LocalisedText Options.OffLabel}"
+                                   Toggled="PenGestureSwitch_Click">
                 <controls:ToggleSwitch.Header>
                     <TextBlock FontSize="{StaticResource ToggleSwitchHeaderFontSize}"
                                FontWeight="Normal">
@@ -201,7 +214,7 @@
                     </TextBlock>
                 </controls:ToggleSwitch.Header>
             </controls:ToggleSwitch>
-            <StackPanel Visibility="{Binding ElementName=PenGestureSwitch,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}"
+            <StackPanel Visibility="{Binding ElementName=PenGestureSwitch,Path=IsOn,Converter={StaticResource BooleanToVisibilityConverter}}"
                         HorizontalAlignment="Center">
                 <TextBlock HorizontalAlignment="Center"
                            Text="{localization:LocalisedText Options.PenGestureButtonDescription}"
@@ -236,27 +249,27 @@
             </StackPanel>
             <controls:ToggleSwitch x:Name="InitialTimeoutSwitch"
                                    Header="{localization:LocalisedText Options.InitialTimeoutTitle}"
-                                   OnLabel="{localization:LocalisedText Options.OnLabel}"
-                                   OffLabel="{localization:LocalisedText Options.OffLabel}"
-                                   Click="InitialTimeoutSwitch_Click" />
+                                   OnContent="{localization:LocalisedText Options.OnLabel}"
+                                   OffContent="{localization:LocalisedText Options.OffLabel}"
+                                   Toggled="InitialTimeoutSwitch_Click" />
             <TextBlock HorizontalAlignment="Center"
-                       Visibility="{Binding ElementName=InitialTimeoutSwitch,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Visibility="{Binding ElementName=InitialTimeoutSwitch,Path=IsOn,Converter={StaticResource BooleanToVisibilityConverter}}"
                        Text="{Binding ElementName=InitialTimeoutSlider, Path=Value, StringFormat={localization:LocalisedText Options.InitialTimeout}}"
                        FontSize="14"
                        Margin="0,5,0,0" />
             <Slider x:Name="InitialTimeoutSlider"
-                    Visibility="{Binding ElementName=InitialTimeoutSwitch,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}"
+                    Visibility="{Binding ElementName=InitialTimeoutSwitch,Path=IsOn,Converter={StaticResource BooleanToVisibilityConverter}}"
                     Maximum="2"
                     TickFrequency="0.1"
                     IsSnapToTickEnabled="True"
                     ValueChanged="InitialTimeoutSlider_ValueChanged" />
             <controls:ToggleSwitch x:Name="StartupSwitch"
                                    Header="{localization:LocalisedText Options.WindowsStartup.Header}"
-                                   OnLabel="{localization:LocalisedText Options.OnLabel}"
-                                   OffLabel="{localization:LocalisedText Options.OffLabel}"
-                                   Click="StartupSwitch_OnClick" />
+                                   OnContent="{localization:LocalisedText Options.OnLabel}"
+                                   OffContent="{localization:LocalisedText Options.OffLabel}"
+                                   Toggled="StartupSwitch_OnClick" />
             <CheckBox x:Name="RunAsAdminCheckBox"
-                      Visibility="{Binding ElementName=StartupSwitch,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}"
+                      Visibility="{Binding ElementName=StartupSwitch,Path=IsOn,Converter={StaticResource BooleanToVisibilityConverter}}"
                       Click="RunAsAdminCheckBox_Click"
                       Margin="0,10,0,0"
                       FontSize="14"
@@ -264,26 +277,24 @@
                       HorizontalAlignment="Center" />
             <controls:ToggleSwitch x:Name="IgnoreFullScreenSwitch"
                                    Header="{localization:LocalisedText Options.IgnoreFullScreen.Header}"
-                                   OnLabel="{localization:LocalisedText Options.OnLabel}"
-                                   OffLabel="{localization:LocalisedText Options.OffLabel}"
-                                   Click="IgnoreFullScreenSwitch_Click" />
+                                   OnContent="{localization:LocalisedText Options.OnLabel}"
+                                   OffContent="{localization:LocalisedText Options.OffLabel}"
+                                   Toggled="IgnoreFullScreenSwitch_Click" />
             <controls:ToggleSwitch x:Name="IgnoreTouchInputWhenUsingPenSwitch"
                                    Header="{localization:LocalisedText Options.IgnoreTouchInputWhenUsingPen.Header}"
-                                   OnLabel="{localization:LocalisedText Options.OnLabel}"
-                                   OffLabel="{localization:LocalisedText Options.OffLabel}"
-                                   Click="IgnoreTouchInputWhenUsingPenSwitch_Click" />
+                                   OnContent="{localization:LocalisedText Options.OnLabel}"
+                                   OffContent="{localization:LocalisedText Options.OffLabel}"
+                                   Toggled="IgnoreTouchInputWhenUsingPenSwitch_Click" />
             <controls:ToggleSwitch x:Name="ShowTrayIconSwitch"
                                    Header="{localization:LocalisedText Options.ShowTrayIconSwitch.Header}"
-                                   OnLabel="{localization:LocalisedText Options.ShowTrayIconSwitch.OnLabel}"
-                                   OffLabel="{localization:LocalisedText Options.ShowTrayIconSwitch.OffLabel}"
-                                   Checked="ShowTrayIconSwitch_Checked"
-                                   Unchecked="ShowTrayIconSwitch_Unchecked" />
+                                   OnContent="{localization:LocalisedText Options.ShowTrayIconSwitch.OnLabel}"
+                                   OffContent="{localization:LocalisedText Options.ShowTrayIconSwitch.OffLabel}"
+                                   Toggled="ShowTrayIconSwitch_Toggled" />
             <controls:ToggleSwitch x:Name="SendLogToggleSwitch"
                                    Header="{localization:LocalisedText Options.ErrorLogPrompt}"
-                                   OnLabel="{localization:LocalisedText Options.OnLabel}"
-                                   OffLabel="{localization:LocalisedText Options.OffLabel}"
-                                   Checked="SendLogToggleSwitch_Checked"
-                                   Unchecked="SendLogToggleSwitch_Unchecked" />
+                                   OnContent="{localization:LocalisedText Options.OnLabel}"
+                                   OffContent="{localization:LocalisedText Options.OffLabel}"
+                                   Toggled="SendLogToggleSwitch_Toggled" />
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
                         Margin="0,20,0,10">

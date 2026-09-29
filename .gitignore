@@ -159,6 +159,10 @@ $RECYCLE.BIN/
 # Visual Studio 2015 cache/options directory
 .vs/
 
-# Local setup artifacts
-.tools/
-.ref-assemblies/
+# Build bootstrap output of build.ps1 (restored/copied on demand)
+refpacks/
+winmd/
+.nuget/
+
+# Golden replay mismatch dumps
+*.actual.json

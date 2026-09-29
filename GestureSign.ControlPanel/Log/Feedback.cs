@@ -11,8 +11,7 @@ using GestureSign.Common;
 using GestureSign.Common.Configuration;
 using GestureSign.Common.Log;
 using Microsoft.Win32;
-using SharpRaven;
-using SharpRaven.Data;
+using Sentry;
 
 namespace GestureSign.ControlPanel.Log
 {
@@ -22,28 +21,28 @@ namespace GestureSign.ControlPanel.Log
 
         public static string Send(string report)
         {
-            string sendError = null;
-            var ravenClient = new RavenClient(Dsn)
-            {
-                ErrorOnCapture = e =>
-                {
-                    Logging.LogException(e);
-                    sendError = e.Message;
-                },
-                Compression = true
-            };
+            if (string.IsNullOrWhiteSpace(report))
+                return null;
 
-            const int chunkSize = 4096;
-            if (!String.IsNullOrWhiteSpace(report))
+            try
             {
-                foreach (string s in Split(report, chunkSize))
+                using (SentrySdk.Init(options => options.Dsn = Dsn))
                 {
-                    if (s != string.Empty)
-                        ravenClient.Capture(new SentryEvent(s));
+                    const int chunkSize = 4096;
+                    foreach (string chunk in Split(report, chunkSize))
+                    {
+                        if (chunk.Length != 0)
+                            SentrySdk.CaptureMessage(chunk);
+                    }
+                    SentrySdk.FlushAsync(TimeSpan.FromSeconds(30)).GetAwaiter().GetResult();
                 }
+                return null;
             }
-
-            return sendError;
+            catch (Exception exception)
+            {
+                Logging.LogException(exception);
+                return exception.Message;
+            }
         }
 
         public static string OutputLog()
@@ -66,7 +65,7 @@ namespace GestureSign.ControlPanel.Log
             }
             result.AppendLine(version);
 
-            string directoryPath = Path.GetDirectoryName(new Uri(Application.ResourceAssembly.CodeBase).LocalPath);
+            string directoryPath = Path.GetDirectoryName(Application.ResourceAssembly.Location);
             if (directoryPath != null)
             {
                 result.AppendLine(directoryPath);
